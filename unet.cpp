@@ -878,31 +878,31 @@ ap_uint<32>  Base_addr39
 
 
 
-//      conv1: conv_k_wrapper<
-//                             TmBuff1, TnBuff1,Tr1,Tc1,Tm1,Tn1, TmBuff1,TnBuff1,Tk1,Tri1,Tci1>
-//      (weight1,feature1,output_core1,con,Base_addr37,Base_addr38,Base_addr39,
-//      M1,N1,H1,C1,K1,S1);
-//
-//
-//      act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
-//
-//      max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
-//
+      conv1: conv_k_wrapper<
+                             TmBuff1, TnBuff1,Tr1,Tc1,Tm1,Tn1, TmBuff1,TnBuff1,Tk1,Tri1,Tci1>
+      (weight1,feature1,output_core1,con,Base_addr37,Base_addr38,Base_addr39,
+      M1,N1,H1,C1,K1,S1);
+
+
+      act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
+
+      max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
+
+    
+    
+      conv2: conv_k_wrapper<
+                             TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
+      (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
+      M2,N2,H2,C2,K2,S2);
+
+      act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
+
+      max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
       
-      
-//      conv2: conv_k_wrapper<
-//                             TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
-//      (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
-//      M2,N2,H2,C2,K2,S2);
-//
-//      act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
-//
-//      max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
-      
-      fc1: fc_wrapper<
-                      TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
-      (weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
-      M3,N3,S3);
+//      fc1: fc_wrapper<
+//                      TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+//      (weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
+//      M3,N3,S3);
 //      act3: tanh_layer_fc(output_core3,weight3, M3,N3,Base_addr31,Base_addr33);
 
 

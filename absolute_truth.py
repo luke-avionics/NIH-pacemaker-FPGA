@@ -70,10 +70,12 @@ class Net(nn.Module):
         #print('input before')
         #print(x.data)
         x =x.view(1,M2*C2//2*C2//2,1,1)
-        #print('input afterwards')
-        #print(x.data)
-        x =self.f1(x)
-        x =self.f2(x)
+        
+#=================================================================================        
+
+
+        #x =self.f1(x)
+        #x =self.f2(x)
         #x =self.f3(x)
         return x
         
@@ -169,7 +171,7 @@ tensor_output= net1(tensor_test_x)
 test_output=tensor_output.data
 
 with open("test_output.inc","w") as f:
-    for i in range(N4):
+    for i in range(M2*C2//2*C2//2):
         for j in range(1):
             for k in range(1):
                 f.write(str(float(test_output[0][i][j][k]))+"\n\r")   

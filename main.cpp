@@ -49,9 +49,9 @@ int main(){
     //modification anchor 
     data_type * golden_output=(data_type *)malloc(M4*1*1*sizeof(data_type));
     inputFile.open("test_output.inc");
-    for(unsigned int i=0; i<M4; i++)
-	   for(unsigned int j=0; j<1; j++)
-		   for(unsigned int k=0; k<1; k++){
+    for(unsigned int i=0; i<M2; i++)
+	   for(unsigned int j=0; j<C2/2; j++)
+		   for(unsigned int k=0; k<C2/2; k++){
 			   inputFile>>golden_output[i];
 		   } 
     inputFile.close();
@@ -384,18 +384,18 @@ int main(){
                // }   
 
     //modification anchor
-    for(unsigned int i=0; i<M4; i+=2)
-	   for(unsigned int j=0; j<1; j++)
-		   for(unsigned int k=0; k<1; k++){
-                tmp=packed_output4[i/2*1*1+j*1+k];
-                if (abs(tmp.data.data0-golden_output[i*1*1+j*1+k])/golden_output[i*1*1+j*1+k] > 0.1
-                    || abs(tmp.data.data1-golden_output[(i+1)*1*1+j*1+k])/golden_output[(i+1)*1*1+j*1+k]>0.1){
+    for(unsigned int i=0; i<M2; i+=2)
+	   for(unsigned int j=0; j<C2/2; j++)
+		   for(unsigned int k=0; k<C2/2; k++){
+                tmp=packed_input3[i/2*C2*C2/4+j*C2/2+k];
+                if (abs(tmp.data.data0-golden_output[i*C2*C2/4+j*C2/2+k])/golden_output[i*C2*C2/4+j*C2/2+k] > 0.1
+                    || abs(tmp.data.data1-golden_output[(i+1)*C2*C2/4+j*C2/2+k])/golden_output[(i+1)*C2*C2/4+j*C2/2+k]>0.1){
                     
                     cout<<"failed"<<' ';
                     cout<<tmp.data.data0<<',';
-                    cout<<golden_output[i*1*1+j*1+k]<<endl;
+                    cout<<golden_output[i*C2*C2/4+j*C2/2+k]<<endl;
                     cout<<tmp.data.data1<<',';
-                    cout<<golden_output[(i+1)*1*1+j*1+k]<<endl;
+                    cout<<golden_output[(i+1)*C2*C2/4+j*C2/2+k]<<endl;
                     cout<<i<<',';
                     cout<<j<<',';
                     cout<<k<<endl;
