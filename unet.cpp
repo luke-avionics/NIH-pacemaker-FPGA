@@ -577,7 +577,7 @@ void max_pool(dma_data* input_next,dma_data* output,
 
 
 /* bilinear interpolation, scale_factor = 2, align_corners = False */
-void upsample(dma_data* input, dma_data* output)
+void upsample(dma_data* input, dma_data* output, int N, int C)
 {
     data_type x_in, y_in;
     int x_west, y_north, x_east, y_south;
@@ -586,9 +586,9 @@ void upsample(dma_data* input, dma_data* output)
     data_type a1, b1, c1, d1;
     data_type pixel0, pixel1;
 
-    int ch = N1;
-    int h_in = C1;
-    int w_in = C1;
+    int ch = N;
+    int h_in = C;
+    int w_in = C;
     int factor = 2;
 
     int i, j, k;
@@ -597,6 +597,7 @@ void upsample(dma_data* input, dma_data* output)
     for (i = 0; i < h_in*factor; i++)
         for (j = 0; j < w_in*factor; j++)
         {
+#pragma HLS PIPELINE
             // map output coord (i,j) to input space (y_in, x_in)
             //  align_corners = False
             x_in = ((data_type)j + 0.5)/factor - 0.5;
@@ -609,9 +610,9 @@ void upsample(dma_data* input, dma_data* output)
 
             // get indices of nearest neighbors
             x_west  = floor(x_in);      // j (col) coord of west neighbors
-            x_east  = ceil(x_in);       // j (col) coord of east neighbors
+            x_east  = x_west + 1;       // j (col) coord of east neighbors
             y_north = floor(y_in);      // i (row) coord of north neighbors
-            y_south = ceil(y_in);       // i (row) coord of south neighbors
+            y_south = y_north + 1;      // i (row) coord of south neighbors
 
             // check boundaries
             x_west  = (x_west < 0)? 0 : x_west;
@@ -628,7 +629,7 @@ void upsample(dma_data* input, dma_data* output)
             // loop over output channels (two at once for packed data)
             for(k = 0; k < ch; k += 2)
             {
-#pragma HLS PIPELINE
+#pragma HLS UNROLL
                 // get neighbor values
                 a0 = input[k/2*C1*C1 + y_north*C1 + x_west].data.data0;    // NW
                 b0 = input[k/2*C1*C1 + y_north*C1 + x_east].data.data0;    // NE
@@ -964,10 +965,10 @@ ap_uint<32>  Base_addr39
 
       act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
 
-      max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
+      max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);	// result: feature2
 
 
-      upsample1: upsample(output_core1, feature2);
+      upsample1: upsample(feature2, output_core1, M1, C2);	// M1xC2xC2 (48x8x8) back up to M1xC1xC1 (48x16x16)
 
     
     
