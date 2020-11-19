@@ -575,6 +575,84 @@ void max_pool(dma_data* input_next,dma_data* output,
             }
 }
 
+
+/* bilinear interpolation, scale_factor = 2, align_corners = False */
+void upsample(dma_data* input, dma_data* output)
+{
+    data_type x_in, y_in;
+    int x_west, y_north, x_east, y_south;
+    data_type dx_west, dx_east, dy_north, dy_south;
+    data_type a0, b0, c0, d0;
+    data_type a1, b1, c1, d1;
+    data_type pixel0, pixel1;
+
+    int ch = N1;
+    int h_in = C1;
+    int w_in = C1;
+    int factor = 2;
+
+    int i, j, k;
+
+    // loop over output feature pixels
+    for (i = 0; i < h_in*factor; i++)
+        for (j = 0; j < w_in*factor; j++)
+        {
+            // map output coord (i,j) to input space (y_in, x_in)
+            //  align_corners = False
+            x_in = ((data_type)j + 0.5)/factor - 0.5;
+            y_in = ((data_type)i + 0.5)/factor - 0.5;
+
+            /** align_corners = True
+            x_in = ((data_type)(w_in - 1)/(w_in*factor - 1)) * j;
+            y_in = ((data_type)(h_in - 1)/(h_in*factor - 1)) * i;
+            */
+
+            // get indices of nearest neighbors
+            x_west  = floor(x_in);      // j (col) coord of west neighbors
+            x_east  = ceil(x_in);       // j (col) coord of east neighbors
+            y_north = floor(y_in);      // i (row) coord of north neighbors
+            y_south = ceil(y_in);       // i (row) coord of south neighbors
+
+            // check boundaries
+            x_west  = (x_west < 0)? 0 : x_west;
+            x_east  = (x_east < w_in)? x_east : w_in - 1;
+            y_north = (y_north < 0)? 0 : y_north;
+            y_south = (y_south < h_in)? y_south : h_in - 1;
+
+            // calculate distances relative to neighbors
+            dx_west  = x_in - x_west;
+            dx_east  = 1 - dx_west;
+            dy_north = y_in - y_north;
+            dy_south = 1 - dy_north;
+
+            // loop over output channels (two at once for packed data)
+            for(k = 0; k < ch; k += 2)
+            {
+#pragma HLS PIPELINE
+                // get neighbor values
+                a0 = input[k/2*C1*C1 + y_north*C1 + x_west].data.data0;    // NW
+                b0 = input[k/2*C1*C1 + y_north*C1 + x_east].data.data0;    // NE
+                c0 = input[k/2*C1*C1 + y_south*C1 + x_west].data.data0;    // SW
+                d0 = input[k/2*C1*C1 + y_south*C1 + x_east].data.data0;    // SE
+
+                a1 = input[k/2*C1*C1 + y_north*C1 + x_west].data.data1;    // NW
+                b1 = input[k/2*C1*C1 + y_north*C1 + x_east].data.data1;    // NE
+                c1 = input[k/2*C1*C1 + y_south*C1 + x_west].data.data1;    // SW
+                d1 = input[k/2*C1*C1 + y_south*C1 + x_east].data.data1;    // SE
+
+                // calculate output (interpolating over both dimensions)
+                pixel0 = dy_south*(a0*dx_east + b0*dx_west) +
+                         dy_north*(c0*dx_east + d0*dx_west);
+                pixel1 = dy_south*(a1*dx_east + b1*dx_west) +
+                         dy_north*(c1*dx_east + d1*dx_west);
+                output[k/2*C1*factor*C1*factor + i*C1*factor + j].data.data0 = pixel0;
+                output[k/2*C1*factor*C1*factor + i*C1*factor + j].data.data1 = pixel1;
+            }
+        }
+
+}
+
+
 void unet_top (
 dma_data* weight1,
 dma_data* feature1,
@@ -888,16 +966,19 @@ ap_uint<32>  Base_addr39
 
       max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
 
+
+      upsample1: upsample(output_core1, feature2);
+
     
     
-      conv2: conv_k_wrapper<
-                             TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
-      (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
-      M2,N2,H2,C2,K2,S2);
-
-      act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
-
-      max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
+//      conv2: conv_k_wrapper<
+//                             TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
+//      (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
+//      M2,N2,H2,C2,K2,S2);
+//
+//      act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
+//
+//      max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
       
 //      fc1: fc_wrapper<
 //                      TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
