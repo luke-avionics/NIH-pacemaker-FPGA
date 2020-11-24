@@ -30,30 +30,32 @@ const int TmBuff2=2, TnBuff2=2,Tr2=4,Tc2=4,Tm2=2,Tn2=2,Tk2=5,Tri2=8,Tci2=8;
 const int M2 = 96, N2=48,C2=8,H2=12, K2=5, S2=1;
 
 const int TmBuff3=16, TnBuff3=16,Tm3=16,Tn3=16;
-const int M3 = 60*4*4, N3=96*4*4, S3=1;
+const int M3 = 60*4*4, N3=96*4*4, S3=1;			// corr. to fc1
 
 const int TmBuff4=2, TnBuff4=2,Tm4=2,Tn4=2;
-const int M4 = 40*4*4, N4=60*4*4, S4=1;
+const int M4 = 40*4*4, N4=60*4*4, S4=1;			// corr. to fc2
 
 const int TmBuff5=2, TnBuff5=2,Tm5=2,Tn5=2;
-const int M5 = 40*4*4, N5=60*4*4, S5=1;
+const int M5 = 4*4*4, N5=40*4*4, S5=1;			// corr. to fc3
 
 const int TmBuff6=2, TnBuff6=2,Tm6=2,Tn6=2;
-const int M6 = 40*4*4, N6=60*4*4, S6=1;
+const int M6 = 40*4*4, N6=4*4*4, S6=1;			// corr. to fc4
 
 const int TmBuff7=2, TnBuff7=2,Tm7=2,Tn7=2;
-const int M7 = 40*4*4, N7=60*4*4, S7=1;
+const int M7 = 60*4*4, N7=40*4*4, S7=1;			// corr. to fc5
 
 const int TmBuff8=2, TnBuff8=2,Tm8=2,Tn8=2;
-const int M8 = 60*4*4, N8=96*4*4, S8=1;
+const int M8 = 96*4*4, N8=60*4*4, S8=1;			// corr. to fc6
 
 const int TmBuff9=2, TnBuff9=2,Tr9=4,Tc9=4,Tm9=2,Tn9=2,Tk9=5,Tri9=8,Tci9=8;
-const int M9 = 48, N9=96,C9=4,H9=12, K9=5, S9=1;//h9
+const int M9 = 48, N9=96,C9=4,H9=12, K9=5, S9=1;			// corr. to deconv1
 
 const int TmBuff10=2, TnBuff10=2,Tr10=4,Tc10=4,Tm10=2,Tn10=2,Tk10=5,Tri10=8,Tci10=8;
-const int M10 = 96, N10=48,C10=8,H10=12, K10=7, S10=1;//h9
+const int M10 = 96, N10=48,C10=8,H10=12, K10=7, S10=1;		// corr. to deconv2
 
 const int K4 =1,C4=1,K5=1,C5=1,K6=1,C6=1,K7=1,C7=1,K8=1,H8=1,C8=1;
+
+
 void unet_top (
 dma_data* weight1,
 dma_data* feature1,

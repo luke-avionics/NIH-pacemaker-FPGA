@@ -701,6 +701,8 @@ void upsample(dma_data* input, dma_data* output, int N, int C)
             }
         }
 
+}
+
 template <int Tr, int Tc, int Tn>
 void read_ifmap_deconv2d(data_type feature_temp[Tn][Tr][Tc], dma_data* feature, int tr, int ti, int tc, int H, int C, int K, ap_uint<32> Base_addr2){
 #pragma HLS INLINE off
@@ -1333,120 +1335,154 @@ ap_uint<32>  Base_addr39
 //#pragma HLS data_pack variable=feature17
 //#pragma HLS data_pack variable=output_core17
 
-    //Be sure to check the address order when going for implementation
-//	conv1:conv1_1_1<M1,N1,SE1,OM1,H1,C1,HFD1,CFD1,K1,S1,Tr1,Tc1,Tm1,Tn1,Tm1,Tm1>(weight1,feature1,output_core1,con,Base_addr37,Base_addr38,Base_addr39);
-//	conv2:conv1_1_1<M2,N2,SE2,OM2,H2,C2,HFD2,CFD2,K2,S2,Tr2,Tc2,Tm2,Tn2,Tm2,Tm2>(weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33);
-//	conv3:repeat2_conv1_1_1<M3,N3,SE3,OM3,H3,C3,HFD3,CFD3,K3,S3,Tr3,Tc3,Tm3,Tn3,Tm3,Tm3>(weight4,feature4,output_core4,con,Base_addr28,Base_addr29,Base_addr30);
-//	conv4:conv1_1_1<M5,N5,SE5,OM5,H5,C5,HFD5,CFD5,K5,S5,Tr5,Tc5,Tm5,Tn5,Tm5,Tm5>(weight5,feature5,output_core5,con,Base_addr1,Base_addr2,Base_addr3);
-//	conv5:conv1_1_1<M6,N6,SE6,OM6,H6,C6,HFD6,CFD6,K6,S6,Tr6,Tc6,Tm6,Tn6,Tm6,Tm6>(weight6,feature6,output_core6,con,Base_addr4,Base_addr5,Base_addr6);
-//	conv6:repeat2_conv1_1_1<M7,N7,SE7,OM7,H7,C7,HFD7,CFD7,K7,S7,Tr7,Tc7,Tm7,Tn7,Tm7,Tm7>(weight7,feature7,output_core7,con,Base_addr7,Base_addr8,Base_addr9);
-//	conv7:conv1_1_1<M9,N9,SE9,OM9,H9,C9,HFD9,CFD9,K9,S9,Tr9,Tc9,Tm9,Tn9,Tm9,Tm9>(weight8,feature8,output_core8,con,Base_addr10,Base_addr11,Base_addr12);
-//	conv8:conv1_1_1<M10,N10,SE10,OM10,H10,C10,HFD10,CFD10,K10,S10,Tr10,Tc10,Tm10,Tn10,Tm10,Tm10>(weight9,feature9,output_core9,con,Base_addr13,Base_addr14,Base_addr15);
-//	conv9:repeat2_conv1_1_1<M11,N11,SE11,OM11,H11,C11,HFD11,CFD11,K11,S11,Tr11,Tc11,Tm11,Tn11,Tm11,Tm11>(weight10,feature10,output_core10,con,Base_addr16,Base_addr17,Base_addr18);
-//	conv10:conv1_1_1<M13,N13,SE13,OM13,H13,C13,HFD13,CFD13,K13,S13,Tr13,Tc13,Tm13,Tn13,Tm13,Tm13>(weight11,feature11,output_core11,con,Base_addr19,Base_addr20,Base_addr21);
-//	conv11:repeat2_conv1_1_1<M14,N14,SE14,OM14,H14,C14,HFD14,CFD14,K14,S14,Tr14,Tc14,Tm14,Tn14,Tm14,Tm14>(weight12,feature12,output_core12,con,Base_addr22,Base_addr23,Base_addr24);
-//	conv12:conv1_1_1<M16,N16,SE16,OM16,H16,C16,HFD16,CFD16,K16,S16,Tr16,Tc16,Tm16,Tn16,Tm16,Tm16>(weight13,feature13,output_core13,con,Base_addr25,Base_addr26,Base_addr27);
-//	conv13:conv1_1_1<M17,N17,SE17,OM17,H17,C17,HFD17,CFD17,K17,S17,Tr17,Tc17,Tm17,Tn17,Tm17,Tm17>(weight14,feature14,output_core14,con,Base_addr40,Base_addr41,Base_addr42);
-//	conv14:repeat3_conv1_1_1<M18,N18,SE18,OM18,H18,C18,HFD18,CFD18,K18,S18,Tr18,Tc18,Tm18,Tn18,Tm18,Tm18>(weight15,feature15,output_core15,con,Base_addr43,Base_addr44,Base_addr45);
-//	conv15:conv1_1_1<M21,N21,SE21,OM21,H21,C21,HFD21,CFD21,K21,S21,Tr21,Tc21,Tm21,Tn21,Tm21,Tm21>(weight16,feature16,output_core16,con,Base_addr46,Base_addr47,Base_addr48);
-	// conv16:conv1_1_1<M16,N16,SE16,OM16,H16,C16,HFD16,CFD16,K16,S16,Tr16,Tc16,Tm16,Tn16,Tm16,Tm16>(weight17,feature17,output_core17,con,Base_addr49,Base_addr50,Base_addr51);
+
+/***** Part 1: Convolution and Max Pooling with Batch Normalization *****/
+
+//		conv1: conv_k_wrapper<
+//							  TmBuff1, TnBuff1,Tr1,Tc1,Tm1,Tn1, TmBuff1,TnBuff1,Tk1,Tri1,Tci1>
+//		(weight1,feature1,output_core1,con,Base_addr37,Base_addr38,Base_addr39,
+//		M1,N1,H1,C1,K1,S1);
+
+
+//		act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
+
+		// Here, there are M1 features (since the conv layer will put out this many outputs)
+		// Output should be [M1 x C1 x C1] (assuming same conv)
+
+		// batchnorm never actually reuses input values, so use the same memory for input and output
+//		batchnorm1: batchnorm(output_core1, batchnorm_weight1, batchnorm_bias1, output_core1, batchnorm_eps, C1, C1, M1);
+
+//		max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
+
+
+//		conv2: conv_k_wrapper<
+//							  TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
+//		(weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
+//		M2,N2,H2,C2,K2,S2);
+
+		// conv2 synthesized with conv1 parameters (Chunk 1)
+//		conv2: conv_k_wrapper<
+//							  TmBuff1, TnBuff1,Tr1,Tc1,Tm1,Tn1, TmBuff1,TnBuff1,Tk1,Tri1,Tci1>
+//		(weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
+//		M2,N2,H2,C2,K2,S2);
+
+//		act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
+
+		// batchnorm2 should go here
+
+		// upsample1 for synthesis testing only, not valid location in NN
+//		upsample1: upsample(output_core1, feature2);
+
+//		max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
+
+
+/***** Part 2: FC LAYERS 1-3 *****/
+
+//		fc1: fc_wrapper<
+//					    TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+//		(weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
+//		M3,N3,S3);
+
+//		act3: tanh_layer_fc(output_core3,weight3, M3,N3,Base_addr31,Base_addr33);
+
+//		fc2: fc_wrapper<
+//					    TmBuff4, TnBuff4,Tm4,Tn4,TmBuff4,TnBuff4>
+//		(weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
+//		M4,N4,S4);
+
+		// fc2 synthesized with fc1 parameters (Chunk 2)
+//		fc2: fc_wrapper<
+//						TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+//		(weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
+//		M4,N4,S4);
+
+//		act4: tanh_layer_fc(output_core4,weight4, M4,N4,Base_addr28,Base_addr30);
+
+		// fc3 synthesized with fc1 parameters (Chunk 2) and fc2 inputs
+//		fc3: fc_wrapper<
+//						TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+//	    (weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
+//		M5,N5,S5);
+
+
+/***** Part 3: FC LAYERS 4-6 *****/
+
+		// fc4 synthesized with fc1 parameters (Chunk 3) and fc2 inputs
+//		fc4: fc_wrapper<
+//						TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+//	    (weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
+//		M6,N6,S6);
+
+		// fc5 synthesized with fc1 parameters (Chunk 3) and fc2 inputs
+//		fc5: fc_wrapper<
+//						TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+//	    (weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
+//		M7,N7,S7);
+
+		// fc6 synthesized with fc1 parameters (Chunk 3) and fc2 inputs
+//		fc6: fc_wrapper<
+//						TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+//	    (weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
+//		M8,N8,S8);
 
 
 
-      conv1: conv_k_wrapper<
-                            TmBuff1, TnBuff1,Tr1,Tc1,Tm1,Tn1, TmBuff1,TnBuff1,Tk1,Tri1,Tci1>
-     (weight1,feature1,output_core1,con,Base_addr37,Base_addr38,Base_addr39,
-      M1,N1,H1,C1,K1,S1);
+/** Does not currently synthesize (but should be final implementation)
+		fc3: fc_wrapper<
+						TmBuff5, TnBuff5,Tm5,Tn5,TmBuff5,TnBuff5>
+	    (weight5,output_core4,output_core5,con,Base_addr1,Base_addr30,Base_addr3,
+		M5,N5,S5);
+
+		act5: tanh_layer_fc(output_core5,weight5,M5,N5,Base_addr1,Base_addr3);
+
+		fc4: fc_wrapper<
+						TmBuff6, TnBuff6,Tm6,Tn6,TmBuff6,TnBuff6>
+		(weight6,output_core5,output_core6,con,Base_addr4,Base_addr3,Base_addr6,
+		M6,N6,S6);
+
+		act6: tanh_layer_fc(output_core6,weight6, M6,N6,Base_addr4,Base_addr6);
+
+		fc5: fc_wrapper<
+						TmBuff7, TnBuff7,Tm7,Tn7,TmBuff7,TnBuff7>
+		(weight7,output_core6,output_core7,con,Base_addr7,Base_addr6,Base_addr9,
+		M7,N7,S7);
+
+		act7: tanh_layer_fc(output_core7,weight7, M7,N7,Base_addr7,Base_addr9);
+
+		fc6: fc_wrapper<
+						TmBuff8, TnBuff8,Tm8,Tn8,TmBuff8,TnBuff8>
+		(weight8,output_core7,output_core8,con,Base_addr9,Base_addr10,Base_addr12,
+		M8,N8,S8);
+
+		act8: tanh_layer_fc(feature9,weight8, M8,N8,Base_addr10,Base_addr12);
+
+*/
 
 
-    act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
+/***** Part 4: Deconvolution and Upsampling with Batch Normalization *****/
 
-      max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
+//		deconv1: Deconv_k_wrapper<N9,C9,K9,S9,
+//							 TmBuff9, TnBuff9,Tr9,Tc9,Tm9,Tn9, TmBuff9,TnBuff9,Tk9,Tri9,Tci9>
+//		(weight9,feature9,output_core9,con,Base_addr13,Base_addr14,Base_addr15,
+//		M9,H9,C9,K9,N9,S9,6);
 
-      
-      conv2: conv_k_wrapper<
-                             TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
-     (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
-     M2,N2,H2,C2,K2,S2);
+//		act9: tanh_layer(output_core9,weight9, M9,N9,C9,K9,Base_addr13,Base_addr15);
 
-      act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
+		// batchnorm3 would go here
 
-     max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
-      
-     fc1: fc_wrapper<
-                     TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
-     (weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
-      M3,N3,S3);
-      act3: tanh_layer_fc(output_core3,weight3, M3,N3,Base_addr31,Base_addr33);
+		// upsample1 would go here
 
+//		deconv2: Deconv_k_wrapper<N10,C10,K10,S10,
+//							  TmBuff10, TnBuff10,Tr10,Tc10,Tm10,Tn10, TmBuff10,TnBuff10,Tk10,Tri10,Tci10>
+//		(weight10,output_core10,output_core10,con,Base_addr16,Base_addr17,Base_addr18,
+//		M10,H10,C10,K10,N10,S10,6);
 
-     fc2: fc_wrapper<
-                     TmBuff4, TnBuff4,Tm4,Tn4,TmBuff4,TnBuff4>
-     (weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
-      M4,N4,S4);
-      act4: tanh_layer_fc(output_core4,weight4, M4,N4,Base_addr28,Base_addr30);
+//		act10: tanh_layer(output_core10,weight10, M10,N10,C10,K10,Base_addr16,Base_addr18);
 
-      fc3: fc_wrapper<
-                           TmBuff5, TnBuff5,Tm5,Tn5,TmBuff5,TnBuff5>
-           (weight5,output_core4,output_core5,con,Base_addr1,Base_addr30,Base_addr3,
-            M5,N5,S5);
-       act5: tanh_layer_fc(output_core5,weight5, M5,N5,Base_addr1,Base_addr3);
+		// batchnorm4 would go here
 
-      fc4: fc_wrapper<
-                           TmBuff6, TnBuff6,Tm6,Tn6,TmBuff6,TnBuff6>
-            (weight6,output_core5,output_core6,con,Base_addr4,Base_addr3,Base_addr6,
-             M6,N6,S6);
-             act6: tanh_layer_fc(output_core6,weight6, M6,N6,Base_addr4,Base_addr6);
+		// upsample2 would go here
 
-        fc5: fc_wrapper<
-                          TmBuff7, TnBuff7,Tm7,Tn7,TmBuff7,TnBuff7>
-               (weight7,output_core6,output_core7,con,Base_addr7,Base_addr6,Base_addr9,
-                          M7,N7,S7);
-              act7: tanh_layer_fc(output_core7,weight7, M7,N7,Base_addr7,Base_addr9);
-       fc6: fc_wrapper<
-                            TmBuff8, TnBuff8,Tm8,Tn8,TmBuff8,TnBuff8>
-                             (weight8,output_core7,output_core8,con,Base_addr9,Base_addr10,Base_addr12,
-                                        M8,N8,S8);
-             act8: tanh_layer_fc(feature9,weight8, M8,N8,Base_addr10,Base_addr12);
-      ////////////////////////////////////////////////////////////////////////////////////////
-       deconv1: Deconv_k_wrapper<N9,C9,K9,S9,
-                             TmBuff9, TnBuff9,Tr9,Tc9,Tm9,Tn9, TmBuff9,TnBuff9,Tk9,Tri9,Tci9>
-     (weight9,feature9,output_core9,con,Base_addr13,Base_addr14,Base_addr15,
-    		 M9,H9,C9,K9,N9,S9,6);
-       act9: tanh_layer(output_core9,weight9, M9,N9,C9,K9,Base_addr13,Base_addr15);
-       max3: max_pool(feature10,output_core9,M10,C10,C9,Base_addr15,Base_addr17);
-     //////////////////////////////////////////////////////////////////////////////////////////////
-       deconv2: Deconv_k_wrapper<N10,C10,K10,S10,
-                              TmBuff10, TnBuff10,Tr10,Tc10,Tm10,Tn10, TmBuff10,TnBuff10,Tk10,Tri10,Tci10>
-      (weight10,output_core10,output_core10,con,Base_addr16,Base_addr17,Base_addr18,
-     		 M10,H10,C10,K10,N10,S10,6);
-       act10: tanh_layer(output_core10,weight10, M10,N10,C10,K10,Base_addr16,Base_addr18);
-       max4: max_pool(feature11,output_core10,M10,C10/2,C10,Base_addr18,Base_addr20);
+		// fc7 would go here
 
-
-      // conv3: conv_k_wrapper<
-                             // TmBuff3, TnBuff3,Tr3,Tc3,Tm3,Tn3, TmBuff3,TnBuff3,Tk3,Tri3,Tci3>
-      // (weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
-      // M3,N3,H3,C3,K3,S3);
-      // conv4: conv_k_wrapper<
-                             // TmBuff4, TnBuff4,Tr4,Tc4,Tm4,Tn4, TmBuff4,TnBuff4,Tk4,Tri4,Tci4>
-      // (	weight4,feature4,output_core4,con,Base_addr28,Base_addr29,Base_addr30,
-      // M4,N4,H4,C4,K4,S4);
-      // conv5: conv_k_wrapper<
-                             // TmBuff5, TnBuff5,Tr5,Tc5,Tm5,Tn5, TmBuff5,TnBuff5,Tk5,Tri5,Tci5>
-      // (weight5,feature5,output_core5,con,Base_addr1,Base_addr2,Base_addr3,
-      // M5,N5,H5,C5,K5,S5);
-      // conv6: conv_k_wrapper<
-                             // TmBuff6, TnBuff6,Tr6,Tc6,Tm6,Tn6, TmBuff6,TnBuff6,Tk6,Tri6,Tci6>
-      // (weight6,feature6,output_core6,con,Base_addr4,Base_addr5,Base_addr6,
-      // M6,N6,H6,C6,K6,S6);
-      // conv7: conv_k_wrapper<
-                             // TmBuff7, TnBuff7,Tr7,Tc7,Tm7,Tn7, TmBuff7,TnBuff7,Tk7,Tri7,Tci7>
-      // (weight7,feature7,output_core7,con,Base_addr7,Base_addr8,Base_addr9,
-      // M7,N7,H7,C7,K7,S7);
-      // conv8: conv_k_wrapper<
-                             // TmBuff8, TnBuff8,Tr8,Tc8,Tm8,Tn8, TmBuff8,TnBuff8,Tk8,Tri8,Tci8>
-      // (weight8,feature8,output_core8,con,Base_addr10,Base_addr11,Base_addr12,
-      // M8,N8,H8,C8,K8,S8);
-    
 }
