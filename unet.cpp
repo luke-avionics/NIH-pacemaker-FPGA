@@ -837,7 +837,7 @@ void comp_engine_deconv_2d(
 template <
 int TmBuff, int TnBuff, int Tr, int Tc, int Tm, int Tn,int TmW,int TnW, int Tk,int Tri,int Tci,
 int t_N,int t_C, int t_S, int t_K>
-void De_conv(
+void deconv(
                         dma_data* weight,
                         dma_data* feature,
                         dma_data* output_core,
@@ -972,7 +972,7 @@ void De_conv(
 
 
 template <int N,int C, int S, int K,int TmBuff, int TnBuff,  int Tr, int Tc, int Tm, int Tn, int TmW, int TnW, int Tk,int Tri,int Tci>
-void Deconv_k_wrapper(
+void deconv_k_wrapper(
 		dma_data* weight,
 		dma_data* feature,
 		dma_data* output_core,
@@ -1018,9 +1018,9 @@ void Deconv_k_wrapper(
 
     if(con==0x00000001){
         //Expand
-        #pragma HLS allocation instances=De_conv limit=1 function
+        #pragma HLS allocation instances=deconv limit=1 function
 
-     De_conv<TmBuff,TnBuff,Tr, Tc, Tm,Tn,TmW,TnW, Tk,Tri,Tci,N,C,S,K>
+     deconv<TmBuff,TnBuff,Tr, Tc, Tm,Tn,TmW,TnW, Tk,Tri,Tci,N,C,S,K>
      	 	 	 	 (       weight,
                              feature,
                              output_core,
@@ -1368,7 +1368,7 @@ ap_uint<32>  Base_addr39
 
 //		act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
 
-		// batchnorm2 should go here
+		// batchnorm2 would go here
 
 		// upsample1 for synthesis testing only, not valid location in NN
 //		upsample1: upsample(output_core1, feature2);
@@ -1461,7 +1461,7 @@ ap_uint<32>  Base_addr39
 
 /***** Part 4: Deconvolution and Upsampling with Batch Normalization *****/
 
-//		deconv1: Deconv_k_wrapper<N9,C9,K9,S9,
+//		deconv1: deconv_k_wrapper<N9,C9,K9,S9,
 //							 TmBuff9, TnBuff9,Tr9,Tc9,Tm9,Tn9, TmBuff9,TnBuff9,Tk9,Tri9,Tci9>
 //		(weight9,feature9,output_core9,con,Base_addr13,Base_addr14,Base_addr15,
 //		M9,H9,C9,K9,N9,S9,6);
@@ -1472,7 +1472,7 @@ ap_uint<32>  Base_addr39
 
 		// upsample1 would go here
 
-//		deconv2: Deconv_k_wrapper<N10,C10,K10,S10,
+//		deconv2: deconv_k_wrapper<N10,C10,K10,S10,
 //							  TmBuff10, TnBuff10,Tr10,Tc10,Tm10,Tn10, TmBuff10,TnBuff10,Tk10,Tri10,Tci10>
 //		(weight10,output_core10,output_core10,con,Base_addr16,Base_addr17,Base_addr18,
 //		M10,H10,C10,K10,N10,S10,6);
