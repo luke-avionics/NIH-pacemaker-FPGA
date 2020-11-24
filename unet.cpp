@@ -701,6 +701,345 @@ void upsample(dma_data* input, dma_data* output, int N, int C)
             }
         }
 
+template <int Tr, int Tc, int Tn>
+void read_ifmap_deconv2d(data_type feature_temp[Tn][Tr][Tc], dma_data* feature, int tr, int ti, int tc, int H, int C, int K, ap_uint<32> Base_addr2){
+#pragma HLS INLINE off
+	dma_data tmp;
+    int dim_start = (int)(K/2);
+    int dim_end = (int)(C+K/2-1);
+	int trr, tcc, tii;
+	for (tii = 0; tii < Tn; tii+=2) {
+		for (trr = 0; trr < Tr; trr++) {
+			for (tcc = 0; tcc < Tc; tcc++) {
+				#pragma HLS PIPELINE
+                if ((tr+trr) < dim_start || (tr+trr) > dim_end || (tc+tcc) < dim_start || (tc+tcc) > dim_end){
+                    feature_temp[tii][trr][tcc]=0;
+                    feature_temp[tii+1][trr][tcc]=0;
+                }
+                else{
+                    tmp=feature[(tii+ti)/2*C*C + (tr+trr-dim_start)*C +(tc+ tcc-dim_start)+Base_addr2/dataw];
+                    feature_temp[tii][trr][tcc] = tmp.data.data0;
+                    feature_temp[tii+1][trr][tcc] = tmp.data.data1;
+                }
+			}
+		}
+	}
+}
+
+template <int Tr, int Tc, int Tn, int N, int C, int S ,int K>
+void padding(data_type frame[N][Tr][Tc], data_type fpo[N][C*S+K-1][C*S+K-1],int tnn, int H,
+				 int Cout, int pr, int pc)
+{
+	int row, col, depth;
+	int temp;
+
+	for (depth = 0; depth < Tn; depth++)
+	{
+//#pragma HLS piepline
+		for (row = 0; row < Cout+pr; row++)
+		{
+//#pragma HLS UNROLL
+			for (col = 0; col < Cout+pc; col++)
+			{
+#pragma HLS PIPELINE
+				if (((row>=pr/2) && (row<=(Cout-1+pr/2))) && ((col>=pc/2) && (col<=(Cout-1+pc/2))) )
+				//if (((row>=2) && (row<=3)) && ((col>=2) && (col<=3)) )
+				{
+					fpo[tnn+depth][row][col]=frame[tnn+depth][row-pr/2][col-pc/2];
+				}
+				else
+				{
+					fpo[tnn+depth][row][col]=0;
+				}
+			}
+		}
+	}
+}
+
+template <int Tr, int Tc, int Tn,int t_C, int t_S,int t_K,int t_N>
+void read_padfm_conv2d(data_type padded_fm_temp[Tn][Tr][Tc], data_type data_padded_fm[t_N][t_C*t_S+t_K-1][t_C*t_S+t_K-1], int tr, int ti, int tc, int H, int C, int K){
+#pragma HLS INLINE off
+	int Row, Col, Depth;
+
+	for (Depth = 0; Depth < Tn ; Depth++)
+	{
+		for (Row = 0; Row < Tr+K-1; Row++)
+		{
+			for (Col = 0; Col < Tc+K-1; Col++)
+			{
+#pragma HLS PIPELINE
+				padded_fm_temp[Depth][Row][Col] = data_padded_fm[ti+Depth][tr+Row][tc+Col];
+			}
+		}
+	}
+}
+
+template < int Tk, int Tm,int Tn>
+void read_wek1(data_type weight_temp[Tm][Tn][Tk][Tk],dma_data* weight, int to, int ti,
+             int K, int N, ap_uint<32> Base_addr1){
+#pragma HLS INLINE
+	int too,tii, tkk1,tkk2;
+	dma_data tmp;
+
+	for (too = 0; too < Tm; too+=2) {
+        for (tii = 0; tii < Tn; tii++) {
+            for(tkk1 =0; tkk1<K; tkk1++){
+                for(tkk2 =0; tkk2<K; tkk2++){
+                    #pragma HLS PIPELINE
+                    tmp= weight[(too + to)/2*N*K*K + (tii+ti)*K*K+tkk1*K +tkk2 +Base_addr1/dataw];
+                    weight_temp[too][tii][tkk1][tkk2] = tmp.data.data0;
+                    weight_temp[too+1][tii][tkk1][tkk2] = tmp.data.data1;
+                }
+            }
+        }
+	}
+}
+
+template <int Tr, int Tc, int TmBuff, int TnBuff,int Tm, int Tn,int TmW, int TnW, int Tri, int Tci,int Tk>
+void comp_engine_deconv_2d(
+				 data_type weight_temp[TmW][TnW][Tk][Tk], data_type feature_temp[TnBuff][Tri][Tci],data_type output_core_temp[TmBuff][Tr][Tc],
+                 int K , int S
+                 ){
+#pragma HLS INLINE off
+	int too, tcc, tii, trr,tkk1,tkk2,tncomp,tmcomp;
+    data_type tmp0,tmp1;
+	//TODO: balanced unrolling input channel and output channel
+    for(tncomp=0;tncomp <TnBuff;tncomp+=Tn){
+        for(tmcomp=0;tmcomp <TmBuff;tmcomp+=Tm){
+            for (tkk1=0; tkk1<K; tkk1++){
+                for(tkk2=0; tkk2<K; tkk2++){
+                    for (tcc = 0; tcc < Tc; ++tcc) {
+                        for (trr = 0; trr < Tr; ++trr) {
+                #pragma HLS PIPELINE
+                            for (tii = 0; tii < Tn; ++tii) {
+                #pragma HLS UNROLL
+                                #pragma HLS DEPENDENCE variable=feature_temp inter false
+                                tmp1=feature_temp[tncomp+tii][trr*S+tkk1][tcc*S+tkk2];
+                                for (too = 0; too < Tm; ++too) {
+                                    #pragma HLS DEPENDENCE variable=output_core_temp inter false
+                #pragma HLS UNROLL
+                                    output_core_temp[tmcomp+too][trr][tcc]+=
+                                    tmp1*weight_temp[tmcomp+too][tncomp+tii][tkk1][tkk2];
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+template <
+int TmBuff, int TnBuff, int Tr, int Tc, int Tm, int Tn,int TmW,int TnW, int Tk,int Tri,int Tci,
+int t_N,int t_C, int t_S, int t_K>
+void De_conv(
+                        dma_data* weight,
+                        dma_data* feature,
+                        dma_data* output_core,
+                        ap_uint<32> Base_addr1,
+                        ap_uint<32>  Base_addr2,
+                        ap_uint<32>  Base_addr3,
+						data_type feature_temp_p[Tn][t_C][t_C],
+						data_type padded_fm[t_N][t_C*t_S+t_K-1][t_C*t_S+t_K-1],
+                       data_type output_core_temp[TmBuff][Tr][Tc],data_type weight_temp[TmW][TnW][Tk][Tk],
+                       data_type feature_temp[TnBuff][Tri][Tci] , data_type feature_temp1[TnBuff][Tri][Tci],
+                       int M, int H,
+					   int C,  int K , int S,
+					   int CO,
+					   int N,
+                       dma_data tmp,
+                        int tr, int tc, int to, int ti, int trr,
+                        int tcc, int too, int tii,
+                        int tc_r, int tr_r, int to_r, int ti_r,
+                        int lr_i
+                       )
+{
+	int padr = C*S-CO+K-1;  //CO+padr= C*S-CO+K-1 +CO = C*S+K-1
+	int padc = C*S-CO+K-1;
+
+
+
+    for (trr = 0; trr < C; trr += C){
+
+  		for (tcc = 0; tcc < C; tcc += C){
+			for (ti = 0; ti < N; ti += Tn){
+  				read_ifmap_deconv2d<t_C,t_C,Tn>(feature_temp_p,feature,trr,ti,tcc,H,C,K,Base_addr2);
+  				padding<t_C,t_C,Tn,t_N,t_C,t_S,t_K>(feature_temp_p, padded_fm, ti, H,CO, padr, padc);
+  			}
+  		}
+  	}
+
+    //TODO: buffer initialization
+    read_padfm_conv2d<Tri,Tci,TnBuff,t_C,t_S,t_K,t_N>(feature_temp, padded_fm,0,0,0, H,C,K);
+    for (tc=0; tc<C; tc+=Tc){
+        for (tr=0; tr <C; tr+=Tr){
+            for (to = 0; to < M; to += TmBuff) {
+                for (ti = 0; ti < N; ti += TnBuff) {
+                    read_wek1<Tk,TmW,TnW>(weight_temp,weight,to,ti,K,N,Base_addr1);
+                    //read_padfm_conv2d<Tri,Tci,TnBuff>(feature_temp,feature,tr,ti,tc,H,C,K,Base_addr2);
+                    //comp_engine_conv_2d<Tr,Tc,TmBuff,TnBuff,Tm,Tn,TmW,TnW,Tri,Tci,Tk>(weight_temp,feature_temp,output_core_temp,K,S);
+
+                    if (lr_i==0){
+
+                        //ping pong logic for index shifting
+                        //ti_r=ti;
+                        to_r=to;
+                        tc_r=tc;
+                        tr_r=tr;
+                        ti_r=ti+TnBuff;
+                        if (ti_r==N){
+                            ti_r=0;
+                            if(to == M-TmBuff ){
+                                tr_r=tr+Tr;
+                                if(tr_r==C){
+                                    tr_r=0;
+                                    tc_r=tc_r+Tc;
+                                    if(tc_r==C){
+                                        tc_r=0;
+                                    }
+                                }
+                            }
+                        }
+                        //TODO: controlling port to switch
+                        read_padfm_conv2d<Tri,Tci,TnBuff,t_C,t_S,t_K,t_N>(feature_temp1,padded_fm,tr_r,ti_r,tc_r,H,C,K);
+                        comp_engine_deconv_2d<Tr,Tc,TmBuff,TnBuff,Tm,Tn,TmW,TnW,Tri,Tci,Tk>(weight_temp,feature_temp,output_core_temp,K,S);
+                        lr_i=1-lr_i;
+                    }
+                    else{
+
+
+                        //ping pong logic for index shifting
+                        //ti_r=ti;
+                        to_r=to;
+                        tc_r=tc;
+                        tr_r=tr;
+                        ti_r=ti+TnBuff;
+                        if (ti_r==N){
+                            ti_r=0;
+                            if(to == M-TmBuff ){
+                                tr_r=tr+Tr;
+                                if(tr_r==C){
+                                    tr_r=0;
+                                    tc_r=tc_r+Tc;
+                                    if(tc_r==C){
+                                        tc_r=0;
+                                    }
+                                }
+                            }
+                        }
+                        //TODO: controlling port to switch
+                        read_padfm_conv2d<Tri,Tci,TnBuff,t_C,t_S,t_K,t_N>(feature_temp, padded_fm,tr_r,ti_r,tc_r,H,C,K);
+                        comp_engine_deconv_2d<Tr,Tc,TmBuff,TnBuff,Tm,Tn,TmW,TnW,Tri,Tci,Tk>(weight_temp,feature_temp1,output_core_temp,K,S);
+                        lr_i=1-lr_i;
+                    }
+
+                }
+
+            for (too = 0; too < TmBuff; too+=2) {
+                for (trr = 0; trr < Tr; trr++) {
+                    for (tcc = 0; tcc < Tc; tcc++) {
+                        #pragma HLS PIPELINE
+                        tmp.data.data0=output_core_temp[too][trr][tcc];
+                        tmp.data.data1=output_core_temp[too+1][trr][tcc];
+                        output_core[(too + to)/2*C*C + (tr+trr)*C +tc+ tcc+Base_addr3/dataw]=tmp;
+                    }
+                }
+            }
+
+
+            for (trr = 0; trr < Tr; ++trr) {
+                for (tcc = 0; tcc < Tc; ++tcc) {
+                    #pragma HLS PIPELINE
+                    for (too = 0; too < TmBuff; ++too) {
+                        #pragma HLS UNROLL
+                            output_core_temp[too][trr][tcc] = 0;
+                    }
+                }
+            }
+
+
+            }
+        }
+    }
+
+
+}
+
+
+template <int N,int C, int S, int K,int TmBuff, int TnBuff,  int Tr, int Tc, int Tm, int Tn, int TmW, int TnW, int Tk,int Tri,int Tci>
+void Deconv_k_wrapper(
+		dma_data* weight,
+		dma_data* feature,
+		dma_data* output_core,
+	int con,
+	ap_uint<32> Base_addr1,
+	ap_uint<32>  Base_addr2,
+	ap_uint<32>  Base_addr3,
+    int temp_M,int temp_H, int temp_C, int temp_K , int temp_N,int temp_S, int temp_CO) {
+	dma_data tmp;
+	int tr,tc;
+	int to, ti, trr, tcc, too, tii;
+    int tc_r, tr_r, to_r, ti_r;
+	int lr_i=0;
+
+	data_type output_core_temp[TmBuff][Tr][Tc] = { 0 };
+	#pragma HLS ARRAY_PARTITION variable=output_core_temp complete dim=1
+	//#pragma HLS ARRAY_PARTITION variable=output_core_temp block factor=Tr/2 dim=2
+	//#pragma HLS ARRAY_PARTITION variable=output_core_temp complete dim=3
+	#pragma HLS RESOURCE variable=output_core_temp core=RAM_2P_BRAM
+
+	data_type weight_temp[TmW][TnW][Tk][Tk] = { 0}, feature_temp[TnBuff][Tri][Tci] = { 0 };
+	#pragma HLS RESOURCE variable=feature_temp core=RAM_2P_BRAM
+	//#pragma HLS RESOURCE variable=weight_temp core=RAM_2P_BRAM
+	#pragma HLS RESOURCE variable=weight_temp core=RAM_2P_LUTRAM
+
+	#pragma HLS ARRAY_PARTITION variable=feature_temp complete dim=1
+	//#pragma HLS ARRAY_PARTITION variable=feature_temp complete dim=2
+	//#pragma HLS ARRAY_PARTITION variable=feature_temp complete dim=3
+	#pragma HLS ARRAY_PARTITION variable=weight_temp complete dim=1
+    #pragma HLS ARRAY_PARTITION variable=weight_temp complete dim=2
+	//#pragma HLS ARRAY_PARTITION variable=weight_temp complete dim=3
+	//#pragma HLS ARRAY_PARTITION variable=weight_temp complete dim=4
+
+	data_type feature_temp1[TnBuff][Tri][Tci] = { 0 };
+	#pragma HLS RESOURCE variable=feature_temp1 core=RAM_2P_BRAM
+	#pragma HLS ARRAY_PARTITION variable=feature_temp1 complete dim=1
+	//#pragma HLS ARRAY_PARTITION variable=feature_temp1 complete dim=2
+	//#pragma HLS ARRAY_PARTITION variable=feature_temp1 complete dim=3
+
+	data_type feature_temp_p[Tn][C][C];
+
+	data_type padded_fm[N][C*S+K-1][C*S+K-1];
+
+    if(con==0x00000001){
+        //Expand
+        #pragma HLS allocation instances=De_conv limit=1 function
+
+     De_conv<TmBuff,TnBuff,Tr, Tc, Tm,Tn,TmW,TnW, Tk,Tri,Tci,N,C,S,K>
+     	 	 	 	 (       weight,
+                             feature,
+                             output_core,
+                             Base_addr1,
+                             Base_addr2,
+                             Base_addr3,
+							 feature_temp_p,
+							 padded_fm,
+                             output_core_temp,weight_temp,
+                             feature_temp, feature_temp1,
+                             temp_M,temp_H,
+							 temp_C, temp_K , temp_S,
+							 temp_CO,
+							 temp_N,
+                             tmp,
+                             tr,tc,
+                             to, ti, trr, tcc, too, tii,
+                             tc_r, tr_r, to_r, ti_r,
+                             lr_i
+                       );
+    }
 }
 
 
@@ -720,27 +1059,27 @@ dma_data* output_core3,
  dma_data* weight4,
 // dma_data* feature4,
  dma_data* output_core4,
-// dma_data* weight5,
-// dma_data* feature5,
-// dma_data* output_core5,
-// dma_data* weight6,
+ dma_data* weight5,
+ //dma_data* feature5,
+ dma_data* output_core5,
+ dma_data* weight6,
 // dma_data* feature6,
-// dma_data* output_core6,
-// dma_data* weight7,
+ dma_data* output_core6,
+ dma_data* weight7,
 // dma_data* feature7,
-// dma_data* output_core7,
-// dma_data* weight8,
-// dma_data* feature8,
-// dma_data* output_core8,
-//dma_data* weight9,
-//dma_data* feature9,
-//dma_data* output_core9,
-//dma_data* weight10,
-//dma_data* feature10,
-//dma_data* output_core10,
-//dma_data* weight11,
-//dma_data* feature11,
-//dma_data* output_core11,
+ dma_data* output_core7,
+ dma_data* weight8,
+ //dma_data* feature8,
+ dma_data* output_core8,
+dma_data* weight9,
+dma_data* feature9,
+dma_data* output_core9,
+dma_data* weight10,
+dma_data* feature10,
+dma_data* output_core10,
+dma_data* weight11,
+dma_data* feature11,
+dma_data* output_core11,
 //dma_data* weight12,
 //dma_data* feature12,
 //dma_data* output_core12,
@@ -750,8 +1089,7 @@ dma_data* output_core3,
 //dma_data* weight14,
 //dma_data* feature14,
 //dma_data* output_core14,
-//dma_data* weight15,
-//dma_data* feature15,
+//dma_data* weight15,//dma_data* feature15,
 //dma_data* output_core15,
 //dma_data* weight16,
 //dma_data* feature16,
@@ -760,33 +1098,33 @@ dma_data* output_core3,
 //dma_data* feature17,
 //dma_data* output_core17,
 int con,
-// ap_uint<32> Base_addr1,
-// ap_uint<32>  Base_addr2,
-// ap_uint<32>  Base_addr3,
-// ap_uint<32> Base_addr4,
-// ap_uint<32>  Base_addr5,
-// ap_uint<32>  Base_addr6,
-// ap_uint<32> Base_addr7,
-// ap_uint<32>  Base_addr8,
-// ap_uint<32>  Base_addr9,
-// ap_uint<32> Base_addr10,
-// ap_uint<32>  Base_addr11,
-// ap_uint<32>  Base_addr12,
-//ap_uint<32> Base_addr13,
-//ap_uint<32>  Base_addr14,
-//ap_uint<32>  Base_addr15,
-//ap_uint<32> Base_addr16,
-//ap_uint<32>  Base_addr17,
-//ap_uint<32>  Base_addr18,
-//ap_uint<32> Base_addr19,
-//ap_uint<32>  Base_addr20,
-//ap_uint<32>  Base_addr21,
-//ap_uint<32> Base_addr22,
-//ap_uint<32>  Base_addr23,
-//ap_uint<32>  Base_addr24,
-//ap_uint<32> Base_addr25,
-//ap_uint<32>  Base_addr26,
-//ap_uint<32>  Base_addr27,
+ ap_uint<32> Base_addr1,
+ ap_uint<32>  Base_addr2,
+ ap_uint<32>  Base_addr3,
+ ap_uint<32> Base_addr4,
+ ap_uint<32>  Base_addr5,
+ ap_uint<32>  Base_addr6,
+ ap_uint<32> Base_addr7,
+ ap_uint<32>  Base_addr8,
+ ap_uint<32>  Base_addr9,
+ ap_uint<32> Base_addr10,
+ ap_uint<32>  Base_addr11,
+ ap_uint<32>  Base_addr12,
+ap_uint<32> Base_addr13,
+ap_uint<32>  Base_addr14,
+ap_uint<32>  Base_addr15,
+ap_uint<32> Base_addr16,
+ap_uint<32>  Base_addr17,
+ap_uint<32>  Base_addr18,
+ap_uint<32> Base_addr19,
+ap_uint<32>  Base_addr20,
+ap_uint<32>  Base_addr21,
+ap_uint<32> Base_addr22,
+ap_uint<32>  Base_addr23,
+ap_uint<32>  Base_addr24,
+ap_uint<32> Base_addr25,
+ap_uint<32>  Base_addr26,
+ap_uint<32>  Base_addr27,
   ap_uint<32> Base_addr28,
  // ap_uint<32>  Base_addr29,
   ap_uint<32>  Base_addr30,
@@ -863,73 +1201,73 @@ ap_uint<32>  Base_addr39
  #pragma HLS data_pack variable=output_core4
 
 
-// #pragma HLS INTERFACE s_axilite port=Base_addr1 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr2 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr3 bundle=CRTL_BUS
-// #pragma HLS INTERFACE m_axi depth=M4*N4*K4*K4/4 port=weight5
-// #pragma HLS INTERFACE m_axi depth=N4*H4*H4/4 port=feature5
-// #pragma HLS INTERFACE m_axi depth=M4*C4*C4/4 port=output_core5
-// #pragma HLS data_pack variable=weight5
-// #pragma HLS data_pack variable=feature5
-// #pragma HLS data_pack variable=output_core5
+ #pragma HLS INTERFACE s_axilite port=Base_addr1 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr2 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr3 bundle=CRTL_BUS
 
-// #pragma HLS INTERFACE s_axilite port=Base_addr4 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr5 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr6 bundle=CRTL_BUS
-// #pragma HLS INTERFACE m_axi depth=M5*N5*K5*K5/4 port=weight6
-// #pragma HLS INTERFACE m_axi depth=N5*H5*H5/4 port=feature6
-// #pragma HLS INTERFACE m_axi depth=M5*C5*C5/4 port=output_core6
-// #pragma HLS data_pack variable=weight6
-// #pragma HLS data_pack variable=feature6
-// #pragma HLS data_pack variable=output_core6
+ //#pragma HLS INTERFACE m_axi depth=N4*H4*H4/4 port=feature5
+ #pragma HLS INTERFACE m_axi depth=M4*C4*C4/4 port=output_core5
+ #pragma HLS data_pack variable=weight5
+ //#pragma HLS data_pack variable=feature5
+ #pragma HLS data_pack variable=output_core5
 
-// #pragma HLS INTERFACE s_axilite port=Base_addr7 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr8 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr9 bundle=CRTL_BUS
-// #pragma HLS INTERFACE m_axi depth=M6*N6*K6*K6/4 port=weight7
-// #pragma HLS INTERFACE m_axi depth=N6*H6*H6/4 port=feature7
-// #pragma HLS INTERFACE m_axi depth=M6*C6*C6/4 port=output_core7
-// #pragma HLS data_pack variable=weight7
-// #pragma HLS data_pack variable=feature7
-// #pragma HLS data_pack variable=output_core7
+ #pragma HLS INTERFACE s_axilite port=Base_addr4 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr5 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr6 bundle=CRTL_BUS
+ #pragma HLS INTERFACE m_axi depth=M5*N5*K5*K5/4 port=weight6
+ //#pragma HLS INTERFACE m_axi depth=N5*H5*H5/4 port=feature6
+ #pragma HLS INTERFACE m_axi depth=M5*C5*C5/4 port=output_core6
+ #pragma HLS data_pack variable=weight6
+ //#pragma HLS data_pack variable=feature6
+ #pragma HLS data_pack variable=output_core6
 
-// #pragma HLS INTERFACE s_axilite port=Base_addr10 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr11 bundle=CRTL_BUS
-// #pragma HLS INTERFACE s_axilite port=Base_addr12 bundle=CRTL_BUS
-// #pragma HLS INTERFACE m_axi depth=M7*N7*K7*K7/4 port=weight8
-// #pragma HLS INTERFACE m_axi depth=N7*H7*H7/4 port=feature8
-// #pragma HLS INTERFACE m_axi depth=M7*C7*C7/4 port=output_core8
-// #pragma HLS data_pack variable=weight8
-// #pragma HLS data_pack variable=feature8
-// #pragma HLS data_pack variable=output_core8
+ #pragma HLS INTERFACE s_axilite port=Base_addr7 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr8 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr9 bundle=CRTL_BUS
+ #pragma HLS INTERFACE m_axi depth=M6*N6*K6*K6/4 port=weight7
+ //#pragma HLS INTERFACE m_axi depth=N6*H6*H6/4 port=feature7
+ #pragma HLS INTERFACE m_axi depth=M6*C6*C6/4 port=output_core7
+ #pragma HLS data_pack variable=weight7
+ //#pragma HLS data_pack variable=feature7
+ #pragma HLS data_pack variable=output_core7
+
+ #pragma HLS INTERFACE s_axilite port=Base_addr10 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr11 bundle=CRTL_BUS
+ #pragma HLS INTERFACE s_axilite port=Base_addr12 bundle=CRTL_BUS
+ #pragma HLS INTERFACE m_axi depth=M7*N7*K7*K7/4 port=weight8
+ //#pragma HLS INTERFACE m_axi depth=N7*H7*H7/4 port=feature8
+ #pragma HLS INTERFACE m_axi depth=M7*C7*C7/4 port=output_core8
+ #pragma HLS data_pack variable=weight8
+ //#pragma HLS data_pack variable=feature8
+ #pragma HLS data_pack variable=output_core8
 
 //
-//#pragma HLS INTERFACE s_axilite port=Base_addr13 bundle=CRTL_BUS
-//#pragma HLS INTERFACE s_axilite port=Base_addr14 bundle=CRTL_BUS
-//#pragma HLS INTERFACE s_axilite port=Base_addr15 bundle=CRTL_BUS
-//#pragma HLS INTERFACE m_axi depth=M8*N8*K8*K8/4 port=weight9
-//#pragma HLS INTERFACE m_axi depth=N8*H8*H8/4 port=feature9
-//#pragma HLS INTERFACE m_axi depth=M8*C8*C8/4 port=output_core9
-//#pragma HLS data_pack variable=weight9
-//#pragma HLS data_pack variable=feature9
-//#pragma HLS data_pack variable=output_core9
+#pragma HLS INTERFACE s_axilite port=Base_addr13 bundle=CRTL_BUS
+#pragma HLS INTERFACE s_axilite port=Base_addr14 bundle=CRTL_BUS
+#pragma HLS INTERFACE s_axilite port=Base_addr15 bundle=CRTL_BUS
+#pragma HLS INTERFACE m_axi depth=M8*N8*K8*K8/4 port=weight9
+#pragma HLS INTERFACE m_axi depth=N8*H8*H8/4 port=feature9
+#pragma HLS INTERFACE m_axi depth=M8*C8*C8/4 port=output_core9
+#pragma HLS data_pack variable=weight9
+#pragma HLS data_pack variable=feature9
+#pragma HLS data_pack variable=output_core9
 //
-//#pragma HLS INTERFACE s_axilite port=Base_addr16 bundle=CRTL_BUS
-//#pragma HLS INTERFACE s_axilite port=Base_addr17 bundle=CRTL_BUS
-//#pragma HLS INTERFACE s_axilite port=Base_addr18 bundle=CRTL_BUS
-//#pragma HLS INTERFACE m_axi depth=M9*N9*K9*K9/4 port=weight10
-//#pragma HLS INTERFACE m_axi depth=N9*H9*H9/4 port=feature10
-//#pragma HLS INTERFACE m_axi depth=M9*C9*C9/4 port=output_core10
-//#pragma HLS data_pack variable=weight10
-//#pragma HLS data_pack variable=feature10
-//#pragma HLS data_pack variable=output_core10
+#pragma HLS INTERFACE s_axilite port=Base_addr16 bundle=CRTL_BUS
+#pragma HLS INTERFACE s_axilite port=Base_addr17 bundle=CRTL_BUS
+#pragma HLS INTERFACE s_axilite port=Base_addr18 bundle=CRTL_BUS
+#pragma HLS INTERFACE m_axi depth=M9*N9*K9*K9/4 port=weight10
+#pragma HLS INTERFACE m_axi depth=N9*H9*H9/4 port=feature10
+#pragma HLS INTERFACE m_axi depth=M9*C9*C9/4 port=output_core10
+#pragma HLS data_pack variable=weight10
+#pragma HLS data_pack variable=feature10
+#pragma HLS data_pack variable=output_core10
 //
 //#pragma HLS INTERFACE s_axilite port=Base_addr19 bundle=CRTL_BUS
-//#pragma HLS INTERFACE s_axilite port=Base_addr20 bundle=CRTL_BUS
+#pragma HLS INTERFACE s_axilite port=Base_addr20 bundle=CRTL_BUS
 //#pragma HLS INTERFACE s_axilite port=Base_addr21 bundle=CRTL_BUS
 //#pragma HLS INTERFACE m_axi depth=M10*N10*K10*K10/4 port=weight11
 //#pragma HLS INTERFACE m_axi depth=N10*H10*H10/4 port=feature11
-//#pragma HLS INTERFACE m_axi depth=M10*C10*C10/4 port=output_core11
+#pragma HLS INTERFACE m_axi depth=M10*C10*C10/4 port=output_core11
 //#pragma HLS data_pack variable=weight11
 //#pragma HLS data_pack variable=feature11
 //#pragma HLS data_pack variable=output_core11
@@ -1016,59 +1354,83 @@ ap_uint<32>  Base_addr39
 
 
       conv1: conv_k_wrapper<
-                             TmBuff1, TnBuff1,Tr1,Tc1,Tm1,Tn1, TmBuff1,TnBuff1,Tk1,Tri1,Tci1>
-      (weight1,feature1,output_core1,con,Base_addr37,Base_addr38,Base_addr39,
+                            TmBuff1, TnBuff1,Tr1,Tc1,Tm1,Tn1, TmBuff1,TnBuff1,Tk1,Tri1,Tci1>
+     (weight1,feature1,output_core1,con,Base_addr37,Base_addr38,Base_addr39,
       M1,N1,H1,C1,K1,S1);
 
 
-      act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
-
-      // Here, there are M1 features (since the conv layer will put out this many outputs)
-      // Output should be [M1 x C1 x C1] (assuming same conv)
-
-      // batchnorm never actually reuses input values, so use the same memory for input and output.
-      batchnorm1: batchnorm(output_core1, batchnorm_weight1, batchnorm_bias1, output_core1, batchnorm_eps, C1, C1, M1);
+    act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
 
       max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
 
-
-      upsample1: upsample(feature2, output_core1, M1, C2);	// M1xC2xC2 (48x8x8) back up to M1xC1xC1 (48x16x16)
-
-    
-    
-//      conv2: conv_k_wrapper<
-//                             TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
-//      (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
-//      M2,N2,H2,C2,K2,S2);
-//
-//      act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
-//
-//      max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
       
-//      fc1: fc_wrapper<
-//                      TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
-//      (weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
-//      M3,N3,S3);
-//      act3: tanh_layer_fc(output_core3,weight3, M3,N3,Base_addr31,Base_addr33);
+      conv2: conv_k_wrapper<
+                             TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
+     (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
+     M2,N2,H2,C2,K2,S2);
+
+      act2: tanh_layer(output_core2,weight2, M2,N2,C2,K2,Base_addr34,Base_addr36);
+
+     max2: max_pool(feature3,output_core2,M2,C2/2,C2,Base_addr32,Base_addr36);
+      
+     fc1: fc_wrapper<
+                     TmBuff3, TnBuff3,Tm3,Tn3,TmBuff3,TnBuff3>
+     (weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
+      M3,N3,S3);
+      act3: tanh_layer_fc(output_core3,weight3, M3,N3,Base_addr31,Base_addr33);
 
 
-//      fc2: fc_wrapper<
-//                      TmBuff4, TnBuff4,Tm4,Tn4,TmBuff4,TnBuff4>
-//      (weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
-//      M4,N4,S4);
-//      act4: tanh_layer_fc(output_core4,weight4, M4,N4,Base_addr28,Base_addr30);
+     fc2: fc_wrapper<
+                     TmBuff4, TnBuff4,Tm4,Tn4,TmBuff4,TnBuff4>
+     (weight4,output_core3,output_core4,con,Base_addr28,Base_addr33,Base_addr30,
+      M4,N4,S4);
+      act4: tanh_layer_fc(output_core4,weight4, M4,N4,Base_addr28,Base_addr30);
 
-      // conv2: conv_k_wrapper<
-                             // TmBuff2, TnBuff2,Tr2,Tc2,Tm2,Tn2, TmBuff2,TnBuff2,Tk2,Tri2,Tci2>
-      // (weight2,feature2,output_core2,con,Base_addr34,Base_addr35,Base_addr36,
-      // M2,N2,H2,C2,K2,S2);
+      fc3: fc_wrapper<
+                           TmBuff5, TnBuff5,Tm5,Tn5,TmBuff5,TnBuff5>
+           (weight5,output_core4,output_core5,con,Base_addr1,Base_addr30,Base_addr3,
+            M5,N5,S5);
+       act5: tanh_layer_fc(output_core5,weight5, M5,N5,Base_addr1,Base_addr3);
+
+      fc4: fc_wrapper<
+                           TmBuff6, TnBuff6,Tm6,Tn6,TmBuff6,TnBuff6>
+            (weight6,output_core5,output_core6,con,Base_addr4,Base_addr3,Base_addr6,
+             M6,N6,S6);
+             act6: tanh_layer_fc(output_core6,weight6, M6,N6,Base_addr4,Base_addr6);
+
+        fc5: fc_wrapper<
+                          TmBuff7, TnBuff7,Tm7,Tn7,TmBuff7,TnBuff7>
+               (weight7,output_core6,output_core7,con,Base_addr7,Base_addr6,Base_addr9,
+                          M7,N7,S7);
+              act7: tanh_layer_fc(output_core7,weight7, M7,N7,Base_addr7,Base_addr9);
+       fc6: fc_wrapper<
+                            TmBuff8, TnBuff8,Tm8,Tn8,TmBuff8,TnBuff8>
+                             (weight8,output_core7,output_core8,con,Base_addr9,Base_addr10,Base_addr12,
+                                        M8,N8,S8);
+             act8: tanh_layer_fc(feature9,weight8, M8,N8,Base_addr10,Base_addr12);
+      ////////////////////////////////////////////////////////////////////////////////////////
+       deconv1: Deconv_k_wrapper<N9,C9,K9,S9,
+                             TmBuff9, TnBuff9,Tr9,Tc9,Tm9,Tn9, TmBuff9,TnBuff9,Tk9,Tri9,Tci9>
+     (weight9,feature9,output_core9,con,Base_addr13,Base_addr14,Base_addr15,
+    		 M9,H9,C9,K9,N9,S9,6);
+       act9: tanh_layer(output_core9,weight9, M9,N9,C9,K9,Base_addr13,Base_addr15);
+       max3: max_pool(feature10,output_core9,M10,C10,C9,Base_addr15,Base_addr17);
+     //////////////////////////////////////////////////////////////////////////////////////////////
+       deconv2: Deconv_k_wrapper<N10,C10,K10,S10,
+                              TmBuff10, TnBuff10,Tr10,Tc10,Tm10,Tn10, TmBuff10,TnBuff10,Tk10,Tri10,Tci10>
+      (weight10,output_core10,output_core10,con,Base_addr16,Base_addr17,Base_addr18,
+     		 M10,H10,C10,K10,N10,S10,6);
+       act10: tanh_layer(output_core10,weight10, M10,N10,C10,K10,Base_addr16,Base_addr18);
+       max4: max_pool(feature11,output_core10,M10,C10/2,C10,Base_addr18,Base_addr20);
+
+
       // conv3: conv_k_wrapper<
                              // TmBuff3, TnBuff3,Tr3,Tc3,Tm3,Tn3, TmBuff3,TnBuff3,Tk3,Tri3,Tci3>
       // (weight3,feature3,output_core3,con,Base_addr31,Base_addr32,Base_addr33,
       // M3,N3,H3,C3,K3,S3);
       // conv4: conv_k_wrapper<
                              // TmBuff4, TnBuff4,Tr4,Tc4,Tm4,Tn4, TmBuff4,TnBuff4,Tk4,Tri4,Tci4>
-      // (weight4,feature4,output_core4,con,Base_addr28,Base_addr29,Base_addr30,
+      // (	weight4,feature4,output_core4,con,Base_addr28,Base_addr29,Base_addr30,
       // M4,N4,H4,C4,K4,S4);
       // conv5: conv_k_wrapper<
                              // TmBuff5, TnBuff5,Tr5,Tc5,Tm5,Tn5, TmBuff5,TnBuff5,Tk5,Tri5,Tci5>
