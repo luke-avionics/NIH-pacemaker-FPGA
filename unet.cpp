@@ -120,18 +120,18 @@ void comp_engine_conv_2d(
 	int too, tcc, tii, trr,tkk1,tkk2,tncomp,tmcomp;
     data_type tmp0,tmp1;
 	//TODO: balanced unrolling input channel and output channel
-    for(tncomp=0;tncomp <TnBuff;tncomp+=Tn){
-        for(tmcomp=0;tmcomp <TmBuff;tmcomp+=Tm){    
-            for (tkk1=0; tkk1<K; tkk1++){
-                for(tkk2=0; tkk2<K; tkk2++){
-                    for (tcc = 0; tcc < Tc; ++tcc) {
-                        for (trr = 0; trr < Tr; ++trr) {
+    for(tncomp=0;tncomp <TnBuff;tncomp+=Tn){ // input row partition
+        for(tmcomp=0;tmcomp <TmBuff;tmcomp+=Tm){ // input col partition
+            for (tkk1=0; tkk1<K; tkk1++){ // kernel dim 1
+                for(tkk2=0; tkk2<K; tkk2++){ // kernel dim 2
+                    for (tcc = 0; tcc < Tc; ++tcc) { // input col (base)
+                        for (trr = 0; trr < Tr; ++trr) { // input row (base)
                 #pragma HLS PIPELINE
-                            for (tii = 0; tii < Tn; ++tii) {
+                            for (tii = 0; tii < Tn; ++tii) { // column index
                 #pragma HLS UNROLL
                                 #pragma HLS DEPENDENCE variable=feature_temp inter false
                                 tmp1=feature_temp[tncomp+tii][trr*S+tkk1][tcc*S+tkk2];
-                                for (too = 0; too < Tm; ++too) {
+                                for (too = 0; too < Tm; ++too) { // output depth
                                     #pragma HLS DEPENDENCE variable=output_core_temp inter false
                 #pragma HLS UNROLL
                                     output_core_temp[tmcomp+too][trr][tcc]+=
@@ -553,6 +553,56 @@ void tanh_layer_fc(dma_data* output_core,dma_data* weight,
 
 }
 
+void batchnorm(dma_data* input, dma_data* weight, dma_data* bias,dma_data* output, data_type eps,
+				int input_dim1, int input_dim2, int num_features)
+{
+	// We expect the data to be packed by channels, and we expect the input to be
+	// size [num_channels x input_dim1 x input_dim2]
+    data_type mean0, mean1, variance0, variance1, normalized;
+    dma_data *batch_layers, *out_layers;
+    int i, j ,k;
+    // Run each batch. Since data is packed, we can calculate two batches at once (for 2 channels)
+    for (i = 0; i < num_features; i+= 2) {
+        mean0 = mean1 = 0;
+        variance0 = variance1 = 0;
+        // Pointers to current batch and output dma packs
+        batch_layers = input + (i/2 * input_dim1 * input_dim2);
+        out_layers = output + (i/2 * input_dim1 * input_dim2);
+        // Calculate mean
+        for (j = 0; j < input_dim1; j++) {
+            for (k = 0; k < input_dim2; k++) {
+                mean0 += batch_layers[j * input_dim2 + k].data.data0;
+                mean1 += batch_layers[j * input_dim2 + k].data.data1;
+            }
+        }
+        mean0 /= input_dim1 * input_dim2;
+        mean1 /= input_dim1 * input_dim2;
+        // Calculate variance
+        for (j = 0; j < input_dim1; j++) {
+            for (k = 0; k < input_dim2; k++) {
+                variance0 += pow(batch_layers[j * input_dim2 + k].data.data0 - mean0, 2);
+                variance1 += pow(batch_layers[j * input_dim2 + k].data.data1 - mean1, 2);
+            }
+        }
+        variance0 /= input_dim1 * input_dim2;
+        variance1 /= input_dim1 * input_dim2;
+        // Calculate output using learned weight and bias.
+        for (j = 0; j < input_dim1; j++) {
+            for (k = 0; k < input_dim2; k++) {
+                normalized =
+                  (batch_layers[j * input_dim2 + k].data.data0 - mean0) / pow(variance0 + eps, 0.5);
+                out_layers[j * input_dim2 + k].data.data0 =
+                  weight[i/2].data.data0 * normalized + bias[i/2].data.data0;
+                normalized =
+                  (batch_layers[j * input_dim2 + k].data.data1 - mean1) / pow(variance1 + eps, 0.5);
+                out_layers[j * input_dim2 + k].data.data1 =
+                  weight[i/2].data.data1 * normalized + bias[i/2].data.data1;
+            }
+        }
+    }
+}
+
+
 void max_pool(dma_data* input_next,dma_data* output,
                 int M, int C_next,int C,
                 ap_uint<32> Base_addr2,ap_uint<32> Base_addr3){
@@ -579,6 +629,9 @@ void unet_top (
 dma_data* weight1,
 dma_data* feature1,
 dma_data* output_core1,
+dma_data* batchnorm_weight1,
+dma_data* batchnorm_bias1,
+data_type batchnorm_eps,
 dma_data* weight2,
 dma_data* feature2,
 dma_data* output_core2,
@@ -692,6 +745,11 @@ ap_uint<32>  Base_addr39
 #pragma HLS data_pack variable=weight1
 #pragma HLS data_pack variable=feature1
 #pragma HLS data_pack variable=output_core1
+// Pragmas for batchnorm input data
+#pragma HLS INTERFACE m_axi depth=M1/2 port=batchnorm_weight1
+#pragma HLS INTERFACE m_axi depth=M1/2 port=batchnorm_bias1
+#pragma HLS data_pack variable=batchnorm_weight1
+#pragma HLS data_pack variable=batchnorm_bias1
 
 
 #pragma HLS INTERFACE s_axilite port=Base_addr34 bundle=CRTL_BUS
@@ -885,6 +943,12 @@ ap_uint<32>  Base_addr39
 
 
       act1: tanh_layer(output_core1,weight1, M1,N1,C1,K1,Base_addr37,Base_addr39);
+
+      // Here, there are M1 features (since the conv layer will put out this many outputs)
+      // Output should be [M1 x C1 x C1] (assuming same conv)
+
+      // batchnorm never actually reuses input values, so use the same memory for input and output.
+      batchnorm1: batchnorm(output_core1, batchnorm_weight1, batchnorm_bias1, output_core1, batchnorm_eps, C1, C1, M1);
 
       max1: max_pool(feature2,output_core1,M1,C2,C1,Base_addr35,Base_addr39);
 
