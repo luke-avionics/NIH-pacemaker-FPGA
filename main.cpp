@@ -54,6 +54,7 @@ int main(){
     //data_type * flatten_input3=(data_type *)malloc(N3*sizeof(data_type));
     data_type * flatten_weight4=(data_type *)malloc((M4*N4+M4)*sizeof(data_type));
     
+    float bn_eps = 1E-5; // Batchnorm EPS
     
     //modification anchor 
     data_type * golden_output=(data_type *)malloc(M4*1*1*sizeof(data_type));
@@ -245,6 +246,9 @@ int main(){
         packed_weight,
         packed_input,
         packed_output,
+		packed_bn_weight1,
+		packed_bn_bias,
+		bn_eps,
         packed_weight2,
         packed_input2,
         packed_output2,

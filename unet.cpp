@@ -1058,30 +1058,30 @@ dma_data* output_core2,
 dma_data* weight3,
 dma_data* feature3,
 dma_data* output_core3,
- dma_data* weight4,
+dma_data* weight4,
 // dma_data* feature4,
- dma_data* output_core4,
- dma_data* weight5,
+dma_data* output_core4,
+// dma_data* weight5,
  //dma_data* feature5,
- dma_data* output_core5,
- dma_data* weight6,
+// dma_data* output_core5,
+// dma_data* weight6,
 // dma_data* feature6,
- dma_data* output_core6,
- dma_data* weight7,
+// dma_data* output_core6,
+// dma_data* weight7,
 // dma_data* feature7,
- dma_data* output_core7,
- dma_data* weight8,
+// dma_data* output_core7,
+// dma_data* weight8,
  //dma_data* feature8,
- dma_data* output_core8,
-dma_data* weight9,
-dma_data* feature9,
-dma_data* output_core9,
-dma_data* weight10,
-dma_data* feature10,
-dma_data* output_core10,
-dma_data* weight11,
-dma_data* feature11,
-dma_data* output_core11,
+// dma_data* output_core8,
+//dma_data* weight9,
+//dma_data* feature9,
+//dma_data* output_core9,
+//dma_data* weight10,
+//dma_data* feature10,
+//dma_data* output_core10,
+//dma_data* weight11,
+//dma_data* feature11,
+//dma_data* output_core11,
 //dma_data* weight12,
 //dma_data* feature12,
 //dma_data* output_core12,
@@ -1100,36 +1100,36 @@ dma_data* output_core11,
 //dma_data* feature17,
 //dma_data* output_core17,
 int con,
- ap_uint<32> Base_addr1,
- ap_uint<32>  Base_addr2,
- ap_uint<32>  Base_addr3,
- ap_uint<32> Base_addr4,
- ap_uint<32>  Base_addr5,
- ap_uint<32>  Base_addr6,
- ap_uint<32> Base_addr7,
- ap_uint<32>  Base_addr8,
- ap_uint<32>  Base_addr9,
- ap_uint<32> Base_addr10,
- ap_uint<32>  Base_addr11,
- ap_uint<32>  Base_addr12,
-ap_uint<32> Base_addr13,
-ap_uint<32>  Base_addr14,
-ap_uint<32>  Base_addr15,
-ap_uint<32> Base_addr16,
-ap_uint<32>  Base_addr17,
-ap_uint<32>  Base_addr18,
-ap_uint<32> Base_addr19,
-ap_uint<32>  Base_addr20,
-ap_uint<32>  Base_addr21,
-ap_uint<32> Base_addr22,
-ap_uint<32>  Base_addr23,
-ap_uint<32>  Base_addr24,
-ap_uint<32> Base_addr25,
-ap_uint<32>  Base_addr26,
-ap_uint<32>  Base_addr27,
-  ap_uint<32> Base_addr28,
- // ap_uint<32>  Base_addr29,
-  ap_uint<32>  Base_addr30,
+// ap_uint<32> Base_addr1,
+// ap_uint<32>  Base_addr2,
+// ap_uint<32>  Base_addr3,
+// ap_uint<32> Base_addr4,
+// ap_uint<32>  Base_addr5,
+// ap_uint<32>  Base_addr6,
+// ap_uint<32> Base_addr7,
+// ap_uint<32>  Base_addr8,
+// ap_uint<32>  Base_addr9,
+// ap_uint<32> Base_addr10,
+// ap_uint<32>  Base_addr11,
+// ap_uint<32>  Base_addr12,
+//ap_uint<32> Base_addr13,
+//ap_uint<32>  Base_addr14,
+//ap_uint<32>  Base_addr15,
+//ap_uint<32> Base_addr16,
+//ap_uint<32>  Base_addr17,
+//ap_uint<32>  Base_addr18,
+//ap_uint<32> Base_addr19,
+//ap_uint<32>  Base_addr20,
+//ap_uint<32>  Base_addr21,
+//ap_uint<32> Base_addr22,
+//ap_uint<32>  Base_addr23,
+//ap_uint<32>  Base_addr24,
+//ap_uint<32> Base_addr25,
+//ap_uint<32>  Base_addr26,
+//ap_uint<32>  Base_addr27,
+ap_uint<32> Base_addr28,
+//ap_uint<32>  Base_addr29,
+ap_uint<32>  Base_addr30,
 ap_uint<32> Base_addr31,
 ap_uint<32>  Base_addr32,
 ap_uint<32>  Base_addr33,
@@ -1204,11 +1204,11 @@ ap_uint<32>  Base_addr39
 
 
  #pragma HLS INTERFACE s_axilite port=Base_addr1 bundle=CRTL_BUS
- #pragma HLS INTERFACE s_axilite port=Base_addr2 bundle=CRTL_BUS
- #pragma HLS INTERFACE s_axilite port=Base_addr3 bundle=CRTL_BUS
+ //#pragma HLS INTERFACE s_axilite port=Base_addr2 bundle=CRTL_BUS
+// #pragma HLS INTERFACE s_axilite port=Base_addr3 bundle=CRTL_BUS
 
  //#pragma HLS INTERFACE m_axi depth=N4*H4*H4/4 port=feature5
- #pragma HLS INTERFACE m_axi depth=M4*C4*C4/4 port=output_core5
+// #pragma HLS INTERFACE m_axi depth=M4*C4*C4/4 port=output_core5
  #pragma HLS data_pack variable=weight5
  //#pragma HLS data_pack variable=feature5
  #pragma HLS data_pack variable=output_core5
@@ -1216,19 +1216,19 @@ ap_uint<32>  Base_addr39
  #pragma HLS INTERFACE s_axilite port=Base_addr4 bundle=CRTL_BUS
  #pragma HLS INTERFACE s_axilite port=Base_addr5 bundle=CRTL_BUS
  #pragma HLS INTERFACE s_axilite port=Base_addr6 bundle=CRTL_BUS
- #pragma HLS INTERFACE m_axi depth=M5*N5*K5*K5/4 port=weight6
+ //#pragma HLS INTERFACE m_axi depth=M5*N5*K5*K5/4 port=weight6
  //#pragma HLS INTERFACE m_axi depth=N5*H5*H5/4 port=feature6
- #pragma HLS INTERFACE m_axi depth=M5*C5*C5/4 port=output_core6
+ //#pragma HLS INTERFACE m_axi depth=M5*C5*C5/4 port=output_core6
  #pragma HLS data_pack variable=weight6
  //#pragma HLS data_pack variable=feature6
  #pragma HLS data_pack variable=output_core6
 
  #pragma HLS INTERFACE s_axilite port=Base_addr7 bundle=CRTL_BUS
- #pragma HLS INTERFACE s_axilite port=Base_addr8 bundle=CRTL_BUS
+ //#pragma HLS INTERFACE s_axilite port=Base_addr8 bundle=CRTL_BUS
  #pragma HLS INTERFACE s_axilite port=Base_addr9 bundle=CRTL_BUS
- #pragma HLS INTERFACE m_axi depth=M6*N6*K6*K6/4 port=weight7
+// #pragma HLS INTERFACE m_axi depth=M6*N6*K6*K6/4 port=weight7
  //#pragma HLS INTERFACE m_axi depth=N6*H6*H6/4 port=feature7
- #pragma HLS INTERFACE m_axi depth=M6*C6*C6/4 port=output_core7
+// #pragma HLS INTERFACE m_axi depth=M6*C6*C6/4 port=output_core7
  #pragma HLS data_pack variable=weight7
  //#pragma HLS data_pack variable=feature7
  #pragma HLS data_pack variable=output_core7
@@ -1236,9 +1236,9 @@ ap_uint<32>  Base_addr39
  #pragma HLS INTERFACE s_axilite port=Base_addr10 bundle=CRTL_BUS
  #pragma HLS INTERFACE s_axilite port=Base_addr11 bundle=CRTL_BUS
  #pragma HLS INTERFACE s_axilite port=Base_addr12 bundle=CRTL_BUS
- #pragma HLS INTERFACE m_axi depth=M7*N7*K7*K7/4 port=weight8
+// #pragma HLS INTERFACE m_axi depth=M7*N7*K7*K7/4 port=weight8
  //#pragma HLS INTERFACE m_axi depth=N7*H7*H7/4 port=feature8
- #pragma HLS INTERFACE m_axi depth=M7*C7*C7/4 port=output_core8
+// #pragma HLS INTERFACE m_axi depth=M7*C7*C7/4 port=output_core8
  #pragma HLS data_pack variable=weight8
  //#pragma HLS data_pack variable=feature8
  #pragma HLS data_pack variable=output_core8
@@ -1247,16 +1247,16 @@ ap_uint<32>  Base_addr39
 #pragma HLS INTERFACE s_axilite port=Base_addr13 bundle=CRTL_BUS
 #pragma HLS INTERFACE s_axilite port=Base_addr14 bundle=CRTL_BUS
 #pragma HLS INTERFACE s_axilite port=Base_addr15 bundle=CRTL_BUS
-#pragma HLS INTERFACE m_axi depth=M8*N8*K8*K8/4 port=weight9
-#pragma HLS INTERFACE m_axi depth=N8*H8*H8/4 port=feature9
-#pragma HLS INTERFACE m_axi depth=M8*C8*C8/4 port=output_core9
+//#pragma HLS INTERFACE m_axi depth=M8*N8*K8*K8/4 port=weight9
+//#pragma HLS INTERFACE m_axi depth=N8*H8*H8/4 port=feature9
+//#pragma HLS INTERFACE m_axi depth=M8*C8*C8/4 port=output_core9
 #pragma HLS data_pack variable=weight9
 #pragma HLS data_pack variable=feature9
 #pragma HLS data_pack variable=output_core9
 //
 #pragma HLS INTERFACE s_axilite port=Base_addr16 bundle=CRTL_BUS
 #pragma HLS INTERFACE s_axilite port=Base_addr17 bundle=CRTL_BUS
-#pragma HLS INTERFACE s_axilite port=Base_addr18 bundle=CRTL_BUS
+//#pragma HLS INTERFACE s_axilite port=Base_addr18 bundle=CRTL_BUS
 #pragma HLS INTERFACE m_axi depth=M9*N9*K9*K9/4 port=weight10
 #pragma HLS INTERFACE m_axi depth=N9*H9*H9/4 port=feature10
 #pragma HLS INTERFACE m_axi depth=M9*C9*C9/4 port=output_core10
@@ -1265,7 +1265,7 @@ ap_uint<32>  Base_addr39
 #pragma HLS data_pack variable=output_core10
 //
 //#pragma HLS INTERFACE s_axilite port=Base_addr19 bundle=CRTL_BUS
-#pragma HLS INTERFACE s_axilite port=Base_addr20 bundle=CRTL_BUS
+//#pragma HLS INTERFACE s_axilite port=Base_addr20 bundle=CRTL_BUS
 //#pragma HLS INTERFACE s_axilite port=Base_addr21 bundle=CRTL_BUS
 //#pragma HLS INTERFACE m_axi depth=M10*N10*K10*K10/4 port=weight11
 //#pragma HLS INTERFACE m_axi depth=N10*H10*H10/4 port=feature11
