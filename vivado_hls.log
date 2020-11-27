@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running '/clear/apps/xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'dmd4' on host 'agate.clear.rice.edu' (Linux_x86_64 version 3.10.0-1127.13.1.el7.x86_64) on Fri Nov 27 17:20:07 CST 2020
+INFO: [HLS 200-10] For user 'dmd4' on host 'agate.clear.rice.edu' (Linux_x86_64 version 3.10.0-1127.13.1.el7.x86_64) on Fri Nov 27 17:39:46 CST 2020
 INFO: [HLS 200-10] On os "Red Hat Enterprise Linux Server release 7.8 (Maipo)"
 INFO: [HLS 200-10] In directory '/storage-home/d/dmd4/elec515/NIH-pacemaker-FPGA'
 Sourcing Tcl script '/storage-home/d/dmd4/elec515/NIH-pacemaker-FPGA/NIH-pacemaker-FPGA/solution1/csim.tcl'
@@ -14,10 +14,10 @@ INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
 failed 0,0
 0,4.01245e-11
 40,0,0
-failed 0,946.121
+failed 0,-1.03861e-29
 0,6.40969e-10
 40,1,0
-failed 0,946.121
+failed 0,-1.03861e-29
 0,2.20669e+29
 40,2,0
 failed 0,-nan
@@ -26,7 +26,7 @@ failed 0,-nan
 failed 0,8.96831e-44
 0,4.01245e-11
 42,0,0
-failed 0,4.08095e-38
+failed 0,5.4803e-38
 0,6.40969e-10
 42,1,0
 failed 0,2.94273e-44
@@ -38,10 +38,10 @@ failed 0,6.40969e-10
 failed 0,2.03188e-43
 0,6.43925e-10
 44,0,0
-failed 0,946.121
+failed 0,-1.03861e-29
 0,6.72623e-44
 44,1,0
-failed 0,946.121
+failed 0,-1.03861e-29
 0,6.72623e-44
 44,2,0
 failed 0,1.79366e-43
@@ -50,11 +50,11 @@ failed 0,1.79366e-43
 failed 0,5.60519e-45
 0,6.86636e-44
 46,0,0
-failed 0,-nan
-0,946.121
-46,1,0
 failed 0,6.40969e-10
-0,946.121
+0,6.40287e-10
+46,1,1
+failed 0,6.40969e-10
+0,-1.03861e-29
 46,2,0
 failed 0,6.40969e-10
 0,6.40969e-10

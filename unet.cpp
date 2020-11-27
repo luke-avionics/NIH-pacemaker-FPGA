@@ -1209,9 +1209,9 @@ ap_uint<32>  Base_addr39
 
  //#pragma HLS INTERFACE m_axi depth=N4*H4*H4/4 port=feature5
 // #pragma HLS INTERFACE m_axi depth=M4*C4*C4/4 port=output_core5
- #pragma HLS data_pack variable=weight5
+ //#pragma HLS data_pack variable=weight5
  //#pragma HLS data_pack variable=feature5
- #pragma HLS data_pack variable=output_core5
+ //#pragma HLS data_pack variable=output_core5
 
  #pragma HLS INTERFACE s_axilite port=Base_addr4 bundle=CRTL_BUS
  #pragma HLS INTERFACE s_axilite port=Base_addr5 bundle=CRTL_BUS
@@ -1219,9 +1219,9 @@ ap_uint<32>  Base_addr39
  //#pragma HLS INTERFACE m_axi depth=M5*N5*K5*K5/4 port=weight6
  //#pragma HLS INTERFACE m_axi depth=N5*H5*H5/4 port=feature6
  //#pragma HLS INTERFACE m_axi depth=M5*C5*C5/4 port=output_core6
- #pragma HLS data_pack variable=weight6
+ //#pragma HLS data_pack variable=weight6
  //#pragma HLS data_pack variable=feature6
- #pragma HLS data_pack variable=output_core6
+ //#pragma HLS data_pack variable=output_core6
 
  #pragma HLS INTERFACE s_axilite port=Base_addr7 bundle=CRTL_BUS
  //#pragma HLS INTERFACE s_axilite port=Base_addr8 bundle=CRTL_BUS
@@ -1229,9 +1229,9 @@ ap_uint<32>  Base_addr39
 // #pragma HLS INTERFACE m_axi depth=M6*N6*K6*K6/4 port=weight7
  //#pragma HLS INTERFACE m_axi depth=N6*H6*H6/4 port=feature7
 // #pragma HLS INTERFACE m_axi depth=M6*C6*C6/4 port=output_core7
- #pragma HLS data_pack variable=weight7
+ //#pragma HLS data_pack variable=weight7
  //#pragma HLS data_pack variable=feature7
- #pragma HLS data_pack variable=output_core7
+ //#pragma HLS data_pack variable=output_core7
 
  #pragma HLS INTERFACE s_axilite port=Base_addr10 bundle=CRTL_BUS
  #pragma HLS INTERFACE s_axilite port=Base_addr11 bundle=CRTL_BUS
@@ -1239,9 +1239,9 @@ ap_uint<32>  Base_addr39
 // #pragma HLS INTERFACE m_axi depth=M7*N7*K7*K7/4 port=weight8
  //#pragma HLS INTERFACE m_axi depth=N7*H7*H7/4 port=feature8
 // #pragma HLS INTERFACE m_axi depth=M7*C7*C7/4 port=output_core8
- #pragma HLS data_pack variable=weight8
+ //#pragma HLS data_pack variable=weight8
  //#pragma HLS data_pack variable=feature8
- #pragma HLS data_pack variable=output_core8
+ //#pragma HLS data_pack variable=output_core8
 
 //
 #pragma HLS INTERFACE s_axilite port=Base_addr13 bundle=CRTL_BUS
@@ -1250,9 +1250,9 @@ ap_uint<32>  Base_addr39
 //#pragma HLS INTERFACE m_axi depth=M8*N8*K8*K8/4 port=weight9
 //#pragma HLS INTERFACE m_axi depth=N8*H8*H8/4 port=feature9
 //#pragma HLS INTERFACE m_axi depth=M8*C8*C8/4 port=output_core9
-#pragma HLS data_pack variable=weight9
-#pragma HLS data_pack variable=feature9
-#pragma HLS data_pack variable=output_core9
+//#pragma HLS data_pack variable=weight9
+//#pragma HLS data_pack variable=feature9
+//#pragma HLS data_pack variable=output_core9
 //
 #pragma HLS INTERFACE s_axilite port=Base_addr16 bundle=CRTL_BUS
 #pragma HLS INTERFACE s_axilite port=Base_addr17 bundle=CRTL_BUS
