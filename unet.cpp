@@ -563,6 +563,7 @@ void batchnorm(dma_data* input, dma_data* weight, dma_data* bias,dma_data* outpu
     int i, j ,k;
     // Run each batch. Since data is packed, we can calculate two batches at once (for 2 channels)
     for (i = 0; i < num_features; i+= 2) {
+		//#pragma HLS unroll (with unrolling utilization nearly doubles, for an 0.1ms latency improvement)
         mean0 = mean1 = 0;
         variance0 = variance1 = 0;
         // Pointers to current batch and output dma packs
@@ -571,6 +572,7 @@ void batchnorm(dma_data* input, dma_data* weight, dma_data* bias,dma_data* outpu
         // Calculate mean
         for (j = 0; j < input_dim1; j++) {
             for (k = 0; k < input_dim2; k++) {
+				#pragma HLS pipeline
                 mean0 += batch_layers[j * input_dim2 + k].data.data0;
                 mean1 += batch_layers[j * input_dim2 + k].data.data1;
             }
@@ -580,6 +582,7 @@ void batchnorm(dma_data* input, dma_data* weight, dma_data* bias,dma_data* outpu
         // Calculate variance
         for (j = 0; j < input_dim1; j++) {
             for (k = 0; k < input_dim2; k++) {
+				#pragma HLS pipeline
                 variance0 += pow(batch_layers[j * input_dim2 + k].data.data0 - mean0, 2);
                 variance1 += pow(batch_layers[j * input_dim2 + k].data.data1 - mean1, 2);
             }
@@ -589,6 +592,7 @@ void batchnorm(dma_data* input, dma_data* weight, dma_data* bias,dma_data* outpu
         // Calculate output using learned weight and bias.
         for (j = 0; j < input_dim1; j++) {
             for (k = 0; k < input_dim2; k++) {
+				#pragma HLS pipeline
                 normalized =
                   (batch_layers[j * input_dim2 + k].data.data0 - mean0) / pow(variance0 + eps, 0.5);
                 out_layers[j * input_dim2 + k].data.data0 =

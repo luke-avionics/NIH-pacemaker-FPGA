@@ -1,147 +1,1500 @@
 INFO: [HLS 200-10] Running '/clear/apps/xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'dmd4' on host 'agate.clear.rice.edu' (Linux_x86_64 version 3.10.0-1127.13.1.el7.x86_64) on Fri Nov 27 17:39:46 CST 2020
+INFO: [HLS 200-10] For user 'dmd4' on host 'agate.clear.rice.edu' (Linux_x86_64 version 3.10.0-1127.13.1.el7.x86_64) on Fri Nov 27 19:04:28 CST 2020
 INFO: [HLS 200-10] On os "Red Hat Enterprise Linux Server release 7.8 (Maipo)"
 INFO: [HLS 200-10] In directory '/storage-home/d/dmd4/elec515/NIH-pacemaker-FPGA'
-Sourcing Tcl script '/storage-home/d/dmd4/elec515/NIH-pacemaker-FPGA/NIH-pacemaker-FPGA/solution1/csim.tcl'
+Sourcing Tcl script '/storage-home/d/dmd4/elec515/NIH-pacemaker-FPGA/NIH-pacemaker-FPGA/solution1/csynth.tcl'
 INFO: [HLS 200-10] Opening project '/storage-home/d/dmd4/elec515/NIH-pacemaker-FPGA/NIH-pacemaker-FPGA'.
+INFO: [HLS 200-10] Adding design file 'unet.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'unet.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
 INFO: [HLS 200-10] Opening solution '/storage-home/d/dmd4/elec515/NIH-pacemaker-FPGA/NIH-pacemaker-FPGA/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z045-ffg900-2'
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../unet.cpp in debug mode
-   Generating csim.exe
-failed 0,0
-0,4.01245e-11
-40,0,0
-failed 0,-1.03861e-29
-0,6.40969e-10
-40,1,0
-failed 0,-1.03861e-29
-0,2.20669e+29
-40,2,0
-failed 0,-nan
-0,8.96831e-44
-40,3,0
-failed 0,8.96831e-44
-0,4.01245e-11
-42,0,0
-failed 0,5.4803e-38
-0,6.40969e-10
-42,1,0
-failed 0,2.94273e-44
-0,2.20669e+29
-42,2,0
-failed 0,6.40969e-10
-0,6.40969e-10
-42,3,1
-failed 0,2.03188e-43
-0,6.43925e-10
-44,0,0
-failed 0,-1.03861e-29
-0,6.72623e-44
-44,1,0
-failed 0,-1.03861e-29
-0,6.72623e-44
-44,2,0
-failed 0,1.79366e-43
-0,6.40969e-10
-44,3,1
-failed 0,5.60519e-45
-0,6.86636e-44
-46,0,0
-failed 0,6.40969e-10
-0,6.40287e-10
-46,1,1
-failed 0,6.40969e-10
-0,-1.03861e-29
-46,2,0
-failed 0,6.40969e-10
-0,6.40969e-10
-46,3,1
-failed 0,6.40287e-10
-0,2.24208e-44
-48,0,0
-failed 0,3.81153e-43
-0,-nan
-48,1,0
-failed 0,8.96831e-44
-0,6.40969e-10
-48,2,0
-failed 0,0
-0,6.40969e-10
-48,3,0
-failed 0,8.96831e-44
-0,4.48416e-44
-50,0,0
-failed 0,4.70836e-43
-0,-nan
-50,1,0
-failed 0,1.12104e-43
-0,6.40969e-10
-50,2,0
-failed 0,0
-0,6.40969e-10
-50,3,0
-failed 0,6.40969e-10
-0,2.93932e-06
-52,0,0
-failed 0,6.40969e-10
-0,4.44836e-39
-52,1,0
-failed 0,6.44906e-10
-0,1.12104e-43
-52,2,0
-failed 0,1.48449e-40
-0,1.12104e-43
-52,3,0
-failed 0,0
-0,6.40969e-10
-54,0,0
-failed 0,5.60519e-44
-0,6.40969e-10
-54,1,0
-failed 0,-nan
-0,6.40969e-10
-54,2,0
-failed 0,6.40969e-10
-0,6.40969e-10
-54,3,0
-failed 0,1.48292e-40
-0,6.40969e-10
-56,1,0
-failed 0,1.65353e-43
-0,6.40969e-10
-56,2,0
-failed 0,2.24208e-43
-0,6.40969e-10
-56,3,0
-failed 0,6.40969e-10
-0,2.57848e-09
-58,0,0
-failed 0,6.40969e-10
-0,6.40983e-10
-58,1,0
-failed 0,2.56388e-09
-0,6.40983e-10
-58,2,0
-failed 0,6.40983e-10
-0,2.56393e-09
-58,3,0
-failed 0,2.57843e-09
-0,0
-60,0,0
-failed 0,6.40969e-10
-0,0
-60,1,0
-failed 0,2.56393e-09
-0,0
-60,2,0
-failed 0,6.44621e-10
-0,0
-60,3,0
-failed 0,1.48001e-40
-0,0
-62,3,0
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'unet.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1770.312 ; gain = 1233.902 ; free physical = 54834 ; free virtual = 119474
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1770.312 ; gain = 1233.902 ; free physical = 54834 ; free virtual = 119475
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1770.312 ; gain = 1233.902 ; free physical = 54474 ; free virtual = 119173
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:225) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:227) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:231) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:233) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:235) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:334) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:373) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:375) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:641) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'batchnorm' (unet.cpp:586) automatically.
+WARNING: [SYNCHK 200-23] /wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:402: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 1770.312 ; gain = 1233.902 ; free physical = 54337 ; free virtual = 119047
+WARNING: [XFORM 203-1102] Ignored multiple data pack pragma for variable 'weight1.data' (unet.cpp:1053).
+INFO: [XFORM 203-1101] Packing variable 'weight1.data' (unet.cpp:1053) into a 64-bit variable.
+WARNING: [XFORM 203-1102] Ignored multiple data pack pragma for variable 'feature1.data' (unet.cpp:1054).
+INFO: [XFORM 203-1101] Packing variable 'feature1.data' (unet.cpp:1054) into a 64-bit variable.
+WARNING: [XFORM 203-1102] Ignored multiple data pack pragma for variable 'output_core1.data' (unet.cpp:1055).
+INFO: [XFORM 203-1101] Packing variable 'output_core1.data' (unet.cpp:1055) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'batchnorm_weight1.data' (unet.cpp:1056) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'batchnorm_bias1.data' (unet.cpp:1057) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'weight2.data' (unet.cpp:1059) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'feature2.data' (unet.cpp:1060) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'output_core2.data' (unet.cpp:1061) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'weight3.data' (unet.cpp:1062) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'feature3.data' (unet.cpp:1063) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'output_core3.data' (unet.cpp:1064) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'weight4.data' (unet.cpp:1065) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'output_core4.data' (unet.cpp:1067) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:225) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:227) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:231) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:233) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:235) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:334) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:373) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:375) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:412) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:641) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'batchnorm' (unet.cpp:597) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:320:19) to (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:407:5) in function 'pow_reduce::pow_generic<double>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:488:26) to (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:657:55) in function 'pow_reduce::pow_generic<double>'... converting 7 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::log_range_reduction<71>' into 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:548) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'pow_reduce::pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:320)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1770.312 ; gain = 1233.902 ; free physical = 54140 ; free virtual = 118875
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1' (unet.cpp:573:14) in function 'batchnorm'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.2' (unet.cpp:583:14) in function 'batchnorm'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.3' (unet.cpp:593:14) in function 'batchnorm'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (unet.cpp:565:10) in function 'batchnorm' : 
+
+more than one sub loop.
+WARNING: [XFORM 203-631] Renaming function 'pow_reduce::pow_generic<double>' to 'pow_generic<double>' (/wrk/2020.1/continuous/2020_05_27_2902540/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:320)
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 256 on port 'output.data' (unet.cpp:576:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 256 on port 'output.data' (unet.cpp:586:15). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:31 ; elapsed = 00:00:37 . Memory (MB): peak = 1770.312 ; gain = 1233.902 ; free physical = 54085 ; free virtual = 118825
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'unet_top' ...
+WARNING: [SYN 201-103] Legalizing function name 'pow_generic<double>' to 'pow_generic_double_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pow_generic<double>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 39.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 37.53 seconds; current allocated memory: 729.944 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.35 seconds; current allocated memory: 731.494 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'batchnorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('mean0', unet.cpp:576) and 'fadd' operation ('mean0', unet.cpp:576).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('mean0', unet.cpp:576) and 'fadd' operation ('mean0', unet.cpp:576).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('mean0', unet.cpp:576) and 'fadd' operation ('mean0', unet.cpp:576).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 4, Depth = 7.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.2'.
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.2): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0)
+   between 'fptrunc' operation ('variance0', unet.cpp:586) and 'fpext' operation ('tmp_9', unet.cpp:586).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.2): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0)
+   between 'fptrunc' operation ('variance0', unet.cpp:586) and 'fpext' operation ('tmp_9', unet.cpp:586).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.2): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0)
+   between 'fptrunc' operation ('variance0', unet.cpp:586) and 'fpext' operation ('tmp_9', unet.cpp:586).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.2): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0)
+   between 'fptrunc' operation ('variance0', unet.cpp:586) and 'fpext' operation ('tmp_9', unet.cpp:586).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.2): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 0)
+   between 'fptrunc' operation ('variance0', unet.cpp:586) and 'fpext' operation ('tmp_9', unet.cpp:586).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 21.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.3'.
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.3): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between bus access on port 'output_data' (unet.cpp:602) and bus request on port 'output_data' (unet.cpp:596).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.3): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between bus access on port 'output_data' (unet.cpp:602) and bus request on port 'output_data' (unet.cpp:596).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.3): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between bus access on port 'output_data' (unet.cpp:602) and bus request on port 'output_data' (unet.cpp:596).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.3): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between bus access on port 'output_data' (unet.cpp:602) and bus request on port 'output_data' (unet.cpp:596).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.3): Unable to enforce a carried dependence constraint (II = 35, distance = 1, offset = 1)
+   between bus access on port 'output_data' (unet.cpp:602) and bus request on port 'output_data' (unet.cpp:596).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.3): Unable to enforce a carried dependence constraint (II = 51, distance = 1, offset = 1)
+   between bus access on port 'output_data' (unet.cpp:602) and bus request on port 'output_data' (unet.cpp:596).
+WARNING: [SCHED 204-68] The II Violation in module 'batchnorm' (Loop: Loop 1.3): Unable to enforce a carried dependence constraint (II = 59, distance = 1, offset = 1)
+   between bus access on port 'output_data' (unet.cpp:602) and bus request on port 'output_data' (unet.cpp:596).
+INFO: [SCHED 204-61] Discarding stage scheduling solution.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 60, Depth = 87.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.92 seconds; current allocated memory: 732.568 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.31 seconds; current allocated memory: 734.219 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'unet_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.74 seconds; current allocated memory: 734.611 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.21 seconds; current allocated memory: 735.045 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_20' to 'pow_generic_doublbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_19' to 'pow_generic_doublcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_16' to 'pow_generic_doubldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_17' to 'pow_generic_doubleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_9' to 'pow_generic_doublfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_12' to 'pow_generic_doublg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_13' to 'pow_generic_doublhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_14' to 'pow_generic_doublibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_15' to 'pow_generic_doubljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_18' to 'pow_generic_doublkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo' to 'pow_generic_doubllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_21' to 'pow_generic_doublmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_6ns_54s_54_2_1' to 'unet_top_mul_6ns_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_4ns_71ns_75_2_1' to 'unet_top_mul_4ns_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_6ns_73ns_79_2_1' to 'unet_top_mul_6ns_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_6ns_83ns_89_2_1' to 'unet_top_mul_6ns_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_6ns_92ns_98_2_1' to 'unet_top_mul_6ns_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_6ns_87ns_93_2_1' to 'unet_top_mul_6ns_sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_6ns_82ns_88_2_1' to 'unet_top_mul_6ns_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_6ns_77ns_83_2_1' to 'unet_top_mul_6ns_udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_80ns_12s_90_2_1' to 'unet_top_mul_80nsvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mul_72ns_13s_83_2_1' to 'unet_top_mul_72nswdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_mac_muladd_16ns_15s_19s_30_1_1' to 'unet_top_mac_mulaxdS' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'pow_generic_double_s' is 5230 from HDL expression: ((1'b1 == ap_ce) & (1'b0 == ap_block_pp0_stage0_11001))
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mac_mulaxdS': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_4ns_ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_6ns_ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_6ns_pcA': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_6ns_qcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_6ns_rcU': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_6ns_sc4': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_6ns_tde': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_6ns_udo': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_72nswdI': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_mul_80nsvdy': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pow_generic_double_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.79 seconds; current allocated memory: 739.039 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'batchnorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'unet_top_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'unet_top_faddfsubyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_fmul_32ns_32ns_32_3_max_dsp_1' to 'unet_top_fmul_32nzec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_fptrunc_64ns_32_2_1' to 'unet_top_fptrunc_Aem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_fpext_32ns_64_2_1' to 'unet_top_fpext_32Bew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_dadd_64ns_64ns_64_5_full_dsp_1' to 'unet_top_dadd_64nCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_dmul_64ns_64ns_64_5_max_dsp_1' to 'unet_top_dmul_64nDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'unet_top_ddiv_64ns_64ns_64_31_1' to 'unet_top_ddiv_64nEe0' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'unet_top_dadd_64nCeG': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_ddiv_64nEe0': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_dmul_64nDeQ': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_faddfsubyd2': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_fmul_32nzec': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_fpext_32Bew': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'unet_top_fptrunc_Aem': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'batchnorm'.
+INFO: [HLS 200-111]  Elapsed time: 1.46 seconds; current allocated memory: 748.541 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'unet_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/weight1_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/feature1_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/output_core1_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/batchnorm_weight1_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/batchnorm_bias1_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/batchnorm_eps' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/weight2_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/feature2_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/output_core2_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/weight3_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/feature3_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/output_core3_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/weight4_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/output_core4_data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/con' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr28_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr30_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr31_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr32_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr33_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr34_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr35_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr36_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr37_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr38_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'unet_top/Base_addr39_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'unet_top' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'con', 'Base_addr28_V', 'Base_addr30_V', 'Base_addr31_V', 'Base_addr32_V', 'Base_addr33_V', 'Base_addr34_V', 'Base_addr35_V', 'Base_addr36_V', 'Base_addr37_V', 'Base_addr38_V' and 'Base_addr39_V' to AXI-Lite port CRTL_BUS.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight1_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight1_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature1_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature1_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight2_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight2_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature2_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature2_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core2_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core2_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight3_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight3_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_feature3_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_feature3_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core3_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core3_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_weight4_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_weight4_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_AWUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_WVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_WVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_WREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_WDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_WDATA' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_WSTRB' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_WSTRB' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_WLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_WLAST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_WID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_WID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_WUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_WUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARADDR' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARID' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARLEN' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARSIZE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARBURST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARLOCK' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARCACHE' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARPROT' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARQOS' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARREGION' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_ARUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_ARUSER' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_RVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_RREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_RREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_RDATA' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_RLAST' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_RID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_RUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_RRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_BVALID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_BREADY' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'unet_top/m_axi_output_core4_data_BREADY' to 0.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_BRESP' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_BID' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'unet_top/m_axi_output_core4_data_BUSER' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'unet_top'.
+INFO: [HLS 200-111]  Elapsed time: 9.11 seconds; current allocated memory: 754.835 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 109.27 MHz
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_6ns_ncg_MulnS_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_4ns_ocq_MulnS_1'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_6ns_pcA_MulnS_2'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_6ns_qcK_MulnS_3'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_6ns_rcU_MulnS_4'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_6ns_sc4_MulnS_5'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_6ns_tde_MulnS_6'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_6ns_udo_MulnS_7'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_80nsvdy_MulnS_8'
+INFO: [RTMG 210-282] Generating pipelined core: 'unet_top_mul_72nswdI_MulnS_9'
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublcud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubldEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubleOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublfYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublg8j_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubljbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublkbM_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubllbW_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublmb6_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:48 ; elapsed = 00:01:01 . Memory (MB): peak = 1770.312 ; gain = 1233.902 ; free physical = 54035 ; free virtual = 118790
+INFO: [VHDL 208-304] Generating VHDL RTL for unet_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for unet_top.
+INFO: [HLS 200-112] Total elapsed time: 61.59 seconds; peak allocated memory: 754.835 MB.
