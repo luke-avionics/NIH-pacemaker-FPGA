@@ -340,7 +340,7 @@ void unet_top(
 	// batchnorm2 would go here
 
 	// upsample1 for synthesis testing only, not valid location in NN
-	upsample1: upsample(output_core1, feature2);
+	upsample1: upsample(output_core1, feature2, M1, C2);	// M1xC2xC2 (48x8x8) back up to M1xC1xC1 (48x16x16)
 
     max2: max_pool(feature3, output_core2, M2, C2/2, C2, Base_addr32, Base_addr36);
     */
