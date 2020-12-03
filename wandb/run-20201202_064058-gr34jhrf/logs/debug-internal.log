@@ -1,0 +1,286 @@
+2020-12-02 06:40:58,517 INFO    MainThread:61565 [internal.py:wandb_internal():62] W&B internal server running at pid: 61565
+2020-12-02 06:40:58,520 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: check_version
+2020-12-02 06:40:58,521 INFO    WriterThread:61565 [datastore.py:open_for_write():76] open: wandb/run-20201202_064058-gr34jhrf/run-gr34jhrf.wandb
+2020-12-02 06:40:58,521 DEBUG   SenderThread:61565 [sender.py:send():88] send: header
+2020-12-02 06:40:58,522 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:40:58,522 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: check_version
+2020-12-02 06:40:58,525 DEBUG   Thread-4  :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): pypi.org:443
+2020-12-02 06:40:58,555 DEBUG   Thread-4  :61565 [connectionpool.py:_make_request():442] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 51947
+2020-12-02 06:40:58,567 DEBUG   SenderThread:61565 [sender.py:send():88] send: run
+2020-12-02 06:40:58,571 DEBUG   SenderThread:61565 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/home/yz87/NIH-pacemaker-FPGA, universal_newlines=False, shell=None, istream=<valid stream>)
+2020-12-02 06:40:58,586 DEBUG   SenderThread:61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:40:58,683 DEBUG   SenderThread:61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-12-02 06:40:58,688 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: run_start
+2020-12-02 06:40:58,691 INFO    SenderThread:61565 [dir_watcher.py:__init__():167] watching files in: wandb/run-20201202_064058-gr34jhrf/files
+2020-12-02 06:40:58,691 INFO    SenderThread:61565 [sender.py:_start_run_threads():464] run started: gr34jhrf with start time 1606912858
+2020-12-02 06:40:58,691 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:40:58,692 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:40:58,704 DEBUG   HandlerThread:61565 [cmd.py:execute():719] Popen(['git', 'cat-file', '--batch-check'], cwd=/home/yz87/NIH-pacemaker-FPGA, universal_newlines=False, shell=None, istream=<valid stream>)
+2020-12-02 06:40:58,712 DEBUG   HandlerThread:61565 [cmd.py:execute():719] Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/home/yz87/NIH-pacemaker-FPGA, universal_newlines=False, shell=None, istream=None)
+2020-12-02 06:40:58,755 DEBUG   SenderThread:61565 [sender.py:send():88] send: files
+2020-12-02 06:40:58,755 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-metadata.json with policy now
+2020-12-02 06:40:58,756 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: status
+2020-12-02 06:40:58,757 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:40:58,757 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: status
+2020-12-02 06:40:58,761 DEBUG   SenderThread:61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:40:58,767 DEBUG   Thread-11 :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:40:58,836 DEBUG   SenderThread:61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-12-02 06:40:58,853 DEBUG   Thread-11 :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-12-02 06:40:58,859 DEBUG   Thread-11 :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): storage.googleapis.com:443
+2020-12-02 06:40:59,075 DEBUG   Thread-11 :61565 [connectionpool.py:_make_request():442] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/sirsargras/nih_project_1/gr34jhrf/wandb-metadata.json?Expires=1606999258&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=HSTyCGSvjeq%2FsvjoesfIprQpp85SxHajdYiMOAX8wl0ObtQi7JVwJHgsfABqWkokEjw2mz77HNdmoeD3gw1iDTweO0ID5v0%2FoeHlkHJFkeoUm39ZoOP2qgXXT6HlQQFlTOrGO800oYye8lNhETmHXHMgctNCynboVeFmMEC6fa5KDdz4XM2VgGl8q7HsgbHiaTRADvqBycjemL%2BUJBSkK1%2BwL5jZOfvTg58pXdZxi01EAWMTx1CXg5gL1c9aTWjEzTM5mGqaFxRIkc0L3zNL%2FQSYiAVX0Q7Y1sYQpMbj%2F%2FhZOUH9o78OdLj%2BfMWxWkNI3oh0i8g1hzHgwJb4GZNdDw%3D%3D HTTP/1.1" 200 0
+2020-12-02 06:40:59,077 INFO    Thread-11 :61565 [upload_job.py:push():112] Uploaded file /tmp/tmppkjlluzgwandb/2l3rnaq7-wandb-metadata.json
+2020-12-02 06:40:59,693 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_created():215] file/dir created: wandb/run-20201202_064058-gr34jhrf/files/wandb-metadata.json
+2020-12-02 06:40:59,693 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_created():215] file/dir created: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:40:59,694 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_created():215] file/dir created: wandb/run-20201202_064058-gr34jhrf/files/requirements.txt
+2020-12-02 06:40:59,694 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_created():215] file/dir created: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:00,693 DEBUG   Thread-5  :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:41:00,771 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:01,692 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:02,810 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:02,883 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:04,693 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:05,973 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:07,876 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:07,951 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:08,694 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:10,275 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:10,276 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:10,278 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:10,346 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:10,695 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:10,696 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:11,228 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:11,229 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:11,230 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:11,696 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:11,696 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:12,184 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:12,184 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:12,185 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:12,696 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:12,696 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:12,962 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:13,046 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:13,139 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:13,139 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:13,139 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:13,696 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:13,697 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:13,840 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: status
+2020-12-02 06:41:13,840 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:41:13,840 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: status
+2020-12-02 06:41:13,844 DEBUG   SenderThread:61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:41:13,917 DEBUG   SenderThread:61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-12-02 06:41:14,094 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:14,095 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:14,095 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:14,697 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:14,698 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:15,048 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:15,048 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:15,051 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:15,118 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:15,698 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:15,698 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:16,002 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:16,002 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:16,002 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:16,698 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:16,698 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:16,960 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:16,961 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:16,961 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:17,698 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:17,699 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:17,915 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:17,915 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:17,917 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:17,988 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:18,055 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:18,699 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:18,699 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:18,874 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:18,874 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:18,875 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:19,699 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:19,700 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:19,833 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:19,833 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:19,833 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:20,700 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:20,700 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:21,926 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:23,106 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:25,240 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:25,701 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:27,459 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:28,227 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:28,921 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: status
+2020-12-02 06:41:28,921 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:41:28,921 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: status
+2020-12-02 06:41:28,924 DEBUG   SenderThread:61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:41:28,997 DEBUG   SenderThread:61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-12-02 06:41:30,301 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:32,413 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:32,414 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:32,416 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:32,486 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:32,704 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:32,704 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:33,330 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:33,370 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:33,371 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:33,371 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:33,704 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:33,705 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:34,322 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:34,322 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:34,322 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:34,705 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:34,705 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:35,278 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:35,279 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:35,281 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:35,461 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:35,705 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:35,706 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:36,238 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:36,239 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:36,239 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:36,706 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:36,706 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:37,189 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:37,190 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:37,190 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:37,706 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:37,706 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:38,145 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:38,145 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:38,149 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:38,216 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:38,429 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:38,706 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:38,707 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:39,099 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:39,099 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:39,099 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:39,707 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:39,707 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:40,055 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:40,056 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:40,056 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:40,707 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:40,707 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:41,011 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:41,012 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:41,014 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:41,132 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:41,707 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:41,708 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:41,966 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:41,966 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:41,966 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:42,708 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:42,708 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:42,924 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:42,924 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:42,925 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:43,517 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:43,584 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:43,708 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:43,709 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:44,000 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: status
+2020-12-02 06:41:44,000 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:41:44,001 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: status
+2020-12-02 06:41:44,003 DEBUG   SenderThread:61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:41:44,072 DEBUG   SenderThread:61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-12-02 06:41:48,458 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:48,578 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:48,710 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:50,656 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:53,649 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:53,929 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:55,460 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:55,461 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:55,461 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:55,712 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:55,712 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:56,414 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:56,415 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:56,417 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:56,484 DEBUG   Thread-5  :61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /files/sirsargras/nih_project_1/gr34jhrf/file_stream HTTP/1.1" 200 None
+2020-12-02 06:41:56,713 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:56,713 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:57,364 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:57,365 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:57,365 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:57,713 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:57,713 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:58,315 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:58,316 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:58,316 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:58,713 DEBUG   SenderThread:61565 [sender.py:send():88] send: stats
+2020-12-02 06:41:58,715 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:58,715 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:41:59,075 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: status
+2020-12-02 06:41:59,075 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:41:59,075 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: status
+2020-12-02 06:41:59,078 DEBUG   SenderThread:61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:41:59,149 DEBUG   SenderThread:61565 [connectionpool.py:_make_request():442] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None
+2020-12-02 06:41:59,271 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:41:59,272 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:41:59,272 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:41:59,715 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:41:59,716 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:42:00,218 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:42:00,219 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:42:00,219 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:42:00,716 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:42:00,716 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:42:01,171 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:42:01,172 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:42:01,172 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:42:01,716 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:42:01,717 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:42:02,123 DEBUG   SenderThread:61565 [sender.py:send():88] send: history
+2020-12-02 06:42:02,124 DEBUG   SenderThread:61565 [sender.py:send():88] send: summary
+2020-12-02 06:42:02,124 INFO    SenderThread:61565 [sender.py:_save_file():542] saving file wandb-summary.json with policy end
+2020-12-02 06:42:02,318 WARNING MainThread:61565 [internal.py:wandb_internal():116] Internal process interrupt: 1
+2020-12-02 06:42:02,322 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: poll_exit
+2020-12-02 06:42:02,322 DEBUG   SenderThread:61565 [sender.py:send():88] send: exit
+2020-12-02 06:42:02,322 INFO    SenderThread:61565 [sender.py:send_exit():156] handling exit code: 255
+2020-12-02 06:42:02,322 INFO    SenderThread:61565 [sender.py:send_exit():164] send defer
+2020-12-02 06:42:02,323 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:42:02,323 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: poll_exit
+2020-12-02 06:42:02,324 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: defer
+2020-12-02 06:42:02,324 INFO    HandlerThread:61565 [handler.py:handle_request_defer():68] handle defer: 0
+2020-12-02 06:42:02,324 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:42:02,324 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: defer
+2020-12-02 06:42:02,324 INFO    SenderThread:61565 [sender.py:send_request_defer():173] handle sender defer: 0
+2020-12-02 06:42:02,324 INFO    SenderThread:61565 [sender.py:send_request_defer():209] send defer: 1
+2020-12-02 06:42:02,325 DEBUG   HandlerThread:61565 [handler.py:handle_request():54] handle_request: defer
+2020-12-02 06:42:02,325 INFO    HandlerThread:61565 [handler.py:handle_request_defer():68] handle defer: 1
+2020-12-02 06:42:02,534 WARNING MainThread:61565 [internal.py:wandb_internal():116] Internal process interrupt: 2
+2020-12-02 06:42:02,534 ERROR   MainThread:61565 [internal.py:wandb_internal():119] Internal process interrupted.
+2020-12-02 06:42:02,552 INFO    HandlerThread:61565 [handler.py:finish():267] shutting down handler
+2020-12-02 06:42:02,552 DEBUG   SenderThread:61565 [sender.py:send():88] send: request
+2020-12-02 06:42:02,552 DEBUG   SenderThread:61565 [sender.py:send_request():97] send_request: defer
+2020-12-02 06:42:02,552 INFO    SenderThread:61565 [sender.py:send_request_defer():173] handle sender defer: 1
+2020-12-02 06:42:02,552 INFO    SenderThread:61565 [sender.py:send_request_defer():209] send defer: 2
+2020-12-02 06:42:02,552 INFO    SenderThread:61565 [sender.py:finish():583] shutting down sender
+2020-12-02 06:42:02,552 INFO    SenderThread:61565 [dir_watcher.py:finish():280] shutting down directory watcher
+2020-12-02 06:42:02,717 INFO    Thread-8  :61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json
+2020-12-02 06:42:02,718 INFO    SenderThread:61565 [dir_watcher.py:_on_file_modified():228] file/dir modified: wandb/run-20201202_064058-gr34jhrf/files/output.log
+2020-12-02 06:42:02,718 INFO    SenderThread:61565 [dir_watcher.py:finish():309] scan: wandb/run-20201202_064058-gr34jhrf/files
+2020-12-02 06:42:02,718 INFO    SenderThread:61565 [dir_watcher.py:finish():315] scan save: wandb/run-20201202_064058-gr34jhrf/files/config.yaml config.yaml
+2020-12-02 06:42:02,718 INFO    SenderThread:61565 [dir_watcher.py:finish():315] scan save: wandb/run-20201202_064058-gr34jhrf/files/wandb-summary.json wandb-summary.json
+2020-12-02 06:42:02,719 INFO    SenderThread:61565 [dir_watcher.py:finish():315] scan save: wandb/run-20201202_064058-gr34jhrf/files/output.log output.log
+2020-12-02 06:42:02,719 INFO    SenderThread:61565 [dir_watcher.py:finish():315] scan save: wandb/run-20201202_064058-gr34jhrf/files/wandb-metadata.json wandb-metadata.json
+2020-12-02 06:42:02,719 INFO    SenderThread:61565 [dir_watcher.py:finish():315] scan save: wandb/run-20201202_064058-gr34jhrf/files/requirements.txt requirements.txt
+2020-12-02 06:42:02,720 INFO    SenderThread:61565 [file_pusher.py:finish():169] shutting down file pusher
+2020-12-02 06:42:02,720 INFO    SenderThread:61565 [file_pusher.py:join():174] waiting for file pusher
+2020-12-02 06:42:02,725 DEBUG   Thread-12 :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:42:02,735 DEBUG   Thread-15 :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:42:02,735 DEBUG   Thread-14 :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:42:02,740 DEBUG   Thread-13 :61565 [connectionpool.py:_new_conn():943] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-12-02 06:42:02,823 INFO    MainThread:61565 [internal.py:handle_exit():137] Internal process exited

@@ -1,0 +1,1151 @@
+<class 'numpy.ndarray'>
+(876, 10, 16, 16)
+(876, 24, 16, 16)
+Number of training samples:  876
+Number of testing samples:  876
+Dimension of Data: (876, 10, 16, 16) (876, 10, 16, 16)
+Number of all Data 1752
+Number of batches:  55
+  0%|          | 0/2000 [00:00<?, ?it/s]Unet_training_torch.py:391: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  inputs = Variable(inputs, volatile=True).cuda()
+Unet_training_torch.py:392: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  labels = Variable(labels, volatile=True).cuda()
+libibverbs: Warning: couldn't open config directory '/etc/libibverbs.d'.
+[1,     5] loss: 0.008 
+                                          0%|          | 0/2000 [00:06<?, ?it/s][1,    10] loss: -0.086 
+                                          0%|          | 0/2000 [00:06<?, ?it/s]                                          0%|          | 0/2000 [00:07<?, ?it/s][1,    15] loss: -0.150 
+[1,    20] loss: -0.099 
+                                          0%|          | 0/2000 [00:08<?, ?it/s][1,    25] loss: -0.215 
+                                          0%|          | 0/2000 [00:08<?, ?it/s][1,    30] loss: -0.334 
+                                          0%|          | 0/2000 [00:09<?, ?it/s][1,    35] loss: -0.534 
+                                          0%|          | 0/2000 [00:10<?, ?it/s][1,    40] loss: -0.484 
+                                          0%|          | 0/2000 [00:11<?, ?it/s]                                        [1,    45] loss: -0.606 
+  0%|          | 0/2000 [00:11<?, ?it/s][1,    50] loss: -0.729 
+                                          0%|          | 0/2000 [00:12<?, ?it/s]                                          0%|          | 0/2000 [00:13<?, ?it/s][1,    55] loss: -0.791 
+Pruning threshold: 4.5368227574726916e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 2.4790024200083138e-11
+layer index: 14 	 total params: 1474560 	 remaining params: 1474560
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 9.469606254697283e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Unet_training_torch.py:520: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  tinputs = Variable(tinputs, volatile=True).cuda()
+Unet_training_torch.py:521: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  tlabels = Variable(tlabels, volatile=True).cuda()
+Reconstructed correlation 0.6982047711559881
+test loss:  -0.7944798718799244
+  0%|          | 1/2000 [00:29<16:09:17, 29.09s/it]                                                     0%|          | 1/2000 [00:29<16:09:17, 29.09s/it][2,     5] loss: -0.792 
+                                                     0%|          | 1/2000 [00:30<16:09:17, 29.09s/it][2,    10] loss: -0.874 
+[2,    15] loss: -0.873 
+                                                     0%|          | 1/2000 [00:31<16:09:17, 29.09s/it][2,    20] loss: -0.899 
+                                                     0%|          | 1/2000 [00:32<16:09:17, 29.09s/it][2,    25] loss: -0.931 
+                                                     0%|          | 1/2000 [00:32<16:09:17, 29.09s/it][2,    30] loss: -0.910 
+                                                     0%|          | 1/2000 [00:33<16:09:17, 29.09s/it][2,    35] loss: -0.934 
+                                                     0%|          | 1/2000 [00:34<16:09:17, 29.09s/it][2,    40] loss: -0.948 
+                                                     0%|          | 1/2000 [00:34<16:09:17, 29.09s/it]                                                   [2,    45] loss: -0.953 
+  0%|          | 1/2000 [00:35<16:09:17, 29.09s/it][2,    50] loss: -0.951 
+                                                     0%|          | 1/2000 [00:36<16:09:17, 29.09s/it][2,    55] loss: -0.959 
+                                                     0%|          | 1/2000 [00:37<16:09:17, 29.09s/it]Pruning threshold: 7.502104608647642e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 2.1337480393679442e-11
+layer index: 14 	 total params: 1474560 	 remaining params: 1474560
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 6.405442398715877e-09
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9163279597751794
+test loss:  -0.945889746059071
+  0%|          | 2/2000 [00:52<15:16:04, 27.51s/it]                                                   [3,     5] loss: -0.961 
+  0%|          | 2/2000 [00:53<15:16:04, 27.51s/it][3,    10] loss: -0.972 
+                                                     0%|          | 2/2000 [00:54<15:16:04, 27.51s/it]                                                   [3,    15] loss: -0.946 
+  0%|          | 2/2000 [00:55<15:16:04, 27.51s/it][3,    20] loss: -0.963 
+                                                     0%|          | 2/2000 [00:55<15:16:04, 27.51s/it][3,    25] loss: -0.974 
+                                                     0%|          | 2/2000 [00:56<15:16:04, 27.51s/it]                                                   [3,    30] loss: -0.948 
+  0%|          | 2/2000 [00:57<15:16:04, 27.51s/it][3,    35] loss: -0.969 
+                                                     0%|          | 2/2000 [00:58<15:16:04, 27.51s/it][3,    40] loss: -0.970 
+                                                     0%|          | 2/2000 [00:58<15:16:04, 27.51s/it]                                                   [3,    45] loss: -0.973 
+  0%|          | 2/2000 [00:59<15:16:04, 27.51s/it]                                                   [3,    50] loss: -0.972 
+  0%|          | 2/2000 [01:00<15:16:04, 27.51s/it][3,    55] loss: -0.974 
+                                                     0%|          | 2/2000 [01:01<15:16:04, 27.51s/it]Pruning threshold: 5.451289553093375e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 4.2571740403729574e-13
+layer index: 14 	 total params: 1474560 	 remaining params: 1474560
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 2.0952435875187803e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  0%|          | 3/2000 [01:16<14:39:33, 26.43s/it]Reconstructed correlation 0.9554443604104292
+test loss:  -0.9632903760129755
+[4,     5] loss: -0.966 
+                                                     0%|          | 3/2000 [01:17<14:39:33, 26.43s/it][4,    10] loss: -0.981 
+                                                     0%|          | 3/2000 [01:18<14:39:33, 26.43s/it][4,    15] loss: -0.956 
+                                                     0%|          | 3/2000 [01:19<14:39:33, 26.43s/it]                                                   [4,    20] loss: -0.967 
+  0%|          | 3/2000 [01:19<14:39:33, 26.43s/it]                                                   [4,    25] loss: -0.974 
+  0%|          | 3/2000 [01:20<14:39:33, 26.43s/it][4,    30] loss: -0.944 
+                                                     0%|          | 3/2000 [01:21<14:39:33, 26.43s/it]                                                   [4,    35] loss: -0.976 
+  0%|          | 3/2000 [01:21<14:39:33, 26.43s/it]                                                   [4,    40] loss: -0.973 
+  0%|          | 3/2000 [01:22<14:39:33, 26.43s/it][4,    45] loss: -0.975 
+                                                     0%|          | 3/2000 [01:23<14:39:33, 26.43s/it][4,    50] loss: -0.973 
+                                                     0%|          | 3/2000 [01:24<14:39:33, 26.43s/it][4,    55] loss: -0.977 
+                                                     0%|          | 3/2000 [01:24<14:39:33, 26.43s/it]Pruning threshold: 1.6484752052292606e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 4.541956654530166e-12
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.223670125227727e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  0%|          | 4/2000 [01:40<14:13:26, 25.65s/it]Reconstructed correlation 0.952040298627342
+test loss:  -0.9630500186573375
+                                                   [5,     5] loss: -0.967 
+  0%|          | 4/2000 [01:41<14:13:26, 25.65s/it]                                                     0%|          | 4/2000 [01:42<14:13:26, 25.65s/it][5,    10] loss: -0.982 
+                                                   [5,    15] loss: -0.957 
+  0%|          | 4/2000 [01:42<14:13:26, 25.65s/it][5,    20] loss: -0.970 
+                                                     0%|          | 4/2000 [01:43<14:13:26, 25.65s/it][5,    25] loss: -0.977 
+                                                     0%|          | 4/2000 [01:44<14:13:26, 25.65s/it][5,    30] loss: -0.947 
+                                                     0%|          | 4/2000 [01:45<14:13:26, 25.65s/it][5,    35] loss: -0.966 
+                                                     0%|          | 4/2000 [01:45<14:13:26, 25.65s/it][5,    40] loss: -0.968 
+                                                     0%|          | 4/2000 [01:46<14:13:26, 25.65s/it][5,    45] loss: -0.973 
+                                                     0%|          | 4/2000 [01:47<14:13:26, 25.65s/it][5,    50] loss: -0.969 
+                                                     0%|          | 4/2000 [01:48<14:13:26, 25.65s/it][5,    55] loss: -0.975 
+                                                     0%|          | 4/2000 [01:48<14:13:26, 25.65s/it]Pruning threshold: 1.633570967385367e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 3.3536010340257105e-13
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 5.002340586202081e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9452267975845584
+test loss:  -0.9628578305244446
+  0%|          | 5/2000 [02:04<13:54:24, 25.09s/it][6,     5] loss: -0.963 
+                                                     0%|          | 5/2000 [02:05<13:54:24, 25.09s/it]                                                   [6,    10] loss: -0.980 
+  0%|          | 5/2000 [02:05<13:54:24, 25.09s/it][6,    15] loss: -0.953 
+                                                     0%|          | 5/2000 [02:06<13:54:24, 25.09s/it][6,    20] loss: -0.970 
+                                                     0%|          | 5/2000 [02:07<13:54:24, 25.09s/it][6,    25] loss: -0.978 
+                                                     0%|          | 5/2000 [02:08<13:54:24, 25.09s/it][6,    30] loss: -0.951 
+                                                     0%|          | 5/2000 [02:08<13:54:24, 25.09s/it]                                                   [6,    35] loss: -0.977 
+  0%|          | 5/2000 [02:09<13:54:24, 25.09s/it][6,    40] loss: -0.975 
+                                                     0%|          | 5/2000 [02:10<13:54:24, 25.09s/it][6,    45] loss: -0.978 
+                                                     0%|          | 5/2000 [02:11<13:54:24, 25.09s/it]                                                   [6,    50] loss: -0.976 
+  0%|          | 5/2000 [02:11<13:54:24, 25.09s/it][6,    55] loss: -0.980 
+                                                     0%|          | 5/2000 [02:12<13:54:24, 25.09s/it]Pruning threshold: 9.574037562742888e-09
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 3.2588616440137495e-15
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.4896204447722994e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9582822791946225
+test loss:  -0.9661464062604037
+  0%|          | 6/2000 [02:28<13:41:12, 24.71s/it]                                                   [7,     5] loss: -0.970 
+  0%|          | 6/2000 [02:28<13:41:12, 24.71s/it]                                                   [7,    10] loss: -0.985 
+  0%|          | 6/2000 [02:29<13:41:12, 24.71s/it][7,    15] loss: -0.956 
+                                                     0%|          | 6/2000 [02:30<13:41:12, 24.71s/it][7,    20] loss: -0.972 
+                                                     0%|          | 6/2000 [02:31<13:41:12, 24.71s/it]                                                   [7,    25] loss: -0.980 
+  0%|          | 6/2000 [02:31<13:41:12, 24.71s/it][7,    30] loss: -0.948 
+                                                     0%|          | 6/2000 [02:32<13:41:12, 24.71s/it]                                                   [7,    35] loss: -0.978 
+  0%|          | 6/2000 [02:33<13:41:12, 24.71s/it]                                                   [7,    40] loss: -0.974 
+  0%|          | 6/2000 [02:34<13:41:12, 24.71s/it][7,    45] loss: -0.977 
+                                                     0%|          | 6/2000 [02:34<13:41:12, 24.71s/it]                                                   [7,    50] loss: -0.973 
+  0%|          | 6/2000 [02:35<13:41:12, 24.71s/it]                                                     0%|          | 6/2000 [02:36<13:41:12, 24.71s/it][7,    55] loss: -0.979 
+Pruning threshold: 4.227846406301694e-10
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.1065840916744133e-16
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.629485097964789e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115200
+layer index: 44 	 total params: 56448 	 remaining params: 56447
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9522714141777538
+test loss:  -0.9663066127083518
+  0%|          | 7/2000 [02:52<13:31:41, 24.44s/it][8,     5] loss: -0.968 
+                                                     0%|          | 7/2000 [02:52<13:31:41, 24.44s/it][8,    10] loss: -0.985 
+                                                     0%|          | 7/2000 [02:53<13:31:41, 24.44s/it][8,    15] loss: -0.957 
+                                                     0%|          | 7/2000 [02:54<13:31:41, 24.44s/it]                                                   [8,    20] loss: -0.970 
+  0%|          | 7/2000 [02:55<13:31:41, 24.44s/it]                                                   [8,    25] loss: -0.978 
+  0%|          | 7/2000 [02:55<13:31:41, 24.44s/it][8,    30] loss: -0.950 
+                                                     0%|          | 7/2000 [02:56<13:31:41, 24.44s/it][8,    35] loss: -0.978 
+                                                     0%|          | 7/2000 [02:57<13:31:41, 24.44s/it][8,    40] loss: -0.975 
+                                                     0%|          | 7/2000 [02:57<13:31:41, 24.44s/it][8,    45] loss: -0.978 
+                                                     0%|          | 7/2000 [02:58<13:31:41, 24.44s/it][8,    50] loss: -0.974 
+                                                     0%|          | 7/2000 [02:59<13:31:41, 24.44s/it][8,    55] loss: -0.980 
+                                                     0%|          | 7/2000 [03:00<13:31:41, 24.44s/it]Pruning threshold: 7.75783517287243e-12
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.0050947546039956e-17
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 2.8791758310831028e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9564984522690962
+test loss:  -0.9664492607116699
+  0%|          | 8/2000 [03:15<13:25:45, 24.27s/it]                                                   [9,     5] loss: -0.969 
+  0%|          | 8/2000 [03:16<13:25:45, 24.27s/it]                                                   [9,    10] loss: -0.986 
+  0%|          | 8/2000 [03:17<13:25:45, 24.27s/it]                                                   [9,    15] loss: -0.956 
+  0%|          | 8/2000 [03:18<13:25:45, 24.27s/it][9,    20] loss: -0.972 
+                                                     0%|          | 8/2000 [03:18<13:25:45, 24.27s/it][9,    25] loss: -0.978 
+                                                     0%|          | 8/2000 [03:19<13:25:45, 24.27s/it][9,    30] loss: -0.949 
+                                                     0%|          | 8/2000 [03:20<13:25:45, 24.27s/it]                                                   [9,    35] loss: -0.977 
+  0%|          | 8/2000 [03:21<13:25:45, 24.27s/it][9,    40] loss: -0.974 
+                                                     0%|          | 8/2000 [03:21<13:25:45, 24.27s/it]                                                   [9,    45] loss: -0.978 
+  0%|          | 8/2000 [03:22<13:25:45, 24.27s/it][9,    50] loss: -0.976 
+                                                     0%|          | 8/2000 [03:23<13:25:45, 24.27s/it]                                                   [9,    55] loss: -0.981 
+  0%|          | 8/2000 [03:24<13:25:45, 24.27s/it]Pruning threshold: 7.171749088694113e-13
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 3.624993147964171e-19
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 3.5824726296596054e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9579478153732538
+test loss:  -0.9681134050542658
+  0%|          | 9/2000 [03:39<13:20:45, 24.13s/it][10,     5] loss: -0.971 
+                                                     0%|          | 9/2000 [03:40<13:20:45, 24.13s/it][10,    10] loss: -0.987 
+                                                     0%|          | 9/2000 [03:41<13:20:45, 24.13s/it][10,    15] loss: -0.958 
+                                                     0%|          | 9/2000 [03:41<13:20:45, 24.13s/it][10,    20] loss: -0.972 
+                                                     0%|          | 9/2000 [03:42<13:20:45, 24.13s/it]                                                   [10,    25] loss: -0.979 
+  0%|          | 9/2000 [03:43<13:20:45, 24.13s/it][10,    30] loss: -0.947 
+                                                     0%|          | 9/2000 [03:44<13:20:45, 24.13s/it]                                                     0%|          | 9/2000 [03:44<13:20:45, 24.13s/it][10,    35] loss: -0.977 
+[10,    40] loss: -0.973 
+                                                     0%|          | 9/2000 [03:45<13:20:45, 24.13s/it]                                                   [10,    45] loss: -0.978 
+  0%|          | 9/2000 [03:46<13:20:45, 24.13s/it][10,    50] loss: -0.976 
+                                                     0%|          | 9/2000 [03:47<13:20:45, 24.13s/it][10,    55] loss: -0.981 
+                                                     0%|          | 9/2000 [03:47<13:20:45, 24.13s/it]Pruning threshold: 3.112426725238038e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 5.453736195411651e-20
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 3.20832036493357e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  0%|          | 10/2000 [04:03<13:17:10, 24.04s/it]Reconstructed correlation 0.9567183918318238
+test loss:  -0.9675322012467817
+                                                    [11,     5] loss: -0.971 
+  0%|          | 10/2000 [04:04<13:17:10, 24.04s/it]                                                    [11,    10] loss: -0.986 
+  0%|          | 10/2000 [04:05<13:17:10, 24.04s/it]                                                    [11,    15] loss: -0.957 
+  0%|          | 10/2000 [04:05<13:17:10, 24.04s/it][11,    20] loss: -0.971 
+                                                      0%|          | 10/2000 [04:06<13:17:10, 24.04s/it]                                                    [11,    25] loss: -0.981 
+  0%|          | 10/2000 [04:07<13:17:10, 24.04s/it][11,    30] loss: -0.950 
+                                                      0%|          | 10/2000 [04:07<13:17:10, 24.04s/it][11,    35] loss: -0.978 
+                                                      0%|          | 10/2000 [04:08<13:17:10, 24.04s/it]                                                    [11,    40] loss: -0.975 
+  0%|          | 10/2000 [04:09<13:17:10, 24.04s/it][11,    45] loss: -0.978 
+                                                      0%|          | 10/2000 [04:10<13:17:10, 24.04s/it]                                                    [11,    50] loss: -0.976 
+  0%|          | 10/2000 [04:10<13:17:10, 24.04s/it][11,    55] loss: -0.981 
+                                                      0%|          | 10/2000 [04:11<13:17:10, 24.04s/it]Pruning threshold: 4.00195801830705e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.454481269576999e-20
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 9.306919679374914e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.954851462286838
+test loss:  -0.966586277701638
+  1%|          | 11/2000 [04:27<13:14:57, 23.98s/it]                                                    [12,     5] loss: -0.970 
+  1%|          | 11/2000 [04:28<13:14:57, 23.98s/it][12,    10] loss: -0.986 
+                                                      1%|          | 11/2000 [04:28<13:14:57, 23.98s/it]                                                      1%|          | 11/2000 [04:29<13:14:57, 23.98s/it][12,    15] loss: -0.960 
+[12,    20] loss: -0.971 
+                                                      1%|          | 11/2000 [04:30<13:14:57, 23.98s/it]                                                    [12,    25] loss: -0.980 
+  1%|          | 11/2000 [04:31<13:14:57, 23.98s/it]                                                      1%|          | 11/2000 [04:31<13:14:57, 23.98s/it][12,    30] loss: -0.950 
+                                                    [12,    35] loss: -0.979 
+  1%|          | 11/2000 [04:32<13:14:57, 23.98s/it]                                                      1%|          | 11/2000 [04:33<13:14:57, 23.98s/it][12,    40] loss: -0.974 
+                                                    [12,    45] loss: -0.978 
+  1%|          | 11/2000 [04:34<13:14:57, 23.98s/it][12,    50] loss: -0.976 
+                                                      1%|          | 11/2000 [04:34<13:14:57, 23.98s/it][12,    55] loss: -0.982 
+                                                      1%|          | 11/2000 [04:35<13:14:57, 23.98s/it]Pruning threshold: 1.3091185913083336e-09
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.315649911497482e-23
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 3.601218736548617e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  1%|          | 12/2000 [04:51<13:13:07, 23.94s/it]Reconstructed correlation 0.9577035023573466
+test loss:  -0.9677481618794528
+[13,     5] loss: -0.971 
+                                                      1%|          | 12/2000 [04:51<13:13:07, 23.94s/it][13,    10] loss: -0.986 
+                                                      1%|          | 12/2000 [04:52<13:13:07, 23.94s/it][13,    15] loss: -0.957 
+                                                      1%|          | 12/2000 [04:53<13:13:07, 23.94s/it][13,    20] loss: -0.972 
+                                                      1%|          | 12/2000 [04:54<13:13:07, 23.94s/it][13,    25] loss: -0.981 
+                                                      1%|          | 12/2000 [04:54<13:13:07, 23.94s/it][13,    30] loss: -0.950 
+                                                      1%|          | 12/2000 [04:55<13:13:07, 23.94s/it]                                                    [13,    35] loss: -0.979 
+  1%|          | 12/2000 [04:56<13:13:07, 23.94s/it]                                                      1%|          | 12/2000 [04:57<13:13:07, 23.94s/it][13,    40] loss: -0.976 
+[13,    45] loss: -0.979 
+                                                      1%|          | 12/2000 [04:57<13:13:07, 23.94s/it]                                                    [13,    50] loss: -0.977 
+  1%|          | 12/2000 [04:58<13:13:07, 23.94s/it]                                                    [13,    55] loss: -0.981 
+  1%|          | 12/2000 [04:59<13:13:07, 23.94s/it]Pruning threshold: 1.9260427919221e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 6.2283116487922746e-24
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.8822613867541804e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9570334180178593
+test loss:  -0.9674072460694747
+  1%|          | 13/2000 [05:15<13:10:58, 23.88s/it]                                                    [14,     5] loss: -0.970 
+  1%|          | 13/2000 [05:15<13:10:58, 23.88s/it]                                                    [14,    10] loss: -0.987 
+  1%|          | 13/2000 [05:16<13:10:58, 23.88s/it][14,    15] loss: -0.958 
+                                                      1%|          | 13/2000 [05:17<13:10:58, 23.88s/it][14,    20] loss: -0.971 
+                                                      1%|          | 13/2000 [05:17<13:10:58, 23.88s/it][14,    25] loss: -0.981 
+                                                      1%|          | 13/2000 [05:18<13:10:58, 23.88s/it]                                                    [14,    30] loss: -0.948 
+  1%|          | 13/2000 [05:19<13:10:58, 23.88s/it][14,    35] loss: -0.978 
+                                                      1%|          | 13/2000 [05:20<13:10:58, 23.88s/it]                                                    [14,    40] loss: -0.975 
+  1%|          | 13/2000 [05:20<13:10:58, 23.88s/it]                                                    [14,    45] loss: -0.979 
+  1%|          | 13/2000 [05:21<13:10:58, 23.88s/it]                                                      1%|          | 13/2000 [05:22<13:10:58, 23.88s/it][14,    50] loss: -0.976 
+                                                    [14,    55] loss: -0.981 
+  1%|          | 13/2000 [05:23<13:10:58, 23.88s/it]Pruning threshold: 3.082250010777443e-10
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 3.1276632924610104e-24
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.3621678363051615e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115200
+layer index: 44 	 total params: 56448 	 remaining params: 56447
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9578610070299324
+test loss:  -0.9680680459195917
+  1%|          | 14/2000 [05:38<13:10:07, 23.87s/it][15,     5] loss: -0.971 
+                                                      1%|          | 14/2000 [05:39<13:10:07, 23.87s/it]                                                    [15,    10] loss: -0.988 
+  1%|          | 14/2000 [05:40<13:10:07, 23.87s/it]                                                    [15,    15] loss: -0.959 
+  1%|          | 14/2000 [05:41<13:10:07, 23.87s/it][15,    20] loss: -0.974 
+                                                      1%|          | 14/2000 [05:41<13:10:07, 23.87s/it][15,    25] loss: -0.983 
+                                                      1%|          | 14/2000 [05:42<13:10:07, 23.87s/it]                                                    [15,    30] loss: -0.951 
+  1%|          | 14/2000 [05:43<13:10:07, 23.87s/it]                                                    [15,    35] loss: -0.977 
+  1%|          | 14/2000 [05:44<13:10:07, 23.87s/it][15,    40] loss: -0.973 
+                                                      1%|          | 14/2000 [05:44<13:10:07, 23.87s/it][15,    45] loss: -0.976 
+                                                      1%|          | 14/2000 [05:45<13:10:07, 23.87s/it][15,    50] loss: -0.975 
+                                                      1%|          | 14/2000 [05:46<13:10:07, 23.87s/it][15,    55] loss: -0.981 
+                                                      1%|          | 14/2000 [05:46<13:10:07, 23.87s/it]Pruning threshold: 4.760770228560973e-13
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 4.967613043465009e-26
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 5.055127871855802e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9582100676516315
+test loss:  -0.9675127462907271
+  1%|          | 15/2000 [06:02<13:09:38, 23.87s/it][16,     5] loss: -0.970 
+                                                      1%|          | 15/2000 [06:03<13:09:38, 23.87s/it][16,    10] loss: -0.987 
+                                                      1%|          | 15/2000 [06:04<13:09:38, 23.87s/it][16,    15] loss: -0.958 
+                                                      1%|          | 15/2000 [06:04<13:09:38, 23.87s/it][16,    20] loss: -0.973 
+                                                      1%|          | 15/2000 [06:05<13:09:38, 23.87s/it]                                                      1%|          | 15/2000 [06:06<13:09:38, 23.87s/it][16,    25] loss: -0.982 
+                                                    [16,    30] loss: -0.952 
+  1%|          | 15/2000 [06:07<13:09:38, 23.87s/it][16,    35] loss: -0.979 
+                                                      1%|          | 15/2000 [06:07<13:09:38, 23.87s/it]                                                    [16,    40] loss: -0.975 
+  1%|          | 15/2000 [06:08<13:09:38, 23.87s/it][16,    45] loss: -0.975 
+                                                      1%|          | 15/2000 [06:09<13:09:38, 23.87s/it][16,    50] loss: -0.975 
+                                                      1%|          | 15/2000 [06:10<13:09:38, 23.87s/it][16,    55] loss: -0.981 
+                                                      1%|          | 15/2000 [06:10<13:09:38, 23.87s/it]Pruning threshold: 5.204411832320389e-15
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 2.401049350540784e-27
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 5.484419602908019e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115200
+layer index: 44 	 total params: 56448 	 remaining params: 56447
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9559106303077709
+test loss:  -0.9678212306716225
+  1%|          | 16/2000 [06:26<13:08:46, 23.85s/it]                                                    [17,     5] loss: -0.971 
+  1%|          | 16/2000 [06:27<13:08:46, 23.85s/it]                                                    [17,    10] loss: -0.987 
+  1%|          | 16/2000 [06:28<13:08:46, 23.85s/it][17,    15] loss: -0.959 
+                                                      1%|          | 16/2000 [06:28<13:08:46, 23.85s/it][17,    20] loss: -0.975 
+                                                      1%|          | 16/2000 [06:29<13:08:46, 23.85s/it]                                                      1%|          | 16/2000 [06:30<13:08:46, 23.85s/it][17,    25] loss: -0.983 
+[17,    30] loss: -0.950 
+                                                      1%|          | 16/2000 [06:30<13:08:46, 23.85s/it]                                                    [17,    35] loss: -0.980 
+  1%|          | 16/2000 [06:31<13:08:46, 23.85s/it][17,    40] loss: -0.976 
+                                                      1%|          | 16/2000 [06:32<13:08:46, 23.85s/it]                                                    [17,    45] loss: -0.977 
+  1%|          | 16/2000 [06:33<13:08:46, 23.85s/it][17,    50] loss: -0.975 
+                                                      1%|          | 16/2000 [06:33<13:08:46, 23.85s/it][17,    55] loss: -0.981 
+                                                      1%|          | 16/2000 [06:34<13:08:46, 23.85s/it]Pruning threshold: 1.0024551550948899e-16
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 2.2087365066865957e-29
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 2.308282631702241e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.957056074361461
+test loss:  -0.9675131429325451
+  1%|          | 17/2000 [06:50<13:07:53, 23.84s/it][18,     5] loss: -0.970 
+                                                      1%|          | 17/2000 [06:51<13:07:53, 23.84s/it]                                                      1%|          | 17/2000 [06:51<13:07:53, 23.84s/it][18,    10] loss: -0.987 
+                                                    [18,    15] loss: -0.959 
+  1%|          | 17/2000 [06:52<13:07:53, 23.84s/it][18,    20] loss: -0.973 
+                                                      1%|          | 17/2000 [06:53<13:07:53, 23.84s/it][18,    25] loss: -0.981 
+                                                      1%|          | 17/2000 [06:54<13:07:53, 23.84s/it]                                                    [18,    30] loss: -0.951 
+  1%|          | 17/2000 [06:54<13:07:53, 23.84s/it]                                                    [18,    35] loss: -0.977 
+  1%|          | 17/2000 [06:55<13:07:53, 23.84s/it]                                                    [18,    40] loss: -0.972 
+  1%|          | 17/2000 [06:56<13:07:53, 23.84s/it]                                                    [18,    45] loss: -0.978 
+  1%|          | 17/2000 [06:56<13:07:53, 23.84s/it][18,    50] loss: -0.975 
+                                                      1%|          | 17/2000 [06:57<13:07:53, 23.84s/it][18,    55] loss: -0.982 
+                                                      1%|          | 17/2000 [06:58<13:07:53, 23.84s/it]Pruning threshold: 1.6660247581512522e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 6.803382436028153e-29
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.7444340016936621e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  1%|          | 18/2000 [07:14<13:07:25, 23.84s/it]Reconstructed correlation 0.9594360301638318
+test loss:  -0.9684465560046109
+                                                      1%|          | 18/2000 [07:14<13:07:25, 23.84s/it][19,     5] loss: -0.972 
+                                                    [19,    10] loss: -0.987 
+  1%|          | 18/2000 [07:15<13:07:25, 23.84s/it][19,    15] loss: -0.961 
+                                                      1%|          | 18/2000 [07:16<13:07:25, 23.84s/it][19,    20] loss: -0.974 
+                                                      1%|          | 18/2000 [07:17<13:07:25, 23.84s/it][19,    25] loss: -0.982 
+                                                      1%|          | 18/2000 [07:17<13:07:25, 23.84s/it]                                                    [19,    30] loss: -0.952 
+  1%|          | 18/2000 [07:18<13:07:25, 23.84s/it]                                                    [19,    35] loss: -0.976 
+  1%|          | 18/2000 [07:19<13:07:25, 23.84s/it][19,    40] loss: -0.972 
+                                                      1%|          | 18/2000 [07:20<13:07:25, 23.84s/it][19,    45] loss: -0.978 
+                                                      1%|          | 18/2000 [07:20<13:07:25, 23.84s/it]                                                    [19,    50] loss: -0.976 
+  1%|          | 18/2000 [07:21<13:07:25, 23.84s/it]                                                    [19,    55] loss: -0.982 
+  1%|          | 18/2000 [07:22<13:07:25, 23.84s/it]Pruning threshold: 1.4905477030424663e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 7.403959314134454e-32
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.0938202166244082e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9601574867183009
+test loss:  -0.9686445767229254
+  1%|          | 19/2000 [07:37<13:06:51, 23.83s/it]                                                    [20,     5] loss: -0.972 
+  1%|          | 19/2000 [07:38<13:06:51, 23.83s/it][20,    10] loss: -0.988 
+                                                      1%|          | 19/2000 [07:39<13:06:51, 23.83s/it]                                                    [20,    15] loss: -0.960 
+  1%|          | 19/2000 [07:40<13:06:51, 23.83s/it][20,    20] loss: -0.975 
+                                                      1%|          | 19/2000 [07:40<13:06:51, 23.83s/it][20,    25] loss: -0.983 
+                                                      1%|          | 19/2000 [07:41<13:06:51, 23.83s/it][20,    30] loss: -0.952 
+                                                      1%|          | 19/2000 [07:42<13:06:51, 23.83s/it][20,    35] loss: -0.979 
+                                                      1%|          | 19/2000 [07:43<13:06:51, 23.83s/it]                                                    [20,    40] loss: -0.972 
+  1%|          | 19/2000 [07:43<13:06:51, 23.83s/it][20,    45] loss: -0.978 
+                                                      1%|          | 19/2000 [07:44<13:06:51, 23.83s/it][20,    50] loss: -0.976 
+                                                      1%|          | 19/2000 [07:45<13:06:51, 23.83s/it]                                                    [20,    55] loss: -0.982 
+  1%|          | 19/2000 [07:46<13:06:51, 23.83s/it]Pruning threshold: 8.207288715311734e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.0549060791721908e-33
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 7.003867352750603e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9585600862092725
+test loss:  -0.9676963611082597
+  1%|          | 20/2000 [08:01<13:06:13, 23.83s/it]                                                    [21,     5] loss: -0.970 
+  1%|          | 20/2000 [08:02<13:06:13, 23.83s/it][21,    10] loss: -0.988 
+                                                      1%|          | 20/2000 [08:03<13:06:13, 23.83s/it][21,    15] loss: -0.960 
+                                                      1%|          | 20/2000 [08:04<13:06:13, 23.83s/it][21,    20] loss: -0.974 
+                                                      1%|          | 20/2000 [08:04<13:06:13, 23.83s/it][21,    25] loss: -0.983 
+                                                      1%|          | 20/2000 [08:05<13:06:13, 23.83s/it][21,    30] loss: -0.952 
+                                                      1%|          | 20/2000 [08:06<13:06:13, 23.83s/it][21,    35] loss: -0.979 
+                                                      1%|          | 20/2000 [08:06<13:06:13, 23.83s/it]                                                    [21,    40] loss: -0.973 
+  1%|          | 20/2000 [08:07<13:06:13, 23.83s/it][21,    45] loss: -0.978 
+                                                      1%|          | 20/2000 [08:08<13:06:13, 23.83s/it][21,    50] loss: -0.976 
+                                                      1%|          | 20/2000 [08:09<13:06:13, 23.83s/it]                                                    [21,    55] loss: -0.982 
+  1%|          | 20/2000 [08:09<13:06:13, 23.83s/it]Pruning threshold: 5.535914127108299e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 5.760539086221406e-33
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 3.071297882684121e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  1%|          | 21/2000 [08:25<13:05:01, 23.80s/it]Reconstructed correlation 0.959792995158455
+test loss:  -0.9688414898785678
+                                                    [22,     5] loss: -0.971 
+  1%|          | 21/2000 [08:26<13:05:01, 23.80s/it]                                                      1%|          | 21/2000 [08:27<13:05:01, 23.80s/it][22,    10] loss: -0.988 
+                                                    [22,    15] loss: -0.960 
+  1%|          | 21/2000 [08:27<13:05:01, 23.80s/it][22,    20] loss: -0.974 
+                                                      1%|          | 21/2000 [08:28<13:05:01, 23.80s/it][22,    25] loss: -0.983 
+                                                      1%|          | 21/2000 [08:29<13:05:01, 23.80s/it]                                                    [22,    30] loss: -0.951 
+  1%|          | 21/2000 [08:29<13:05:01, 23.80s/it]                                                    [22,    35] loss: -0.976 
+  1%|          | 21/2000 [08:30<13:05:01, 23.80s/it][22,    40] loss: -0.974 
+                                                      1%|          | 21/2000 [08:31<13:05:01, 23.80s/it][22,    45] loss: -0.980 
+                                                      1%|          | 21/2000 [08:32<13:05:01, 23.80s/it][22,    50] loss: -0.977 
+                                                      1%|          | 21/2000 [08:32<13:05:01, 23.80s/it][22,    55] loss: -0.982 
+                                                      1%|          | 21/2000 [08:33<13:05:01, 23.80s/it]Pruning threshold: 1.4044255181033805e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 2.1750305134734215e-34
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.8822396441464662e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  1%|          | 22/2000 [08:49<13:04:18, 23.79s/it]Reconstructed correlation 0.9599448045591747
+test loss:  -0.9686109000986273
+[23,     5] loss: -0.972 
+                                                      1%|          | 22/2000 [08:50<13:04:18, 23.79s/it][23,    10] loss: -0.987 
+                                                      1%|          | 22/2000 [08:50<13:04:18, 23.79s/it]                                                    [23,    15] loss: -0.961 
+  1%|          | 22/2000 [08:51<13:04:18, 23.79s/it][23,    20] loss: -0.975 
+                                                      1%|          | 22/2000 [08:52<13:04:18, 23.79s/it][23,    25] loss: -0.982 
+                                                      1%|          | 22/2000 [08:53<13:04:18, 23.79s/it][23,    30] loss: -0.948 
+                                                      1%|          | 22/2000 [08:53<13:04:18, 23.79s/it][23,    35] loss: -0.973 
+                                                      1%|          | 22/2000 [08:54<13:04:18, 23.79s/it][23,    40] loss: -0.975 
+                                                      1%|          | 22/2000 [08:55<13:04:18, 23.79s/it]                                                      1%|          | 22/2000 [08:55<13:04:18, 23.79s/it][23,    45] loss: -0.979 
+                                                    [23,    50] loss: -0.977 
+  1%|          | 22/2000 [08:56<13:04:18, 23.79s/it][23,    55] loss: -0.982 
+                                                      1%|          | 22/2000 [08:57<13:04:18, 23.79s/it]Pruning threshold: 5.576491446390719e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 5.3948107531369405e-37
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 5.794197832642567e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9614904666080156
+test loss:  -0.9689120357686823
+  1%|          | 23/2000 [09:13<13:04:11, 23.80s/it]                                                    [24,     5] loss: -0.973 
+  1%|          | 23/2000 [09:13<13:04:11, 23.80s/it][24,    10] loss: -0.988 
+                                                      1%|          | 23/2000 [09:14<13:04:11, 23.80s/it][24,    15] loss: -0.959 
+                                                      1%|          | 23/2000 [09:15<13:04:11, 23.80s/it][24,    20] loss: -0.975 
+                                                      1%|          | 23/2000 [09:16<13:04:11, 23.80s/it][24,    25] loss: -0.984 
+                                                      1%|          | 23/2000 [09:16<13:04:11, 23.80s/it][24,    30] loss: -0.951 
+                                                      1%|          | 23/2000 [09:17<13:04:11, 23.80s/it][24,    35] loss: -0.979 
+                                                      1%|          | 23/2000 [09:18<13:04:11, 23.80s/it][24,    40] loss: -0.971 
+                                                      1%|          | 23/2000 [09:19<13:04:11, 23.80s/it][24,    45] loss: -0.977 
+                                                      1%|          | 23/2000 [09:19<13:04:11, 23.80s/it]                                                    [24,    50] loss: -0.976 
+  1%|          | 23/2000 [09:20<13:04:11, 23.80s/it]                                                    [24,    55] loss: -0.982 
+  1%|          | 23/2000 [09:21<13:04:11, 23.80s/it]Pruning threshold: 5.1834486924917655e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 9.265595304573708e-37
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 5.769640765151962e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  1%|          | 24/2000 [09:36<13:04:26, 23.82s/it]Reconstructed correlation 0.9594516291716593
+test loss:  -0.9685594157739119
+                                                    [25,     5] loss: -0.972 
+  1%|          | 24/2000 [09:37<13:04:26, 23.82s/it][25,    10] loss: -0.988 
+                                                      1%|          | 24/2000 [09:38<13:04:26, 23.82s/it]                                                    [25,    15] loss: -0.960 
+  1%|          | 24/2000 [09:39<13:04:26, 23.82s/it]                                                    [25,    20] loss: -0.975 
+  1%|          | 24/2000 [09:39<13:04:26, 23.82s/it][25,    25] loss: -0.983 
+                                                      1%|          | 24/2000 [09:40<13:04:26, 23.82s/it][25,    30] loss: -0.951 
+                                                      1%|          | 24/2000 [09:41<13:04:26, 23.82s/it][25,    35] loss: -0.980 
+                                                      1%|          | 24/2000 [09:42<13:04:26, 23.82s/it][25,    40] loss: -0.976 
+                                                      1%|          | 24/2000 [09:42<13:04:26, 23.82s/it]                                                    [25,    45] loss: -0.976 
+  1%|          | 24/2000 [09:43<13:04:26, 23.82s/it][25,    50] loss: -0.974 
+                                                      1%|          | 24/2000 [09:44<13:04:26, 23.82s/it][25,    55] loss: -0.981 
+                                                      1%|          | 24/2000 [09:45<13:04:26, 23.82s/it]Pruning threshold: 4.244484319571029e-09
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.2413147409900885e-38
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.25495603242598e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115200
+layer index: 44 	 total params: 56448 	 remaining params: 56447
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.956291467630065
+test loss:  -0.9679057988253507  1%|▏         | 25/2000 [10:00<13:03:48, 23.81s/it]
+[26,     5] loss: -0.972 
+                                                      1%|▏         | 25/2000 [10:01<13:03:48, 23.81s/it][26,    10] loss: -0.988 
+                                                      1%|▏         | 25/2000 [10:02<13:03:48, 23.81s/it][26,    15] loss: -0.959 
+                                                      1%|▏         | 25/2000 [10:03<13:03:48, 23.81s/it][26,    20] loss: -0.974 
+                                                      1%|▏         | 25/2000 [10:03<13:03:48, 23.81s/it]                                                    [26,    25] loss: -0.983 
+  1%|▏         | 25/2000 [10:04<13:03:48, 23.81s/it][26,    30] loss: -0.953 
+                                                      1%|▏         | 25/2000 [10:05<13:03:48, 23.81s/it][26,    35] loss: -0.980 
+                                                      1%|▏         | 25/2000 [10:05<13:03:48, 23.81s/it][26,    40] loss: -0.977 
+                                                      1%|▏         | 25/2000 [10:06<13:03:48, 23.81s/it][26,    45] loss: -0.981 
+                                                      1%|▏         | 25/2000 [10:07<13:03:48, 23.81s/it][26,    50] loss: -0.977 
+                                                      1%|▏         | 25/2000 [10:08<13:03:48, 23.81s/it][26,    55] loss: -0.979 
+                                                      1%|▏         | 25/2000 [10:08<13:03:48, 23.81s/it]Pruning threshold: 6.588708467702986e-10
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 5.493272148953645e-39
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 8.509142901402811e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115200
+layer index: 44 	 total params: 56448 	 remaining params: 56447
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9481059787409294
+test loss:  -0.9661533399061724
+  1%|▏         | 26/2000 [10:24<13:03:24, 23.81s/it][27,     5] loss: -0.970 
+                                                      1%|▏         | 26/2000 [10:25<13:03:24, 23.81s/it][27,    10] loss: -0.987 
+                                                      1%|▏         | 26/2000 [10:26<13:03:24, 23.81s/it]                                                    [27,    15] loss: -0.959 
+  1%|▏         | 26/2000 [10:26<13:03:24, 23.81s/it][27,    20] loss: -0.974 
+                                                      1%|▏         | 26/2000 [10:27<13:03:24, 23.81s/it][27,    25] loss: -0.982 
+                                                      1%|▏         | 26/2000 [10:28<13:03:24, 23.81s/it][27,    30] loss: -0.952 
+                                                      1%|▏         | 26/2000 [10:29<13:03:24, 23.81s/it][27,    35] loss: -0.981 
+                                                      1%|▏         | 26/2000 [10:29<13:03:24, 23.81s/it][27,    40] loss: -0.978 
+                                                      1%|▏         | 26/2000 [10:30<13:03:24, 23.81s/it][27,    45] loss: -0.981 
+                                                      1%|▏         | 26/2000 [10:31<13:03:24, 23.81s/it][27,    50] loss: -0.976 
+                                                      1%|▏         | 26/2000 [10:31<13:03:24, 23.81s/it][27,    55] loss: -0.981 
+                                                      1%|▏         | 26/2000 [10:32<13:03:24, 23.81s/it]Pruning threshold: 1.6737033634028897e-11
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 3.9288205044274896e-41
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 2.987492564443528e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9527803568807175
+test loss:  -0.9674991206689314
+  1%|▏         | 27/2000 [10:48<13:03:12, 23.82s/it]                                                      1%|▏         | 27/2000 [10:49<13:03:12, 23.82s/it][28,     5] loss: -0.970 
+[28,    10] loss: -0.987 
+                                                      1%|▏         | 27/2000 [10:49<13:03:12, 23.82s/it]                                                      1%|▏         | 27/2000 [10:50<13:03:12, 23.82s/it][28,    15] loss: -0.959 
+                                                    [28,    20] loss: -0.974 
+  1%|▏         | 27/2000 [10:51<13:03:12, 23.82s/it][28,    25] loss: -0.983 
+                                                      1%|▏         | 27/2000 [10:52<13:03:12, 23.82s/it][28,    30] loss: -0.952 
+                                                      1%|▏         | 27/2000 [10:52<13:03:12, 23.82s/it][28,    35] loss: -0.980 
+                                                      1%|▏         | 27/2000 [10:53<13:03:12, 23.82s/it][28,    40] loss: -0.976 
+                                                      1%|▏         | 27/2000 [10:54<13:03:12, 23.82s/it]                                                    [28,    45] loss: -0.980 
+  1%|▏         | 27/2000 [10:55<13:03:12, 23.82s/it][28,    50] loss: -0.977 
+                                                      1%|▏         | 27/2000 [10:55<13:03:12, 23.82s/it]                                                    [28,    55] loss: -0.983 
+  1%|▏         | 27/2000 [10:56<13:03:12, 23.82s/it]Pruning threshold: 2.3780613389590144e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 3.126296873908667e-42
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.1770381291853482e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  1%|▏         | 28/2000 [11:12<13:02:29, 23.81s/it]Reconstructed correlation 0.9597932420201594
+test loss:  -0.9687658093192361
+                                                    [29,     5] loss: -0.972 
+  1%|▏         | 28/2000 [11:12<13:02:29, 23.81s/it]                                                      1%|▏         | 28/2000 [11:13<13:02:29, 23.81s/it][29,    10] loss: -0.988 
+                                                      1%|▏         | 28/2000 [11:14<13:02:29, 23.81s/it][29,    15] loss: -0.959 
+[29,    20] loss: -0.974 
+                                                      1%|▏         | 28/2000 [11:15<13:02:29, 23.81s/it][29,    25] loss: -0.982 
+                                                      1%|▏         | 28/2000 [11:15<13:02:29, 23.81s/it][29,    30] loss: -0.949 
+                                                      1%|▏         | 28/2000 [11:16<13:02:29, 23.81s/it][29,    35] loss: -0.978 
+                                                      1%|▏         | 28/2000 [11:17<13:02:29, 23.81s/it][29,    40] loss: -0.976 
+                                                      1%|▏         | 28/2000 [11:18<13:02:29, 23.81s/it][29,    45] loss: -0.980 
+                                                      1%|▏         | 28/2000 [11:18<13:02:29, 23.81s/it][29,    50] loss: -0.977 
+                                                      1%|▏         | 28/2000 [11:19<13:02:29, 23.81s/it][29,    55] loss: -0.983 
+                                                      1%|▏         | 28/2000 [11:20<13:02:29, 23.81s/it]Pruning threshold: 1.5121463547984604e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.5834672646870433e-43
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.4628466260546702e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9612677337824808
+test loss:  -0.9689535010944713
+  1%|▏         | 29/2000 [11:36<13:01:50, 23.80s/it]                                                    [30,     5] loss: -0.973 
+  1%|▏         | 29/2000 [11:36<13:01:50, 23.80s/it][30,    10] loss: -0.988 
+                                                      1%|▏         | 29/2000 [11:37<13:01:50, 23.80s/it][30,    15] loss: -0.960 
+                                                      1%|▏         | 29/2000 [11:38<13:01:50, 23.80s/it]                                                    [30,    20] loss: -0.975 
+  1%|▏         | 29/2000 [11:38<13:01:50, 23.80s/it]                                                      1%|▏         | 29/2000 [11:39<13:01:50, 23.80s/it][30,    25] loss: -0.984 
+[30,    30] loss: -0.952 
+                                                      1%|▏         | 29/2000 [11:40<13:01:50, 23.80s/it][30,    35] loss: -0.974 
+                                                      1%|▏         | 29/2000 [11:41<13:01:50, 23.80s/it][30,    40] loss: -0.975 
+                                                      1%|▏         | 29/2000 [11:41<13:01:50, 23.80s/it][30,    45] loss: -0.980 
+                                                      1%|▏         | 29/2000 [11:42<13:01:50, 23.80s/it]                                                    [30,    50] loss: -0.977 
+  1%|▏         | 29/2000 [11:43<13:01:50, 23.80s/it]                                                      1%|▏         | 29/2000 [11:44<13:01:50, 23.80s/it][30,    55] loss: -0.983 
+Pruning threshold: 1.4193027197961783e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.1210387714598537e-44
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.6384163359361992e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  2%|▏         | 30/2000 [11:59<13:01:19, 23.80s/it]Reconstructed correlation 0.9618326798543257
+test loss:  -0.9692028370770541
+                                                      2%|▏         | 30/2000 [12:00<13:01:19, 23.80s/it][31,     5] loss: -0.973 
+[31,    10] loss: -0.988 
+                                                      2%|▏         | 30/2000 [12:01<13:01:19, 23.80s/it][31,    15] loss: -0.960 
+                                                      2%|▏         | 30/2000 [12:02<13:01:19, 23.80s/it][31,    20] loss: -0.974 
+                                                      2%|▏         | 30/2000 [12:02<13:01:19, 23.80s/it]                                                    [31,    25] loss: -0.983 
+  2%|▏         | 30/2000 [12:03<13:01:19, 23.80s/it]                                                    [31,    30] loss: -0.951 
+  2%|▏         | 30/2000 [12:04<13:01:19, 23.80s/it][31,    35] loss: -0.979 
+                                                      2%|▏         | 30/2000 [12:04<13:01:19, 23.80s/it][31,    40] loss: -0.972 
+                                                      2%|▏         | 30/2000 [12:05<13:01:19, 23.80s/it][31,    45] loss: -0.980 
+                                                      2%|▏         | 30/2000 [12:06<13:01:19, 23.80s/it][31,    50] loss: -0.978 
+                                                      2%|▏         | 30/2000 [12:07<13:01:19, 23.80s/it][31,    55] loss: -0.983 
+                                                      2%|▏         | 30/2000 [12:07<13:01:19, 23.80s/it]Pruning threshold: 1.6167750471751674e-09
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.401298464324817e-45
+layer index: 14 	 total params: 1474560 	 remaining params: 1474559
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 1.8480234587059385e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9603473408580656
+test loss:  -0.9691173759373751  2%|▏         | 31/2000 [12:23<13:01:12, 23.81s/it]
+[32,     5] loss: -0.972 
+                                                      2%|▏         | 31/2000 [12:24<13:01:12, 23.81s/it][32,    10] loss: -0.989 
+                                                      2%|▏         | 31/2000 [12:25<13:01:12, 23.81s/it][32,    15] loss: -0.960 
+                                                      2%|▏         | 31/2000 [12:25<13:01:12, 23.81s/it]                                                      2%|▏         | 31/2000 [12:26<13:01:12, 23.81s/it][32,    20] loss: -0.976 
+[32,    25] loss: -0.983 
+                                                      2%|▏         | 31/2000 [12:27<13:01:12, 23.81s/it][32,    30] loss: -0.952 
+                                                      2%|▏         | 31/2000 [12:28<13:01:12, 23.81s/it][32,    35] loss: -0.981 
+                                                      2%|▏         | 31/2000 [12:28<13:01:12, 23.81s/it][32,    40] loss: -0.975 
+                                                      2%|▏         | 31/2000 [12:29<13:01:12, 23.81s/it]                                                    [32,    45] loss: -0.976 
+  2%|▏         | 31/2000 [12:30<13:01:12, 23.81s/it][32,    50] loss: -0.977 
+                                                      2%|▏         | 31/2000 [12:30<13:01:12, 23.81s/it][32,    55] loss: -0.982 
+                                                      2%|▏         | 31/2000 [12:31<13:01:12, 23.81s/it]Pruning threshold: 5.657313159601607e-11
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 0.0
+layer index: 14 	 total params: 1474560 	 remaining params: 1474558
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 5.906213829121043e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115200
+layer index: 44 	 total params: 56448 	 remaining params: 56447
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9588360801077646
+test loss:  -0.9687622211196206
+  2%|▏         | 32/2000 [12:47<13:00:58, 23.81s/it][33,     5] loss: -0.972 
+                                                      2%|▏         | 32/2000 [12:48<13:00:58, 23.81s/it]                                                    [33,    10] loss: -0.988 
+  2%|▏         | 32/2000 [12:48<13:00:58, 23.81s/it]                                                      2%|▏         | 32/2000 [12:49<13:00:58, 23.81s/it][33,    15] loss: -0.960 
+                                                      2%|▏         | 32/2000 [12:50<13:00:58, 23.81s/it][33,    20] loss: -0.975 
+                                                    [33,    25] loss: -0.984 
+  2%|▏         | 32/2000 [12:51<13:00:58, 23.81s/it]                                                    [33,    30] loss: -0.951 
+  2%|▏         | 32/2000 [12:51<13:00:58, 23.81s/it][33,    35] loss: -0.980 
+                                                      2%|▏         | 32/2000 [12:52<13:00:58, 23.81s/it][33,    40] loss: -0.978 
+                                                      2%|▏         | 32/2000 [12:53<13:00:58, 23.81s/it][33,    45] loss: -0.982 
+                                                      2%|▏         | 32/2000 [12:54<13:00:58, 23.81s/it][33,    50] loss: -0.978 
+                                                      2%|▏         | 32/2000 [12:54<13:00:58, 23.81s/it][33,    55] loss: -0.982 
+                                                      2%|▏         | 32/2000 [12:55<13:00:58, 23.81s/it]Pruning threshold: 2.839265960119519e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 0.0
+layer index: 14 	 total params: 1474560 	 remaining params: 1474558
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 3.788228752910072e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115200
+layer index: 44 	 total params: 56448 	 remaining params: 56447
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9571966300898891
+test loss:  -0.9688141280954534  2%|▏         | 33/2000 [13:11<13:00:05, 23.80s/it]
+[34,     5] loss: -0.972 
+                                                      2%|▏         | 33/2000 [13:11<13:00:05, 23.80s/it]                                                    [34,    10] loss: -0.987 
+  2%|▏         | 33/2000 [13:12<13:00:05, 23.80s/it][34,    15] loss: -0.960 
+                                                      2%|▏         | 33/2000 [13:13<13:00:05, 23.80s/it]                                                      2%|▏         | 33/2000 [13:14<13:00:05, 23.80s/it][34,    20] loss: -0.974 
+                                                      2%|▏         | 33/2000 [13:14<13:00:05, 23.80s/it][34,    25] loss: -0.983 
+                                                    [34,    30] loss: -0.952 
+  2%|▏         | 33/2000 [13:15<13:00:05, 23.80s/it]                                                    [34,    35] loss: -0.980 
+  2%|▏         | 33/2000 [13:16<13:00:05, 23.80s/it][34,    40] loss: -0.977 
+                                                      2%|▏         | 33/2000 [13:17<13:00:05, 23.80s/it]                                                      2%|▏         | 33/2000 [13:17<13:00:05, 23.80s/it][34,    45] loss: -0.981 
+[34,    50] loss: -0.978 
+                                                      2%|▏         | 33/2000 [13:18<13:00:05, 23.80s/it][34,    55] loss: -0.983 
+                                                      2%|▏         | 33/2000 [13:19<13:00:05, 23.80s/it]Pruning threshold: 7.31790166241808e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 0.0
+layer index: 14 	 total params: 1474560 	 remaining params: 1474558
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 3.6395938707300957e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9608984660865394
+test loss:  -0.9691843509674072
+  2%|▏         | 34/2000 [13:35<12:59:54, 23.80s/it][35,     5] loss: -0.972 
+                                                      2%|▏         | 34/2000 [13:35<12:59:54, 23.80s/it][35,    10] loss: -0.988 
+                                                      2%|▏         | 34/2000 [13:36<12:59:54, 23.80s/it][35,    15] loss: -0.961 
+                                                      2%|▏         | 34/2000 [13:37<12:59:54, 23.80s/it][35,    20] loss: -0.973 
+                                                      2%|▏         | 34/2000 [13:37<12:59:54, 23.80s/it][35,    25] loss: -0.979 
+                                                      2%|▏         | 34/2000 [13:38<12:59:54, 23.80s/it][35,    30] loss: -0.951 
+                                                      2%|▏         | 34/2000 [13:39<12:59:54, 23.80s/it][35,    35] loss: -0.980 
+                                                      2%|▏         | 34/2000 [13:40<12:59:54, 23.80s/it][35,    40] loss: -0.978 
+                                                      2%|▏         | 34/2000 [13:40<12:59:54, 23.80s/it]                                                    [35,    45] loss: -0.982 
+  2%|▏         | 34/2000 [13:41<12:59:54, 23.80s/it][35,    50] loss: -0.979 
+                                                      2%|▏         | 34/2000 [13:42<12:59:54, 23.80s/it][35,    55] loss: -0.983 
+                                                      2%|▏         | 34/2000 [13:43<12:59:54, 23.80s/it]Pruning threshold: 2.0655518540024786e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 0.0
+layer index: 14 	 total params: 1474560 	 remaining params: 1474557
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 4.0, Pruned ratio: 9.521865251826966e-08
+Pruning threshold: 1.4549990545731362e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9621401971447733
+test loss:  -0.9692412354729393
+  2%|▏         | 35/2000 [13:58<12:59:17, 23.79s/it][36,     5] loss: -0.973 
+                                                      2%|▏         | 35/2000 [13:59<12:59:17, 23.79s/it]                                                    [36,    10] loss: -0.988 
+  2%|▏         | 35/2000 [14:00<12:59:17, 23.79s/it][36,    15] loss: -0.960 
+                                                      2%|▏         | 35/2000 [14:01<12:59:17, 23.79s/it][36,    20] loss: -0.974 
+                                                      2%|▏         | 35/2000 [14:01<12:59:17, 23.79s/it]                                                      2%|▏         | 35/2000 [14:02<12:59:17, 23.79s/it][36,    25] loss: -0.983 
+                                                    [36,    30] loss: -0.947 
+  2%|▏         | 35/2000 [14:03<12:59:17, 23.79s/it][36,    35] loss: -0.978 
+                                                      2%|▏         | 35/2000 [14:03<12:59:17, 23.79s/it][36,    40] loss: -0.977 
+                                                      2%|▏         | 35/2000 [14:04<12:59:17, 23.79s/it][36,    45] loss: -0.981 
+                                                      2%|▏         | 35/2000 [14:05<12:59:17, 23.79s/it][36,    50] loss: -0.978 
+                                                      2%|▏         | 35/2000 [14:06<12:59:17, 23.79s/it][36,    55] loss: -0.984 
+                                                      2%|▏         | 35/2000 [14:06<12:59:17, 23.79s/it]Pruning threshold: 4.3247061398687947e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.401298464324817e-45
+layer index: 14 	 total params: 1474560 	 remaining params: 1474555
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 4.0, Pruned ratio: 9.521865251826966e-08
+Pruning threshold: 8.722236088942736e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Reconstructed correlation 0.9617204987573323
+test loss:  -0.9697447527538646
+  2%|▏         | 36/2000 [14:22<12:59:05, 23.80s/it]                                                    [37,     5] loss: -0.973 
+  2%|▏         | 36/2000 [14:23<12:59:05, 23.80s/it][37,    10] loss: -0.988 
+                                                      2%|▏         | 36/2000 [14:24<12:59:05, 23.80s/it]                                                    [37,    15] loss: -0.961 
+  2%|▏         | 36/2000 [14:24<12:59:05, 23.80s/it][37,    20] loss: -0.976 
+                                                      2%|▏         | 36/2000 [14:25<12:59:05, 23.80s/it][37,    25] loss: -0.983 
+                                                      2%|▏         | 36/2000 [14:26<12:59:05, 23.80s/it][37,    30] loss: -0.954 
+                                                      2%|▏         | 36/2000 [14:27<12:59:05, 23.80s/it][37,    35] loss: -0.976 
+                                                      2%|▏         | 36/2000 [14:27<12:59:05, 23.80s/it][37,    40] loss: -0.976 
+                                                      2%|▏         | 36/2000 [14:28<12:59:05, 23.80s/it][37,    45] loss: -0.980 
+                                                      2%|▏         | 36/2000 [14:29<12:59:05, 23.80s/it][37,    50] loss: -0.977 
+                                                      2%|▏         | 36/2000 [14:29<12:59:05, 23.80s/it][37,    55] loss: -0.983 
+                                                      2%|▏         | 36/2000 [14:30<12:59:05, 23.80s/it]Pruning threshold: 1.1161813517901464e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 0.0
+layer index: 14 	 total params: 1474560 	 remaining params: 1474557
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 4.0, Pruned ratio: 9.521865251826966e-08
+Pruning threshold: 4.29696456194506e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+  2%|▏         | 37/2000 [14:46<12:58:22, 23.79s/it]Reconstructed correlation 0.9613758437411246
+test loss:  -0.9694843097166581
+[38,     5] loss: -0.973 
+                                                      2%|▏         | 37/2000 [14:47<12:58:22, 23.79s/it][38,    10] loss: -0.989 
+                                                      2%|▏         | 37/2000 [14:47<12:58:22, 23.79s/it][38,    15] loss: -0.962 
+                                                      2%|▏         | 37/2000 [14:48<12:58:22, 23.79s/it][38,    20] loss: -0.975 
+                                                      2%|▏         | 37/2000 [14:49<12:58:22, 23.79s/it][38,    25] loss: -0.984 
+                                                      2%|▏         | 37/2000 [14:50<12:58:22, 23.79s/it][38,    30] loss: -0.952 
+                                                      2%|▏         | 37/2000 [14:50<12:58:22, 23.79s/it][38,    35] loss: -0.980 
+                                                      2%|▏         | 37/2000 [14:51<12:58:22, 23.79s/it][38,    40] loss: -0.976 
+                                                      2%|▏         | 37/2000 [14:52<12:58:22, 23.79s/it][38,    45] loss: -0.979 
+                                                      2%|▏         | 37/2000 [14:53<12:58:22, 23.79s/it][38,    50] loss: -0.977 
+                                                      2%|▏         | 37/2000 [14:53<12:58:22, 23.79s/it][38,    55] loss: -0.983 
+                                                      2%|▏         | 37/2000 [14:54<12:58:22, 23.79s/it]Pruning threshold: 7.242975641474914e-08
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Exception ignored in: <generator object tqdm.__iter__ at 0x7f55ca65aa50>
+Traceback (most recent call last):
+  File "/home/yz87/anaconda3/envs/torchpy3_7/lib/python3.7/site-packages/tqdm/std.py", line 1130, in __iter__
+    yield obj
+KeyboardInterrupt: 
+Traceback (most recent call last):
+  File "Unet_training_torch.py", line 462, in <module>
+    y, i = torch.sort(conv_weights)
+KeyboardInterrupt

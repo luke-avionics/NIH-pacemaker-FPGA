@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.4.0-42-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.7",
+    "heartbeatAt": "2020-12-02T13:00:59.141967",
+    "startedAt": "2020-12-02T13:00:58.453020",
+    "docker": null,
+    "gpu": "GeForce RTX 2080 Ti",
+    "gpu_count": 8,
+    "cpu_count": 64,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "codePath": "Unet_training_torch.py",
+    "program": "Unet_training_torch.py",
+    "git": {
+        "remote": "https://github.com/luke-avionics/NIH-pacemaker-FPGA.git",
+        "commit": "b6f82e2508996f13368960c7e39f1c01946751d5"
+    },
+    "email": null,
+    "root": "/home/yz87/NIH-pacemaker-FPGA",
+    "host": "eic-2020gpu6.ece.rice.edu",
+    "username": "yz87",
+    "executable": "/home/yz87/anaconda3/envs/torchpy3_7/bin/python"
+}

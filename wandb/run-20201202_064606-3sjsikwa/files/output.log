@@ -1,0 +1,56 @@
+<class 'numpy.ndarray'>
+(876, 10, 16, 16)
+(876, 24, 16, 16)
+Number of training samples:  876
+Number of testing samples:  876
+Dimension of Data: (876, 10, 16, 16) (876, 10, 16, 16)
+Number of all Data 1752
+Number of batches:  55
+  0%|          | 0/2000 [00:00<?, ?it/s]Unet_training_torch.py:388: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  inputs = Variable(inputs, volatile=True).cuda()
+Unet_training_torch.py:389: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  labels = Variable(labels, volatile=True).cuda()
+libibverbs: Warning: couldn't open config directory '/etc/libibverbs.d'.
+                                        [1,     5] loss: 0.000 
+  0%|          | 0/2000 [00:06<?, ?it/s]                                        [1,    10] loss: -0.001 
+  0%|          | 0/2000 [00:07<?, ?it/s]                                        [1,    15] loss: 0.002 
+  0%|          | 0/2000 [00:08<?, ?it/s]                                        [1,    20] loss: -0.000 
+  0%|          | 0/2000 [00:09<?, ?it/s][1,    25] loss: 0.001 
+                                          0%|          | 0/2000 [00:09<?, ?it/s]                                        [1,    30] loss: -0.001 
+  0%|          | 0/2000 [00:10<?, ?it/s]                                        [1,    35] loss: 0.000 
+  0%|          | 0/2000 [00:11<?, ?it/s]                                        [1,    40] loss: -0.002 
+  0%|          | 0/2000 [00:12<?, ?it/s]                                        [1,    45] loss: -0.001 
+  0%|          | 0/2000 [00:13<?, ?it/s][1,    50] loss: 0.001 
+                                          0%|          | 0/2000 [00:14<?, ?it/s][1,    55] loss: 0.000 
+                                          0%|          | 0/2000 [00:15<?, ?it/s]Pruning threshold: 3.674094841699116e-07
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 1.1556334361673137e-10
+layer index: 14 	 total params: 1474560 	 remaining params: 1474560
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 7.456362993707444e-08
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Unet_training_torch.py:516: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  tinputs = Variable(tinputs, volatile=True).cuda()
+Unet_training_torch.py:517: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  tlabels = Variable(tlabels, volatile=True).cuda()
+/home/yz87/anaconda3/envs/torchpy3_7/lib/python3.7/site-packages/numpy/lib/function_base.py:2559: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/home/yz87/anaconda3/envs/torchpy3_7/lib/python3.7/site-packages/numpy/lib/function_base.py:2560: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+  0%|          | 0/2000 [00:21<?, ?it/s]
+Traceback (most recent call last):
+  File "Unet_training_torch.py", line 520, in <module>
+    find_correlation(toutputs.view(-1,dim,dim,24).cpu().detach().numpy(), tlabels.cpu().detach().numpy())
+  File "Unet_training_torch.py", line 75, in find_correlation
+    real_o = sample_o[:, :, 2 * i]
+IndexError: index 16 is out of bounds for axis 2 with size 16

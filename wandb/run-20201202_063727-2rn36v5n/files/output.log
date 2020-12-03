@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "Unet_training_torch.py", line 103, in <module>
+    d2 = np.load("/data1/nih_data/Data/EGM_images_P2-2.npy")
+  File "/home/yz87/anaconda3/envs/torchpy3_7/lib/python3.7/site-packages/numpy/lib/npyio.py", line 416, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '/data1/nih_data/Data/EGM_images_P2-2.npy'

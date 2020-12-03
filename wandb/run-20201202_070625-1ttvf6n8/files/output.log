@@ -1,0 +1,113 @@
+<class 'numpy.ndarray'>
+(876, 10, 16, 16)
+(876, 24, 16, 16)
+Number of training samples:  876
+Number of testing samples:  876
+Dimension of Data: (876, 10, 16, 16) (876, 10, 16, 16)
+Number of all Data 1752
+Number of batches:  55
+  0%|          | 0/2000 [00:00<?, ?it/s]Unet_training_torch.py:390: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  inputs = Variable(inputs, volatile=True).cuda()
+Unet_training_torch.py:391: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  labels = Variable(labels, volatile=True).cuda()
+libibverbs: Warning: couldn't open config directory '/etc/libibverbs.d'.
+                                        [1,     5] loss: 0.000 
+  0%|          | 0/2000 [00:06<?, ?it/s][1,    10] loss: 0.002 
+                                          0%|          | 0/2000 [00:07<?, ?it/s]                                          0%|          | 0/2000 [00:08<?, ?it/s][1,    15] loss: 0.002 
+                                        [1,    20] loss: -0.001 
+  0%|          | 0/2000 [00:09<?, ?it/s]                                        [1,    25] loss: -0.001 
+  0%|          | 0/2000 [00:09<?, ?it/s][1,    30] loss: -0.002 
+                                          0%|          | 0/2000 [00:10<?, ?it/s][1,    35] loss: 0.001 
+                                          0%|          | 0/2000 [00:11<?, ?it/s][1,    40] loss: -0.000 
+                                          0%|          | 0/2000 [00:12<?, ?it/s][1,    45] loss: 0.001 
+                                          0%|          | 0/2000 [00:13<?, ?it/s][1,    50] loss: 0.002 
+                                          0%|          | 0/2000 [00:14<?, ?it/s][1,    55] loss: -0.001 
+                                          0%|          | 0/2000 [00:15<?, ?it/s]Pruning threshold: 6.513965811194566e-09
+layer index: 2 	 total params: 23520 	 remaining params: 23520
+layer index: 8 	 total params: 115200 	 remaining params: 115199
+Total conv params: 138720, Pruned conv params: 1.0, Pruned ratio: 7.2087659646058455e-06
+Pruning threshold: 2.5485552557213964e-10
+layer index: 14 	 total params: 1474560 	 remaining params: 1474560
+layer index: 18 	 total params: 614400 	 remaining params: 614400
+layer index: 22 	 total params: 40960 	 remaining params: 40960
+layer index: 25 	 total params: 40960 	 remaining params: 40960
+layer index: 29 	 total params: 614400 	 remaining params: 614400
+layer index: 33 	 total params: 1474560 	 remaining params: 1474560
+layer index: 49 	 total params: 37748736 	 remaining params: 37748736
+Total Linear params: 42008576, Pruned Linear params: 0.0, Pruned ratio: 0.0
+Pruning threshold: 2.0884310458768596e-07
+layer index: 38 	 total params: 115200 	 remaining params: 115199
+layer index: 44 	 total params: 56448 	 remaining params: 56448
+Total ConvTranspose2d params: 171648, Pruned ConvTranspose2d params: 1.0, Pruned ratio: 5.825876087328652e-06
+Unet_training_torch.py:518: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  tinputs = Variable(tinputs, volatile=True).cuda()
+Unet_training_torch.py:519: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  tlabels = Variable(tlabels, volatile=True).cuda()
+Reconstructed correlation 0.003693678411995579
+Reconstructed correlation -0.006636605838388988
+Reconstructed correlation 0.0002590370510238609
+Reconstructed correlation 0.0003755677366763443
+Reconstructed correlation 0.003221218827499693
+Reconstructed correlation 0.0011949664116733978
+Reconstructed correlation -0.004555799802004407
+Reconstructed correlation 0.0027060647255818773
+Reconstructed correlation -0.0022512531650128033
+Reconstructed correlation -0.001028455973363183
+Reconstructed correlation 0.007218736274680557
+Reconstructed correlation -0.004932664106099944
+Reconstructed correlation -0.0008814219692691606
+Reconstructed correlation -0.0018462706713516085
+Reconstructed correlation 0.0014793946006777768
+Reconstructed correlation -0.0012916056587814345
+Reconstructed correlation 0.00027070099301053434
+Reconstructed correlation 5.788893952976577e-05
+Reconstructed correlation -0.0029981393356387103
+Reconstructed correlation 0.0005689469374361146
+Reconstructed correlation -0.0025548399795063516
+Reconstructed correlation 0.00029629124085746566
+Reconstructed correlation -0.00482532863642563
+Reconstructed correlation -0.0013092000079357642
+Reconstructed correlation -0.0016922245247032194
+Reconstructed correlation -1.2335392113762937e-06
+Reconstructed correlation -0.0036323476576982957
+Reconstructed correlation 0.0030089710887501752
+Reconstructed correlation 0.0032980112472540415
+Reconstructed correlation -0.002957006294629831
+Reconstructed correlation 0.00010121945247808164
+Reconstructed correlation -0.004410531278882072
+Reconstructed correlation 0.001573715556228219
+Reconstructed correlation 0.00012099602544093375
+Reconstructed correlation 0.0028671998114844447
+Reconstructed correlation -0.0007615253232685432
+Reconstructed correlation -0.0030804011789705658
+Reconstructed correlation -0.003365125643773146
+Reconstructed correlation 0.0003486709414056456
+Reconstructed correlation 0.0033588096831218633
+Reconstructed correlation -0.0004475951318106115
+Reconstructed correlation 0.0029444354992294083
+Reconstructed correlation -0.0012868512212108067
+Reconstructed correlation 0.00015887894000274949
+Reconstructed correlation 0.0033841788430465296
+Reconstructed correlation 0.000790436855854954
+Reconstructed correlation 0.0010037425782813503
+Reconstructed correlation 0.0011294358963990813
+Reconstructed correlation -0.004271152779246582
+Reconstructed correlation -0.0007886322208890085
+Reconstructed correlation -0.0032140438639192445
+Reconstructed correlation 0.004428657866068796
+Reconstructed correlation 0.0008869123147486465
+Reconstructed correlation 0.0012451316116044717
+Reconstructed correlation -0.00024321191653642682
+test loss:  -0.00016569334230470386
+  0%|          | 1/2000 [00:33<18:46:17, 33.81s/it]                                                   [2,     5] loss: 0.001 
+  0%|          | 1/2000 [00:34<18:46:17, 33.81s/it]                                                   [2,    10] loss: 0.002 
+  0%|          | 1/2000 [00:35<18:46:17, 33.81s/it]                                                   [2,    15] loss: -0.001 
+  0%|          | 1/2000 [00:36<18:46:17, 33.81s/it][2,    20] loss: -0.001 
+                                                     0%|          | 1/2000 [00:37<18:46:17, 33.81s/it]                                                   [2,    25] loss: -0.001 
+  0%|          | 1/2000 [00:38<18:46:17, 33.81s/it][2,    30] loss: 0.000 
+                                                     0%|          | 1/2000 [00:39<18:46:17, 33.81s/it]                                                     0%|          | 1/2000 [00:40<18:46:17, 33.81s/it][2,    35] loss: 0.002 
+  0%|          | 1/2000 [00:41<22:59:58, 41.42s/it]
+Traceback (most recent call last):
+  File "Unet_training_torch.py", line 403, in <module>
+    running_loss += loss.item()
+KeyboardInterrupt

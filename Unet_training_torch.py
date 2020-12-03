@@ -18,12 +18,86 @@ import wandb
 from tqdm._utils import _term_move_up
 from tqdm import tqdm
 from datetime import datetime
+from quantize import QConv2d, RangeBN
+from quantize_rl import  QLinear
+
+
+ACT_FW = 0
+ACT_BW = 0
+GRAD_ACT_ERROR = 0
+GRAD_ACT_GC = 0
+
+MOMENTUM = 0.9
+
+DWS_BITS = 8
+DWS_GRAD_BITS = 16
+
+
+def Conv3x3(in_planes, out_planes, stride=1):
+    "3x3 convolution with padding"
+    return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
+                     padding=1, bias=False)
+
+
+def conv3x3(in_planes, out_planes, stride=1):
+    "3x3 convolution with padding"
+    return QConv2d(in_planes, out_planes, kernel_size=3, stride=stride,
+                   padding=1, bias=True, momentum=MOMENTUM, quant_act_forward=ACT_FW, quant_act_backward=ACT_BW,
+                   quant_grad_act_error=GRAD_ACT_ERROR, quant_grad_act_gc=GRAD_ACT_GC)
+
+
+def conv(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True):
+    return QConv2d(in_channels, out_channels, kernel_size=kernel_size, stride=stride,
+                   padding=padding, dilation=dilation, groups=groups, bias=bias, momentum=MOMENTUM, quant_act_forward=ACT_FW, quant_act_backward=ACT_BW,
+                   quant_grad_act_error=GRAD_ACT_ERROR, quant_grad_act_gc=GRAD_ACT_GC)
+def Linear(in_features, out_features, bias=True, dropout=0):
+    """Linear layer (input: N x T x C)"""
+    m = QLinear(in_features, out_features, bias=bias)
+    # m.weight.data.uniform_(-0.1, 0.1)
+    # if bias:
+    #     m.bias.data.uniform_(-0.1, 0.1)
+    return m
+
+def find_correlation(output, original):
+        length = 360
+        f = 500
+        nseg = 30
+        nover = 6
+        shape = np.shape(output)
+        correlations = np.zeros((12, shape[0]))
+        for j in range(shape[0]):
+            sample_r = output[j, :, :, :]
+            sample_o = original[j, :, :, :]
+            signals_r = np.zeros((12, length))
+            signals_o = np.zeros((12, length))
+            for i in range(int(shape[3]/2)):
+                real_r = sample_r[:, :, 2*i]
+                real_o = sample_o[:, :, 2 * i]
+                imaginary_r = sample_r[:, :, 2*i+1]
+                imaginary_o = sample_o[:, :, 2 * i + 1]
+                complex_signal_r = real_r + 1j*imaginary_r
+                complex_signal_o = real_o + 1j * imaginary_o
+                _, X_r = signal.istft(complex_signal_r, f, window="hann", nperseg=nseg, noverlap=nover)
+                _, X_o = signal.istft(complex_signal_o, f, window="hann", nperseg=nseg, noverlap=nover)
+                correlations[i, j] = np.corrcoef(X_r, X_o, rowvar=False)[0, 1]
+                signals_r[i, :] = np.array(X_r)
+                signals_o[i, :] = np.array(X_o)
+        avg_corr_channel = np.mean(correlations, axis=1)
+        avg_corr_overall = np.mean(avg_corr_channel)
+        out = avg_corr_overall
+        return avg_corr_channel, out, X_r, X_o
+
+
+
 now = datetime.now()
-pruning_ratio=[0.9,0.9,0.9]
-wandb.init(project='nih_project',name=str(pruning_ratio)+str(now))
+#conv bit width - fully connected layer bitwidth
+bit_width=[0,0]
+pruning_ratio=[0,0,0]
+wandb.init(project='nih_project_2',name=str(pruning_ratio)+"bit_w"+str(bit_width)+str(now))
 freq = 10
 dim = 16
-learning_rate = 0.000001
+#learning_rate = 0.000001
+learning_rate=1e-3
 input_dim = 10
 code = 64
 data_normalize=False
@@ -58,9 +132,17 @@ l26 = np.load("/data1/nih_data/Data/EKG_images_P26-2.npy")
 
 data = d5
 labels = l5
+#data=np.concatenate((d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26))
+#labels = np.concatenate(())
+
+#print(data.shape)
+#print(labels.shape)
+#exit()
 data=np.transpose(data,(0,3,1,2)).astype(np.float32)
 labels=np.transpose(labels,(0,3,1,2)).astype(np.float32)
-
+#print(data.shape)
+#print(labels.shape)
+#exit()
 data_train, data_test, labels_train, labels_test = train_test_split(data, labels, test_size=0.5, random_state=42)
 print(type(data_train))
 print(data_train.shape)
@@ -77,7 +159,7 @@ num_test_examples = shape_test[0]
 batch_size = 16
 batch_num = int(math.ceil(num_train_examples/batch_size))
 print("Number of batches: ", batch_num)
-n_epochs = 600
+n_epochs = 2000
 save_steps = batch_num/1 * n_epochs  # Number of training batches between checkpoint saves
 
 
@@ -112,9 +194,11 @@ test_loader=DataLoader(test_set,batch_size=int(batch_size),num_workers=0)
 
 def conv2d(in_channel, out_channel, kshape, stride, padding):
     tmp_layers=[]
-    tmp_layers.append(nn.Conv2d(in_channel,out_channel, kshape, stride=stride, padding=padding))
-    tmp_layers.append(nn.Tanh())
-    return nn.Sequential(*tmp_layers)
+    #tmp_layers.append(nn.Conv2d(in_channel,out_channel, kshape, stride=stride, padding=padding))
+    #tmp_layers.append(conv(in_channel,out_channel,kshape,stride=stride,padding=padding))
+    #tmp_layers.append(nn.Tanh())
+    #return nn.Sequential(*tmp_layers)
+    return conv(in_channel,out_channel,kshape,stride=stride,padding=padding)
     
 def deconv2d(in_channel, out_channel, kshape, stride, padding):
     tmp_layers=[]
@@ -130,12 +214,15 @@ def upsample(scale_factor=2):
 
 def fullyConnected(input_features,output_features):
     tmp_layers=[]
-    tmp_layers.append(nn.Linear(input_features,output_features))
-    tmp_layers.append(nn.Tanh())
-    return nn.Sequential(*tmp_layers)
+    #tmp_layers.append(nn.Linear(input_features,output_features))
+    #tmp_layers.append(Linear(input_features,output_features))
+    #tmp_layers.append(nn.Tanh())
+    #return nn.Sequential(*tmp_layers)
+    return Linear(input_features,output_features)
 
 def fullyConnected2(input_features,output_features):
-    return nn.Linear(input_features,output_features, bias=False)
+    #return nn.Linear(input_features,output_features, bias=False)
+    return Linear(input_features,output_features,bias=False)
 
 
 
@@ -151,34 +238,34 @@ def dropout(p):
     return nn.Dropout(p=p)
     
     
-def find_correlation(output, original):
-        length = 360
-        f = 500
-        nseg = 30
-        nover = 6
-        shape = np.shape(output)
-        correlations = np.zeros((12, shape[0]))
-        for j in range(shape[0]):
-            sample_r = output[j, :, :, :]
-            sample_o = original[j, :, :, :]
-            signals_r = np.zeros((12, length))
-            signals_o = np.zeros((12, length))
-            for i in range(int(shape[3]/2)):
-                real_r = sample_r[:, :, 2*i]
-                real_o = sample_o[:, :, 2 * i]
-                imaginary_r = sample_r[:, :, 2*i+1]
-                imaginary_o = sample_o[:, :, 2 * i + 1]
-                complex_signal_r = real_r + 1j*imaginary_r
-                complex_signal_o = real_o + 1j * imaginary_o
-                _, X_r = signal.istft(complex_signal_r, f, window="hann", nperseg=nseg, noverlap=nover)
-                _, X_o = signal.istft(complex_signal_o, f, window="hann", nperseg=nseg, noverlap=nover)
-                correlations[i, j] = np.corrcoef(X_r, X_o, rowvar=False)[0, 1]
-                signals_r[i, :] = np.array(X_r)
-                signals_o[i, :] = np.array(X_o)
-        avg_corr_channel = np.mean(correlations, axis=1)
-        avg_corr_overall = np.mean(avg_corr_channel)
-        out = avg_corr_overall
-        return avg_corr_channel, out
+#def find_correlation(output, original):
+#        length = 360
+#        f = 500
+#        nseg = 30
+#        nover = 6
+#        shape = np.shape(output)
+#        correlations = np.zeros((12, shape[0]))
+#        for j in range(shape[0]):
+#            sample_r = output[j, :, :, :]
+#            sample_o = original[j, :, :, :]
+#            signals_r = np.zeros((12, length))
+#            signals_o = np.zeros((12, length))
+#            for i in range(int(shape[3]/2)):
+#                real_r = sample_r[:, :, 2*i]
+#                real_o = sample_o[:, :, 2 * i]
+#                imaginary_r = sample_r[:, :, 2*i+1]
+#                imaginary_o = sample_o[:, :, 2 * i + 1]
+#                complex_signal_r = real_r + 1j*imaginary_r
+#                complex_signal_o = real_o + 1j * imaginary_o
+#                _, X_r = signal.istft(complex_signal_r, f, window="hann", nperseg=nseg, noverlap=nover)
+#                _, X_o = signal.istft(complex_signal_o, f, window="hann", nperseg=nseg, noverlap=nover)
+#                correlations[i, j] = np.corrcoef(X_r, X_o, rowvar=False)[0, 1]
+#                signals_r[i, :] = np.array(X_r)
+#                signals_o[i, :] = np.array(X_o)
+#        avg_corr_channel = np.mean(correlations, axis=1)
+#        avg_corr_overall = np.mean(avg_corr_channel)
+#        out = avg_corr_overall
+#        return avg_corr_channel, out
 
 
 def batch_norm(num_features):
@@ -232,31 +319,41 @@ class egmnet(nn.Module):
         self.lfc7=fullyConnected2(dim*dim*24,dim*dim*24)
         self.loutput=dropout(keep_prob3)
         
-    def forward(self,x):
-        x=self.lc1(x)
+        #acttivation
+        self.tanh=nn.ReLU()
+
+    def forward(self,x,num_bits=[8,8]):
+        x=self.lc1(x,num_bits[0])
         x=self.lb1(x)
         x=self.lp1(x)
         x=self.ldo1(x)
-        x=self.lc2(x)
+        x=self.lc2(x,num_bits[0])
+        x=self.tanh(x)
         x=self.lb2(x)
         x=self.lp2(x)
         x=self.ldo2(x)
         x=x.view(-1,dim//4*dim//4*96)
-        x=self.lfc1(x)
+        x=self.lfc1(x,num_bits[1])
+        x=self.tanh(x)
         x=self.lbfc1(x)
         x=self.ldo3(x)
-        x=self.lfc2(x)
+        x=self.lfc2(x,num_bits[1])
+        x=self.tanh(x)
         x=self.lbfc2(x)
         x=self.ldo4(x)
-        x=self.lfc3(x)
+        x=self.lfc3(x,num_bits[1])
+        x=self.tanh(x)
         x=self.lbfc3(x)
-        x=self.lfc4(x)
+        x=self.lfc4(x,num_bits[1])
+        x=self.tanh(x)
         x=self.lbfc4(x)
         x=self.ldo5(x)
-        x=self.lfc5(x)
+        x=self.lfc5(x,num_bits[1])
+        x=self.tanh(x)
         x=self.lbfc5(x)
         x=self.ldo6(x)
-        x=self.lfc6(x)
+        x=self.lfc6(x,num_bits[1])
+        x=self.tanh(x)
         x=self.lbfc6(x)
         x=self.ldo7(x)
         x=x.view(-1,96,dim//4,dim//4)
@@ -269,7 +366,7 @@ class egmnet(nn.Module):
         x=self.lup2(x)
         x=self.ldo9(x)
         x=x.view(-1,dim*dim*24)
-        x=self.lfc7(x)
+        x=self.lfc7(x,num_bits[1])
         x=self.loutput(x)
         return x
 
@@ -297,7 +394,7 @@ for epoch in pbar:  # loop over the dataset multiple times
         # zero the parameter gradients
         optimizer.zero_grad()
         # forward + backward + optimize
-        outputs = net(inputs)
+        outputs = net(inputs,num_bits=bit_width)
         #loss = criterion(outputs, labels)
         loss=correlation(outputs, labels.view(-1,dim*dim*24))
         #loss=error_loss(outputs, labels, 0,1)
@@ -415,16 +512,24 @@ for epoch in pbar:  # loop over the dataset multiple times
 
     
     running_loss_test=0
+    logged_reconstructed_correlation=[]
     for ti, tdata in enumerate(test_loader, 0):
         # get the inputs; data is a list of [inputs, labels]
         tinputs, tlabels = tdata
 
         tinputs = Variable(tinputs, volatile=True).cuda()
         tlabels = Variable(tlabels, volatile=True).cuda()
-        toutputs = net(tinputs)
+        toutputs = net(tinputs,num_bits=bit_width)
         tloss=correlation(toutputs, tlabels.view(-1,dim*dim*24))
+        (avg_corr_channel, out, X_r, X_o)=find_correlation(np.transpose(toutputs.view(-1,24,dim,dim).cpu().detach().numpy(),(0,2,3,1)).astype(np.float32),\
+                         np.transpose(tlabels.cpu().detach().numpy(),(0,2,3,1)).astype(np.float32))
+        logged_reconstructed_correlation.append(out)
         running_loss_test+=tloss.item()
         #allc, corr = find_correlation(toutputs.view(-1,24,dim,dim).cpu().data, tlabels.cpu().data)
         #print('averaged correlation: ', corr)
+        np.save("saved_waves/X_r"+str(ti)+".npy", X_r)
+        np.save("saved_waves/X_o"+str(ti)+".npy", X_o)
+    print('Reconstructed correlation',sum(logged_reconstructed_correlation)/len(logged_reconstructed_correlation))
     print('test loss: ',running_loss_test/(ti+1))
     wandb.log({'Test/loss': running_loss_test/(ti+1), 'epochs': epoch})
+    wandb.log({'Test/reccor': sum(logged_reconstructed_correlation)/len(logged_reconstructed_correlation), 'epochs': epoch})
