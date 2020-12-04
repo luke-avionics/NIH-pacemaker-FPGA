@@ -79,7 +79,7 @@ void read_we1(
 |		   through buffer loading input.
 |
 | Parameters:
-|   data_type weight_temp[TmW][TnW][Tk][Tk] --
+|   data_type weight_temp[TmW][TnW][Tk][Tk] -- the buffer location (BRAM, not reflected here)
 |   data_type feature_temp[TnBuff][Tri][Tci] --
 |   data_type output_core_temp[TmBuff][Tr][Tc] --
 |
@@ -117,13 +117,13 @@ void comp_engine_fc(
 | Purpose: Utilizes two feature buffers so one can be written to while the other executes 
 |
 | Parameters:
-|   dma_data* weight --
-|   dma_data* feature --
+|   dma_data* weight -- single weight
+|   dma_data* feature -- single feature
 |   dma_data* output_core -- where in the dram we will output to
-|	int con --
-|   ap_uint<32> Base_addr1 --
-|   ap_uint<32> Base_addr2 --
-|   ap_uint<32> Base_addr3 --
+|	int con -- flag variable
+|   ap_uint<32> Base_addr1 -- currently just a placeholder
+|   ap_uint<32> Base_addr2 -- ^
+|   ap_uint<32> Base_addr3 -- ^
 |   int M -- number of output channels
 |   int N -- number of input channels
 |

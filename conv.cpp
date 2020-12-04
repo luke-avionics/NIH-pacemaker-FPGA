@@ -12,13 +12,13 @@ using namespace std;
 | Parameters:
 |   data_type feature_temp[Tn][Tr][Tc] -- 
 |   dma_data* feature -- 
-|   int tr -- 
+|   int tr -- feature height
 |   int ti -- 
-|   int tc --
-|   int H --
-|   int C -- 
-|   int K --
-|   ap_uint<32> Base_addr2 -- 
+|   int tc -- feature width
+|   int H -- input dimension (width/height), equivilant to (C*S+K-1)
+|   int C -- output dimension (width/height)
+|   int K -- kernel/filter dimension (width/height)
+|   ap_uint<32> Base_addr2 -- currently just a placeholder
 |
 | Returns: void
 -----------------------------------------------------------------------------*/
@@ -72,15 +72,15 @@ void read_ifmap_conv2d(
 | Function: read_wek
 |
 | Purpose: Read in k weightsRead in weight buffer (specifically w/ kernel size >1)
-
+|
 | Parameters:
 |   data_type weight_temp[Tm][Tn][Tk][Tk] -- 
 |   dma_data* weight --
 |   int to -- 
 |   int ti --
-|   int K --
-|   int N --
-|   ap_uint<32> Base_addr1 --
+|   int K -- kernel/filter dimension (width/height)
+|   int N -- number of input channels
+|   ap_uint<32> Base_addr1 -- currently just a placeholder
 |
 | Returns: void
 -----------------------------------------------------------------------------*/
@@ -157,13 +157,13 @@ void comp_engine_conv_2d(
 | Purpose:
 |
 | Parameters:
-|   dma_data* weight --
-|   dma_data* feature --
-|   dma_data* output_core --
-|   int con -- 
-|   ap_uint<32> Base_addr1 -- 
-|   ap_uint<32> Base_addr2 -- 
-|   ap_uint<32> Base_addr3 -- 
+|   dma_data* weight -- single weight
+|   dma_data* feature -- single feature
+|   dma_data* output_core -- destination
+|	int con -- flag variable
+|   ap_uint<32> Base_addr1 -- currently just a placeholder
+|   ap_uint<32> Base_addr2 -- ^
+|   ap_uint<32> Base_addr3 -- ^
 |   int M -- number of output channels
 |   int N -- number of input channels
 |   int H -- input dimension (width/height), equivilant to (C*S+K-1)
