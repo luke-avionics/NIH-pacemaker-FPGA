@@ -41,7 +41,7 @@ void unet_top(
     dma_data* output_core7,
     dma_data* weight8,
     dma_data* feature8,
-    dma_data* output_core8,
+    dma_data* output_core8,*/
     dma_data* weight9,
     dma_data* feature9,
     dma_data* output_core9,
@@ -50,7 +50,7 @@ void unet_top(
     dma_data* output_core10,
     dma_data* weight11,
     dma_data* feature11,
-    dma_data* output_core11,
+    dma_data* output_core11,/*
     dma_data* weight12,
     dma_data* feature12,
     dma_data* output_core12,
@@ -69,10 +69,10 @@ void unet_top(
     dma_data* weight17,
     dma_data* feature17,
     dma_data* output_core17,*/
-    int con, /*
-    ap_uint<32> Base_addr1,
+    int con,
+    ap_uint<32> Base_addr1,/*
     ap_uint<32>  Base_addr2,
-    ap_uint<32>  Base_addr3,
+    ap_uint<32>  Base_addr3,*/
     ap_uint<32> Base_addr4,
     ap_uint<32>  Base_addr5,
     ap_uint<32>  Base_addr6,
@@ -87,7 +87,7 @@ void unet_top(
     ap_uint<32>  Base_addr15,
     ap_uint<32> Base_addr16,
     ap_uint<32>  Base_addr17,
-    ap_uint<32>  Base_addr18,
+    ap_uint<32>  Base_addr18,/*
     ap_uint<32> Base_addr19,
     ap_uint<32>  Base_addr20,
     ap_uint<32>  Base_addr21,
@@ -347,20 +347,18 @@ void unet_top(
 
 
 /***** Part 2: FC LAYERS 1-3 *****/
-
-	/*
     fc1: single_fc<
 					TmBuff3, TnBuff3, Tm3, Tn3, TmBuff3, TnBuff3>
 	(weight3, feature3, output_core3, con, Base_addr31, Base_addr32, Base_addr33,
 	M3, N3);
 
     act3: tanh_layer_fc(output_core3, weight3, M3, N3, Base_addr31, Base_addr33);
-
+/*
     fc2: single_fc<
                     TmBuff4, TnBuff4, Tm4, Tn4, TmBuff4, TnBuff4>
 	(weight4, output_core3, output_core4, con, Base_addr28, Base_addr33, Base_addr30,
 	M4, N4);
-
+*/
 	// fc2 synthesized with fc1 parameters (Chunk 2)
     fc2: single_fc<
                     TmBuff3, TnBuff3, Tm3, Tn3, TmBuff3, TnBuff3>
@@ -374,7 +372,6 @@ void unet_top(
                     TmBuff3, TnBuff3, Tm3, Tn3, TmBuff3, TnBuff3>
 	(weight4, output_core3, output_core4, con, Base_addr28, Base_addr33, Base_addr30,
 	M5, N5);
-	*/
 
 /***** Part 3: FC LAYERS 4-6 *****/
 
@@ -430,9 +427,11 @@ void unet_top(
 
 /***** Part 4: Deconvolution and Upsampling with Batch Normalization *****/
 
-	/*
-	deconv1: deconv_k_wrapper<N9, C9, K9, S9,
-						 TmBuff9, TnBuff9, Tr9, Tc9, Tm9, Tn9, TmBuff9, TnBuff9, Tk9, Tri9, Tci9>
+
+	// NOTE: This section is not currently supported by main.cpp; either comment out this section and the appropriate
+	// function inputs, or update main.cpp to run.
+
+	deconv1: deconv_k_wrapper<N9, C9, K9, S9, TmBuff9, TnBuff9, Tr9, Tc9, Tm9, Tn9, TmBuff9, TnBuff9, Tk9, Tri9, Tci9>
 	(weight9, feature9, output_core9, con, Base_addr13, Base_addr14, Base_addr15,
 	M9, H9, C9, K9, N9, S9, 6);
 
@@ -454,5 +453,4 @@ void unet_top(
 	// upsample2 would go here
 
 	// fc7 would go here
-	*/
 }

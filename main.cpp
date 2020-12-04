@@ -238,7 +238,7 @@ int main(){
                packed_input[i/2*C1*C1+j*C1+k].data.data1=flatten_input[(i+1)*C1*C1+j*C1+k];
 		   }
 
-    
+    //NOTE: current setup does not work with deconv tests
     unet_top (
         packed_weight,
         packed_input,

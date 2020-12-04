@@ -84,13 +84,13 @@ void unet_top(
     dma_data* output_core7,
     dma_data* weight8,
     dma_data* feature8,
-    dma_data* output_core8,
+    dma_data* output_core8,*/
     dma_data* weight9,
     dma_data* feature9,
     dma_data* output_core9,
     dma_data* weight10,
     dma_data* feature10,
-    dma_data* output_core10,
+    dma_data* output_core10,/*
     dma_data* weight11,
     dma_data* feature11,
     dma_data* output_core11,
@@ -124,13 +124,13 @@ void unet_top(
     ap_uint<32>  Base_addr9,
     ap_uint<32> Base_addr10,
     ap_uint<32>  Base_addr11,
-    ap_uint<32>  Base_addr12,
+    ap_uint<32>  Base_addr12,*/
     ap_uint<32> Base_addr13,
     ap_uint<32>  Base_addr14,
     ap_uint<32>  Base_addr15,
     ap_uint<32> Base_addr16,
     ap_uint<32>  Base_addr17,
-    ap_uint<32>  Base_addr18,
+    ap_uint<32>  Base_addr18,/*
     ap_uint<32> Base_addr19,
     ap_uint<32>  Base_addr20,
     ap_uint<32>  Base_addr21,

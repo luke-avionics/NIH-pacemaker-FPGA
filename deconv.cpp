@@ -270,6 +270,8 @@ void comp_engine_deconv_2d(
     }
 }
 
+
+
 template <
 int TmBuff, int TnBuff, int Tr, int Tc, int Tm, int Tn,int TmW,int TnW, int Tk,int Tri,int Tci,
 int t_N,int t_C, int t_S, int t_K>
@@ -479,6 +481,3 @@ void deconv_k_wrapper(
                        );
     }
 }
-
-
-
